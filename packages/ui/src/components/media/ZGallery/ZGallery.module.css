@@ -1,0 +1,198 @@
+/* ========================================
+   ZGallery - Gallery Component Styles
+======================================== */
+
+.gallery {
+  display: grid;
+  gap: var(--z-space-3);
+  width: 100%;
+}
+
+.gallery.grid {
+  grid-auto-rows: 250px;
+}
+
+.gallery.columns2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery.columns3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery.columns4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery.columns5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.gallery.masonry {
+  column-count: 3;
+  column-gap: var(--z-space-3);
+}
+
+/* ========================================
+   Gallery Item
+======================================== */
+
+.item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--z-radius-md);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.masonry .item {
+  break-inside: avoid;
+  margin-bottom: var(--z-space-3);
+}
+
+.item:hover {
+  transform: scale(1.02);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--z-space-3);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+  font-size: var(--z-text-sm);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.item:hover .caption {
+  opacity: 1;
+}
+
+/* ========================================
+   Lightbox
+======================================== */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.95);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lightboxContent {
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-3);
+}
+
+.lightboxImage {
+  max-width: 90vw;
+  max-height: 80vh;
+}
+
+.lightboxCaption {
+  text-align: center;
+  color: white;
+  font-size: var(--z-text-base);
+}
+
+.closeButton {
+  position: absolute;
+  top: var(--z-space-4);
+  right: var(--z-space-4);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: var(--z-radius-full);
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: var(--z-radius-full);
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.navButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.prevButton {
+  left: var(--z-space-4);
+}
+
+.nextButton {
+  right: var(--z-space-4);
+}
+
+.counter {
+  position: absolute;
+  bottom: var(--z-space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: var(--z-space-2) var(--z-space-4);
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: var(--z-radius-full);
+  color: white;
+  font-size: var(--z-text-sm);
+}
+
+/* ========================================
+   Responsive
+======================================== */
+
+@media (max-width: 768px) {
+  .gallery.columns3,
+  .gallery.columns4,
+  .gallery.columns5 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery.masonry {
+    column-count: 2;
+  }
+}

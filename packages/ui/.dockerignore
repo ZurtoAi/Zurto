@@ -1,0 +1,59 @@
+# Node
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build outputs
+dist
+build
+coverage
+.vitepress/cache
+.vitepress/dist
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Tests
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+src/test
+
+# Docs (except source)
+TESTING.md
+PHASE_*.md
+
+# Docker
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# Scripts
+*.ps1
+*.sh
+
+# Misc
+*.md
+!README.md
+.prettierrc
+.eslintrc*
+tsconfig.json
+vitest.config.ts

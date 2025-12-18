@@ -1,0 +1,10 @@
+/* ========================================
+   ZTimestamp - Timestamp Styles
+======================================== */
+
+.timestamp {
+  font-size: var(--z-text-sm);
+  color: var(--z-text-secondary);
+  font-family: var(--z-font-base);
+  cursor: help;
+}

@@ -1,0 +1,116 @@
+/* ========================================
+   ZFollowButton - Follow Button Styles
+======================================== */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--z-space-2);
+  border-radius: var(--z-radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+}
+
+.button.sm {
+  padding: var(--z-space-1) var(--z-space-3);
+  font-size: var(--z-text-sm);
+}
+
+.button.md {
+  padding: var(--z-space-2) var(--z-space-4);
+  font-size: var(--z-text-base);
+}
+
+.button.lg {
+  padding: var(--z-space-3) var(--z-space-5);
+  font-size: var(--z-text-lg);
+}
+
+/* ========================================
+   Variants
+======================================== */
+
+.button.default {
+  background: var(--z-accent-color);
+  color: white;
+  border: 1px solid var(--z-accent-color);
+}
+
+.button.default:hover {
+  opacity: 0.9;
+}
+
+.button.default.following {
+  background: var(--z-card-bg);
+  color: var(--z-text-primary);
+  border-color: var(--z-border-color);
+}
+
+.button.default.following:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border-color: #ef4444;
+}
+
+.button.outline {
+  background: transparent;
+  color: var(--z-accent-color);
+  border: 1px solid var(--z-accent-color);
+}
+
+.button.outline:hover {
+  background: var(--z-accent-color);
+  color: white;
+}
+
+.button.outline.following {
+  color: var(--z-text-primary);
+  border-color: var(--z-border-color);
+}
+
+.button.outline.following:hover {
+  color: #ef4444;
+  border-color: #ef4444;
+  background: transparent;
+}
+
+.button.solid {
+  background: var(--z-accent-color);
+  color: white;
+  border: 1px solid var(--z-accent-color);
+}
+
+.button.solid:hover {
+  opacity: 0.9;
+}
+
+.button.solid.following {
+  background: #22c55e;
+  border-color: #22c55e;
+}
+
+.button.solid.following:hover {
+  background: #ef4444;
+  border-color: #ef4444;
+}
+
+/* ========================================
+   Icon
+======================================== */
+
+.icon {
+  width: 18px;
+  height: 18px;
+}
+
+.button.sm .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.button.lg .icon {
+  width: 20px;
+  height: 20px;
+}

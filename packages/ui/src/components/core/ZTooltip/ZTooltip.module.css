@@ -1,0 +1,82 @@
+/* ========================================
+   ZTooltip - Tooltip Component Styles
+======================================== */
+
+.trigger {
+  display: inline-flex;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: var(--z-index-tooltip);
+  padding: var(--z-space-2) var(--z-space-3);
+  background: var(--z-bg-elevated);
+  border: 1px solid var(--z-border);
+  border-radius: var(--z-radius-md);
+  color: var(--z-text-primary);
+  font-size: var(--z-text-sm);
+  line-height: var(--z-leading-normal);
+  box-shadow: var(--z-shadow-lg);
+  animation: z-fade-in var(--z-duration-fast) var(--z-ease-out);
+  pointer-events: auto;
+}
+
+/* ========================================
+   Arrow
+======================================== */
+
+.arrow {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--z-bg-elevated);
+  border: 1px solid var(--z-border);
+  transform: rotate(45deg);
+}
+
+.top .arrow {
+  bottom: -5px;
+  left: 50%;
+  margin-left: -4px;
+  border-top: none;
+  border-left: none;
+}
+
+.bottom .arrow {
+  top: -5px;
+  left: 50%;
+  margin-left: -4px;
+  border-bottom: none;
+  border-right: none;
+}
+
+.left .arrow {
+  right: -5px;
+  top: 50%;
+  margin-top: -4px;
+  border-bottom: none;
+  border-left: none;
+}
+
+.right .arrow {
+  left: -5px;
+  top: 50%;
+  margin-top: -4px;
+  border-top: none;
+  border-right: none;
+}
+
+/* ========================================
+   Animation
+======================================== */
+
+@keyframes z-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

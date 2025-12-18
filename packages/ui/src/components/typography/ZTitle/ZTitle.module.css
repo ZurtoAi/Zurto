@@ -1,0 +1,77 @@
+/* ========================================
+   ZTitle - Title/Heading Styles
+======================================== */
+
+.title {
+  margin: 0;
+  color: var(--z-text-primary);
+  line-height: 1.2;
+}
+
+/* ========================================
+   Heading Levels
+======================================== */
+
+.title.h1 {
+  font-size: var(--z-text-4xl);
+}
+
+.title.h2 {
+  font-size: var(--z-text-3xl);
+}
+
+.title.h3 {
+  font-size: var(--z-text-2xl);
+}
+
+.title.h4 {
+  font-size: var(--z-text-xl);
+}
+
+.title.h5 {
+  font-size: var(--z-text-lg);
+}
+
+.title.h6 {
+  font-size: var(--z-text-base);
+}
+
+/* ========================================
+   Weight
+======================================== */
+
+.title.light {
+  font-weight: 300;
+}
+
+.title.normal {
+  font-weight: 400;
+}
+
+.title.medium {
+  font-weight: 500;
+}
+
+.title.semibold {
+  font-weight: 600;
+}
+
+.title.bold {
+  font-weight: 700;
+}
+
+/* ========================================
+   Alignment
+======================================== */
+
+.title.align-left {
+  text-align: left;
+}
+
+.title.align-center {
+  text-align: center;
+}
+
+.title.align-right {
+  text-align: right;
+}

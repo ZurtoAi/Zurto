@@ -1,0 +1,19 @@
+/**
+ * ZForm styles
+ */
+
+.form {
+  width: 100%;
+}
+
+.fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.form.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}

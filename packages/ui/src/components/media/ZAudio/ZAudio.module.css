@@ -1,0 +1,71 @@
+.container {
+  width: 100%;
+  background: var(--z-secondary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-md);
+  padding: var(--z-space-4);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-3);
+}
+
+.playBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--z-accent-color);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  flex-shrink: 0;
+}
+
+.playBtn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-weight: 600;
+  color: var(--z-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.artist {
+  font-size: var(--z-text-sm);
+  color: var(--z-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.muteBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--z-space-2);
+  background: transparent;
+  border: none;
+  color: var(--z-text-secondary);
+  cursor: pointer;
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.muteBtn:hover {
+  color: var(--z-text-primary);
+}

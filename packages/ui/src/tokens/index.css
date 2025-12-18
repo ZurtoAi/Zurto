@@ -1,0 +1,106 @@
+/* ========================================
+   ZURTO UI - DESIGN TOKENS INDEX
+   Import all design tokens
+======================================== */
+
+/* Core tokens */
+@import "./colors.css";
+@import "./typography.css";
+@import "./spacing.css";
+@import "./shadows.css";
+@import "./animations.css";
+@import "./radius.css";
+@import "./z-index.css";
+@import "./breakpoints.css";
+
+/* ========================================
+   GLOBAL RESET & BASE STYLES
+======================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--z-font-sans);
+  font-size: var(--z-text-base);
+  line-height: var(--z-leading-normal);
+  color: var(--z-text-primary);
+  background-color: var(--z-bg-primary);
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--z-focus-ring);
+}
+
+/* Remove default button styles */
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Remove default input styles */
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* Links */
+a {
+  color: var(--z-primary);
+  text-decoration: none;
+  transition: var(--z-transition-colors);
+}
+
+a:hover {
+  color: var(--z-primary-hover);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--z-primary);
+  color: var(--z-text-primary);
+}
+
+/* Scrollbar styling (webkit) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--z-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--z-bg-elevated);
+  border-radius: var(--z-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--z-bg-hover);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--z-bg-elevated) var(--z-bg-secondary);
+}

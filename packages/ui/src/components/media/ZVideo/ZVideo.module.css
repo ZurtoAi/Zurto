@@ -1,0 +1,47 @@
+.container {
+  position: relative;
+  width: 100%;
+  background: var(--z-primary-bg);
+  border-radius: var(--z-radius-md);
+  overflow: hidden;
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: var(--z-space-2);
+  padding: var(--z-space-3);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.container:hover .controls {
+  opacity: 1;
+}
+
+.controlBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--z-space-2);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: var(--z-radius-sm);
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.controlBtn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}

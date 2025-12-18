@@ -1,0 +1,180 @@
+/* ========================================
+   ZNumberInput - Number Input Styles
+======================================== */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-2);
+  width: 100%;
+}
+
+.label {
+  font-size: var(--z-text-sm);
+  font-weight: var(--z-font-medium);
+  color: var(--z-text-primary);
+}
+
+.required {
+  color: var(--z-error);
+  margin-left: var(--z-space-1);
+}
+
+/* ========================================
+   Input Wrapper
+======================================== */
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  text-align: center;
+  font-family: var(--z-font-sans);
+  color: var(--z-text-primary);
+  background: var(--z-surface);
+  border: 1px solid var(--z-border);
+  border-radius: var(--z-radius-md);
+  outline: none;
+  transition: var(--z-transition);
+  -moz-appearance: textfield;
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input.withControls {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+}
+
+.input::placeholder {
+  color: var(--z-text-muted);
+}
+
+.input:hover:not(:disabled) {
+  border-color: var(--z-border-hover);
+}
+
+.input:focus {
+  border-color: var(--z-accent);
+  box-shadow: var(--z-focus-ring);
+  z-index: 1;
+}
+
+.input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   Sizes
+======================================== */
+
+.sm {
+  height: 32px;
+  padding: 0 var(--z-space-2);
+  font-size: var(--z-text-sm);
+}
+
+.md {
+  height: 40px;
+  padding: 0 var(--z-space-3);
+  font-size: var(--z-text-md);
+}
+
+.lg {
+  height: 48px;
+  padding: 0 var(--z-space-4);
+  font-size: var(--z-text-lg);
+}
+
+/* ========================================
+   Control Buttons
+======================================== */
+
+.controlButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--z-surface);
+  border: 1px solid var(--z-border);
+  cursor: pointer;
+  color: var(--z-text-secondary);
+  transition: var(--z-transition);
+  padding: 0 var(--z-space-3);
+}
+
+.controlButton:hover:not(:disabled) {
+  background: var(--z-hover-bg);
+  border-color: var(--z-border-hover);
+  color: var(--z-text-primary);
+}
+
+.controlButton:active:not(:disabled) {
+  background: var(--z-surface-light);
+}
+
+.controlButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.leftButton {
+  border-top-left-radius: var(--z-radius-md);
+  border-bottom-left-radius: var(--z-radius-md);
+  border-right: none;
+}
+
+.rightButton {
+  border-top-right-radius: var(--z-radius-md);
+  border-bottom-right-radius: var(--z-radius-md);
+  border-left: none;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* ========================================
+   States
+======================================== */
+
+.error {
+  border-color: var(--z-error);
+}
+
+.error:focus {
+  border-color: var(--z-error);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.success {
+  border-color: var(--z-success);
+}
+
+.success:focus {
+  border-color: var(--z-success);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* ========================================
+   Helper Text
+======================================== */
+
+.helperText {
+  font-size: var(--z-text-xs);
+  color: var(--z-text-secondary);
+}
+
+.errorText {
+  color: var(--z-error);
+}

@@ -1,0 +1,120 @@
+/* ========================================
+   ZTabs - Tabs Component Styles
+======================================== */
+
+.tabs {
+  display: flex;
+  width: 100%;
+}
+
+.horizontal {
+  flex-direction: column;
+}
+
+.vertical {
+  flex-direction: row;
+  gap: var(--z-space-4);
+}
+
+/* ========================================
+   Tabs List
+======================================== */
+
+.tabsList {
+  display: flex;
+  position: relative;
+}
+
+.horizontalList {
+  flex-direction: row;
+  border-bottom: 1px solid var(--z-border);
+  gap: var(--z-space-1);
+}
+
+.verticalList {
+  flex-direction: column;
+  border-right: 1px solid var(--z-border);
+  gap: var(--z-space-1);
+  min-width: 200px;
+}
+
+/* ========================================
+   Tab Trigger
+======================================== */
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--z-space-3) var(--z-space-4);
+  font-family: var(--z-font-sans);
+  font-size: var(--z-text-sm);
+  font-weight: var(--z-font-medium);
+  color: var(--z-text-secondary);
+  background: transparent;
+  border: none;
+  border-radius: var(--z-radius-sm);
+  cursor: pointer;
+  transition: var(--z-transition);
+  position: relative;
+  white-space: nowrap;
+  outline: none;
+}
+
+.trigger:hover:not(:disabled) {
+  color: var(--z-text-primary);
+  background: var(--z-hover-bg);
+}
+
+.trigger:focus-visible {
+  box-shadow: var(--z-focus-ring);
+}
+
+.trigger.active {
+  color: var(--z-accent);
+}
+
+.horizontalList .trigger.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--z-accent);
+}
+
+.verticalList .trigger.active::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--z-accent);
+}
+
+.trigger.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   Tab Content
+======================================== */
+
+.content {
+  padding: var(--z-space-4);
+  animation: fadeIn 200ms ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

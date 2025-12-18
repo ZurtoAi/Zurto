@@ -1,0 +1,21 @@
+/* ========================================
+   ZRotate - Rotate Animation Styles
+======================================== */
+
+.container {
+  display: inline-block;
+  transition: transform var(--rotation-duration, 500ms) ease-in-out;
+}
+
+.container.rotating {
+  animation: rotate var(--rotation-duration, 500ms) linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(var(--rotation-degrees, 360deg));
+  }
+}

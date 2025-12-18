@@ -1,0 +1,316 @@
+/**
+ * Source Code Panel Styles
+ */
+
+.source-code-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #1e1e2e;
+  border-left: 1px solid #313244;
+  color: #cdd6f4;
+  font-family: "Fira Code", "Consolas", "Monaco", monospace;
+}
+
+/* Header */
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #181825;
+  border-bottom: 1px solid #313244;
+  min-height: 44px;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.file-icon {
+  font-size: 1.1rem;
+}
+
+.file-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-language {
+  background: #45475a;
+  color: #a6adc8;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.unsaved-indicator {
+  color: #fab387;
+  font-size: 1.2rem;
+  margin-left: 4px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.action-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 6px;
+  background: #313244;
+  color: #cdd6f4;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.action-btn:hover:not(:disabled) {
+  background: #45475a;
+}
+
+.action-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.action-btn.save {
+  background: #a6e3a1;
+  color: #1e1e2e;
+}
+
+.action-btn.save:hover:not(:disabled) {
+  background: #94e2d5;
+}
+
+.action-btn.close {
+  background: #f38ba8;
+  color: #1e1e2e;
+}
+
+.action-btn.close:hover {
+  background: #eba0ac;
+}
+
+/* File path bar */
+.file-path-bar {
+  padding: 6px 12px;
+  background: #11111b;
+  border-bottom: 1px solid #313244;
+  font-size: 0.75rem;
+  color: #6c7086;
+}
+
+.path-text {
+  font-family: "Fira Code", monospace;
+}
+
+/* Code container */
+.code-container {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-overlay,
+.error-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(30, 30, 46, 0.9);
+  z-index: 10;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #45475a;
+  border-top-color: #89b4fa;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error-overlay {
+  color: #f38ba8;
+}
+
+.error-icon {
+  font-size: 2rem;
+}
+
+.error-overlay button {
+  margin-top: 8px;
+  padding: 6px 16px;
+  background: #45475a;
+  color: #cdd6f4;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.error-overlay button:hover {
+  background: #585b70;
+}
+
+/* Editor wrapper */
+.editor-wrapper {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Line numbers */
+.line-numbers {
+  width: 50px;
+  padding: 12px 8px;
+  background: #11111b;
+  border-right: 1px solid #313244;
+  overflow: hidden;
+  user-select: none;
+  text-align: right;
+}
+
+.line-number {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #6c7086;
+  height: 21px;
+}
+
+/* Code editor */
+.code-editor {
+  flex: 1;
+  padding: 12px;
+  background: #1e1e2e;
+  color: #cdd6f4;
+  border: none;
+  resize: none;
+  outline: none;
+  font-family: "Fira Code", "Consolas", "Monaco", monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  tab-size: 2;
+  overflow: auto;
+  white-space: pre;
+}
+
+.code-editor::selection {
+  background: rgba(137, 180, 250, 0.3);
+}
+
+.code-editor:focus {
+  background: #1e1e2e;
+}
+
+/* Language-specific colors (basic) */
+.code-editor.language-javascript,
+.code-editor.language-typescript {
+  color: #f9e2af;
+}
+
+.code-editor.language-python {
+  color: #94e2d5;
+}
+
+.code-editor.language-json {
+  color: #a6e3a1;
+}
+
+.code-editor.language-html {
+  color: #fab387;
+}
+
+.code-editor.language-css,
+.code-editor.language-scss {
+  color: #89b4fa;
+}
+
+.code-editor.language-markdown {
+  color: #cdd6f4;
+}
+
+.code-editor.language-shell {
+  color: #a6e3a1;
+}
+
+.code-editor.language-dockerfile {
+  color: #89b4fa;
+}
+
+/* Footer */
+.panel-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 12px;
+  background: #181825;
+  border-top: 1px solid #313244;
+  font-size: 0.75rem;
+  color: #6c7086;
+}
+
+.file-stats {
+  font-family: "Fira Code", monospace;
+}
+
+.edit-hint {
+  color: #fab387;
+}
+
+/* Scrollbar styling */
+.code-editor::-webkit-scrollbar,
+.line-numbers::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.code-editor::-webkit-scrollbar-track,
+.line-numbers::-webkit-scrollbar-track {
+  background: #11111b;
+}
+
+.code-editor::-webkit-scrollbar-thumb {
+  background: #45475a;
+  border-radius: 4px;
+}
+
+.code-editor::-webkit-scrollbar-thumb:hover {
+  background: #585b70;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .file-language {
+    display: none;
+  }
+
+  .line-numbers {
+    width: 40px;
+  }
+}

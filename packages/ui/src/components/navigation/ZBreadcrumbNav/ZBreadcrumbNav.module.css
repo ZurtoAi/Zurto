@@ -1,0 +1,111 @@
+/* ========================================
+   ZBreadcrumbNav - Breadcrumb Styles
+======================================== */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  font-size: var(--z-text-sm);
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--z-space-2);
+  flex-wrap: wrap;
+}
+
+/* ========================================
+   Items
+======================================== */
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-2);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-1);
+  color: var(--z-text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  padding: var(--z-space-1) var(--z-space-2);
+  border-radius: var(--z-radius-sm);
+}
+
+.link:hover {
+  color: var(--z-accent-color);
+  background: var(--z-secondary-bg);
+}
+
+.current {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-1);
+  color: var(--z-text-primary);
+  font-weight: 600;
+  padding: var(--z-space-1) var(--z-space-2);
+}
+
+.ellipsis {
+  color: var(--z-text-tertiary);
+  padding: var(--z-space-1) var(--z-space-2);
+}
+
+/* ========================================
+   Icons
+======================================== */
+
+.homeIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+.separator {
+  width: 16px;
+  height: 16px;
+  color: var(--z-text-tertiary);
+}
+
+.separatorItem {
+  display: flex;
+  align-items: center;
+}
+
+/* ========================================
+   Accessibility
+======================================== */
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ========================================
+   Home Link
+======================================== */
+
+.home {
+  padding: var(--z-space-1);
+}

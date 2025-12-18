@@ -1,0 +1,142 @@
+/* ========================================
+   ZCalendar - Calendar Styles
+======================================== */
+
+.calendar {
+  width: 100%;
+  max-width: 400px;
+  padding: var(--z-space-4);
+  background: var(--z-primary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-lg);
+}
+
+/* ========================================
+   Header
+======================================== */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--z-space-4);
+}
+
+.monthYear {
+  font-size: var(--z-text-lg);
+  font-weight: 700;
+  color: var(--z-text-primary);
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-md);
+  color: var(--z-text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navButton:hover {
+  border-color: var(--z-accent-color);
+  color: var(--z-accent-color);
+}
+
+.navButton svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ========================================
+   Weekdays
+======================================== */
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--z-space-1);
+  margin-bottom: var(--z-space-2);
+}
+
+.weekday {
+  text-align: center;
+  font-size: var(--z-text-xs);
+  font-weight: 600;
+  color: var(--z-text-tertiary);
+  text-transform: uppercase;
+  padding: var(--z-space-2);
+}
+
+/* ========================================
+   Days
+======================================== */
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--z-space-1);
+}
+
+.emptyDay {
+  aspect-ratio: 1;
+}
+
+.day {
+  position: relative;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--z-radius-md);
+  color: var(--z-text-primary);
+  font-size: var(--z-text-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.day:hover:not(:disabled) {
+  background: var(--z-secondary-bg);
+  border-color: var(--z-border-color);
+}
+
+.day:disabled {
+  color: var(--z-text-tertiary);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.day.today {
+  font-weight: 700;
+  color: var(--z-accent-color);
+}
+
+.day.selected {
+  background: var(--z-accent-color);
+  border-color: var(--z-accent-color);
+  color: white;
+  font-weight: 700;
+}
+
+.day.hasEvent {
+  background: rgba(223, 62, 83, 0.1);
+}
+
+.eventDot {
+  position: absolute;
+  bottom: 4px;
+  width: 4px;
+  height: 4px;
+  background: var(--z-accent-color);
+  border-radius: 50%;
+}
+
+.day.selected .eventDot {
+  background: white;
+}

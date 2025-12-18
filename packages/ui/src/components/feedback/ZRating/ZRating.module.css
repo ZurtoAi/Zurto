@@ -1,0 +1,116 @@
+/* ========================================
+   ZRating - Rating Component Styles
+======================================== */
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--z-space-2);
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-1);
+}
+
+/* ========================================
+   Star Wrapper
+======================================== */
+
+.starWrapper {
+  position: relative;
+  display: flex;
+}
+
+.starWrapper.interactive {
+  cursor: pointer;
+}
+
+.halfStar {
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+}
+
+.halfStar:first-child {
+  clip-path: inset(0 50% 0 0);
+}
+
+.halfStar:last-child {
+  clip-path: inset(0 0 0 50%);
+  margin-left: -50%;
+}
+
+/* ========================================
+   Star
+======================================== */
+
+.star {
+  transition: all 0.2s ease;
+  stroke-width: 1.5;
+}
+
+.star.filled {
+  filter: drop-shadow(0 2px 4px rgba(251, 191, 36, 0.3));
+}
+
+.interactive .star:hover {
+  transform: scale(1.1);
+}
+
+/* ========================================
+   Value
+======================================== */
+
+.value {
+  font-size: var(--z-text-sm);
+  font-weight: var(--z-font-semibold);
+  color: var(--z-text-primary);
+  margin-left: var(--z-space-1);
+}
+
+/* ========================================
+   Size Variants
+======================================== */
+
+.xs .star {
+  width: 12px;
+  height: 12px;
+}
+
+.sm .star {
+  width: 16px;
+  height: 16px;
+}
+
+.md .star {
+  width: 20px;
+  height: 20px;
+}
+
+.lg .star {
+  width: 24px;
+  height: 24px;
+}
+
+.xl .star {
+  width: 32px;
+  height: 32px;
+}
+
+/* ========================================
+   Read-Only
+======================================== */
+
+.readOnly .starWrapper {
+  pointer-events: none;
+}
+
+/* ========================================
+   Variant: Outline
+======================================== */
+
+.outline .star {
+  stroke-width: 2;
+}

@@ -1,0 +1,118 @@
+/* ========================================
+   ZActivityFeed - Activity Feed Styles
+======================================== */
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* ========================================
+   Item
+======================================== */
+
+.item {
+  position: relative;
+  display: flex;
+  gap: var(--z-space-3);
+  padding: var(--z-space-4);
+  border-left: 2px solid var(--z-border-color);
+}
+
+.item:not(.last)::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 100%;
+  width: 2px;
+  height: 100%;
+  background: var(--z-border-color);
+}
+
+.item:hover {
+  background: var(--z-secondary-bg);
+}
+
+/* ========================================
+   Avatar
+======================================== */
+
+.avatarWrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--z-radius-full);
+  object-fit: cover;
+}
+
+.avatarFallback {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--z-radius-full);
+  color: white;
+  font-size: var(--z-text-sm);
+  font-weight: var(--z-font-semibold);
+}
+
+/* ========================================
+   Content
+======================================== */
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-2);
+  margin-bottom: var(--z-space-1);
+}
+
+.user {
+  font-size: var(--z-text-sm);
+  font-weight: var(--z-font-semibold);
+  color: var(--z-text-primary);
+}
+
+.timestamp {
+  font-size: var(--z-text-xs);
+  color: var(--z-text-tertiary);
+}
+
+.text {
+  margin: 0;
+  font-size: var(--z-text-sm);
+  color: var(--z-text-secondary);
+  word-wrap: break-word;
+}
+
+/* ========================================
+   Icon
+======================================== */
+
+.icon {
+  flex-shrink: 0;
+  color: var(--z-text-tertiary);
+}
+
+/* ========================================
+   More
+======================================== */
+
+.more {
+  padding: var(--z-space-3);
+  text-align: center;
+  font-size: var(--z-text-sm);
+  color: var(--z-text-secondary);
+  border-top: 1px solid var(--z-border-color);
+}

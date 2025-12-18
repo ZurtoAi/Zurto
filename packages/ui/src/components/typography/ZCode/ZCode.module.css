@@ -1,0 +1,29 @@
+/* ========================================
+   ZCode - Code Component Styles
+======================================== */
+
+.inline {
+  padding: 2px 6px;
+  background: var(--z-secondary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-sm);
+  color: var(--z-accent-color);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9em;
+}
+
+.block {
+  margin: var(--z-space-4) 0;
+  padding: var(--z-space-4);
+  background: var(--z-secondary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-md);
+  overflow-x: auto;
+}
+
+.code {
+  font-family: "Courier New", Courier, monospace;
+  font-size: var(--z-text-sm);
+  color: var(--z-text-primary);
+  line-height: 1.6;
+}

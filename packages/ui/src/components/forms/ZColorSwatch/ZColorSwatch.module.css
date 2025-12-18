@@ -1,0 +1,66 @@
+/* ========================================
+   ZColorSwatch - Color Swatch Styles
+======================================== */
+
+.swatch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--z-border-color);
+  border-radius: var(--z-radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.swatch.sm {
+  width: 32px;
+  height: 32px;
+}
+
+.swatch.md {
+  width: 40px;
+  height: 40px;
+}
+
+.swatch.lg {
+  width: 48px;
+  height: 48px;
+}
+
+.swatch:hover:not(:disabled) {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.swatch.selected {
+  border-color: var(--z-accent-color);
+  border-width: 3px;
+  box-shadow: 0 0 0 2px rgba(223, 62, 83, 0.2);
+}
+
+.swatch.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   Check Icon
+======================================== */
+
+.checkIcon {
+  width: 18px;
+  height: 18px;
+  color: white;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+}
+
+.swatch.sm .checkIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.swatch.lg .checkIcon {
+  width: 22px;
+  height: 22px;
+}

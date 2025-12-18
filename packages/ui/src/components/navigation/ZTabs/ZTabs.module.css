@@ -1,0 +1,208 @@
+/* ========================================
+   ZTabs - Tab Navigation Styles
+======================================== */
+
+.tabs {
+  display: inline-flex;
+  gap: var(--z-space-1);
+  position: relative;
+}
+
+.vertical {
+  flex-direction: column;
+}
+
+.fullWidth {
+  display: flex;
+  width: 100%;
+}
+
+.fullWidth .tab {
+  flex: 1;
+  justify-content: center;
+}
+
+/* ========================================
+   Tab Button
+======================================== */
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--z-space-2);
+  font-family: inherit;
+  font-weight: var(--z-font-medium);
+  color: var(--z-text-secondary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: var(--z-transition);
+  white-space: nowrap;
+  position: relative;
+}
+
+.tab:hover:not(.disabled) {
+  color: var(--z-text-primary);
+}
+
+.tab:focus-visible {
+  outline: none;
+  box-shadow: var(--z-focus-ring);
+}
+
+.tab.active {
+  color: var(--z-primary);
+}
+
+.tab.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   Sizes
+======================================== */
+
+.sm .tab {
+  padding: var(--z-space-1-5) var(--z-space-2-5);
+  font-size: var(--z-text-xs);
+}
+
+.md .tab {
+  padding: var(--z-space-2) var(--z-space-3);
+  font-size: var(--z-text-sm);
+}
+
+.lg .tab {
+  padding: var(--z-space-2-5) var(--z-space-4);
+  font-size: var(--z-text-base);
+}
+
+/* ========================================
+   Variants
+======================================== */
+
+/* Default */
+.default {
+  background: var(--z-bg-secondary);
+  border-radius: var(--z-radius-md);
+  padding: var(--z-space-1);
+}
+
+.default .tab {
+  border-radius: var(--z-radius-sm);
+}
+
+.default .tab.active {
+  background: var(--z-bg-elevated);
+  color: var(--z-text-primary);
+  box-shadow: var(--z-shadow-sm);
+}
+
+/* Pills */
+.pills .tab {
+  border-radius: var(--z-radius-full);
+}
+
+.pills .tab:hover:not(.disabled):not(.active) {
+  background: var(--z-bg-secondary);
+}
+
+.pills .tab.active {
+  background: var(--z-primary);
+  color: var(--z-text-primary);
+}
+
+/* Underline */
+.underline {
+  border-bottom: 1px solid var(--z-border);
+  gap: 0;
+}
+
+.underline .tab {
+  border-radius: 0;
+  margin-bottom: -1px;
+  border-bottom: 2px solid transparent;
+}
+
+.underline .tab:hover:not(.disabled) {
+  border-bottom-color: var(--z-border-hover);
+}
+
+.underline .tab.active {
+  border-bottom-color: var(--z-primary);
+}
+
+/* Bordered */
+.bordered {
+  border: 1px solid var(--z-border);
+  border-radius: var(--z-radius-md);
+  padding: var(--z-space-0-5);
+}
+
+.bordered .tab {
+  border-radius: var(--z-radius-sm);
+}
+
+.bordered .tab.active {
+  background: var(--z-primary);
+  color: var(--z-text-primary);
+}
+
+/* ========================================
+   Tab Content
+======================================== */
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sm .icon {
+  font-size: 14px;
+}
+.md .icon {
+  font-size: 16px;
+}
+.lg .icon {
+  font-size: 18px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--z-text-xs);
+  padding: 0 var(--z-space-1-5);
+  min-width: 18px;
+  height: 18px;
+  border-radius: var(--z-radius-full);
+  background: var(--z-bg-tertiary);
+  color: var(--z-text-secondary);
+}
+
+.tab.active .badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: inherit;
+}
+
+/* ========================================
+   Tab Panel
+======================================== */
+
+.panel {
+  padding: var(--z-space-4) 0;
+  animation: panel-in var(--z-duration-fast) var(--z-ease-out);
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

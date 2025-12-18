@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="LeeLoo - A heavily animated dark-modern portfolio featuring 3D interactive elements, neon aesthetics, and immersive animations. Showcasing projects and creative work." />
+    <meta name="theme-color" content="#0a0e27" />
+    <meta name="author" content="LeeLoo" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="LeeLoo - Portfolio" />
+    <meta property="og:description" content="A heavily animated dark-modern portfolio with 3D interactive elements and neon aesthetics" />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:url" content="https://leeloo.dev" />
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="LeeLoo - Portfolio" />
+    <meta name="twitter:description" content="A heavily animated dark-modern portfolio with 3D interactive elements and neon aesthetics" />
+    <meta name="twitter:image" content="/twitter-image.png" />
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" as="style" href="/src/styles/global.css" />
+    <link rel="preload" as="style" href="/src/styles/animations.css" />
+    <link rel="preload" as="style" href="/src/styles/neon.css" />
+    
+    <!-- Preconnect to External Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVJkEZSMUkrQ6usKu8zUkAolztLtCs8It2xUZLn8l4wo4s+SNXaI3I2yNXZi0l0VYFqUQNfkQA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <title>LeeLoo - Portfolio</title>
+  </head>
+  <body>
+    <!-- Root React Application Mount Point -->
+    <div id="root"></div>
+    
+    <!-- Main Application Script -->
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Smooth Scroll Behavior for Supported Browsers -->
+    <script>
+      if ('scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'manual';
+      }
+    </script>
+  </body>
+</html>

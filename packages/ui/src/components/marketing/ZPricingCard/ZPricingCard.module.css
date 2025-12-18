@@ -1,0 +1,186 @@
+/* ========================================
+   ZPricingCard - Pricing Card Styles
+======================================== */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--z-space-8);
+  background: var(--z-secondary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-lg);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   Popular Badge
+======================================== */
+
+.popular {
+  border-color: var(--z-accent);
+  border-width: 2px;
+}
+
+.badge {
+  position: absolute;
+  top: var(--z-space-4);
+  right: var(--z-space-4);
+}
+
+/* ========================================
+   Header
+======================================== */
+
+.header {
+  margin-bottom: var(--z-space-6);
+}
+
+.name {
+  font-size: var(--z-text-2xl);
+  font-weight: var(--z-font-bold);
+  color: var(--z-text-primary);
+  margin: 0 0 var(--z-space-2) 0;
+}
+
+.description {
+  font-size: var(--z-text-sm);
+  color: var(--z-text-secondary);
+  margin: 0;
+}
+
+/* ========================================
+   Pricing
+======================================== */
+
+.pricing {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: var(--z-space-6);
+}
+
+.price {
+  font-size: var(--z-text-5xl);
+  font-weight: var(--z-font-bold);
+  color: var(--z-text-primary);
+  line-height: 1;
+}
+
+.period {
+  font-size: var(--z-text-lg);
+  color: var(--z-text-secondary);
+  margin-left: var(--z-space-2);
+}
+
+/* ========================================
+   Button
+======================================== */
+
+.button {
+  margin-bottom: var(--z-space-8);
+}
+
+/* ========================================
+   Features
+======================================== */
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-3);
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--z-space-2);
+  font-size: var(--z-text-sm);
+  color: var(--z-text-primary);
+}
+
+.feature.excluded {
+  color: var(--z-text-tertiary);
+  text-decoration: line-through;
+}
+
+.checkIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--z-accent);
+  margin-top: 2px;
+}
+
+.feature.excluded .checkIcon {
+  color: var(--z-text-tertiary);
+}
+
+/* ========================================
+   Variant: Featured
+======================================== */
+
+.featured {
+  background: linear-gradient(
+    135deg,
+    rgba(223, 62, 83, 0.1) 0%,
+    rgba(194, 53, 90, 0.1) 100%
+  );
+  border-color: var(--z-accent);
+  border-width: 2px;
+  transform: scale(1.05);
+}
+
+.featured:hover {
+  transform: scale(1.05) translateY(-4px);
+}
+
+.featured .name {
+  color: var(--z-accent);
+}
+
+/* ========================================
+   Variant: Enterprise
+======================================== */
+
+.enterprise {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+}
+
+.enterprise .pricing {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.enterprise .price {
+  font-size: var(--z-text-3xl);
+}
+
+/* ========================================
+   Responsive
+======================================== */
+
+@media (max-width: 768px) {
+  .card {
+    padding: var(--z-space-6);
+  }
+
+  .featured {
+    transform: scale(1);
+  }
+
+  .featured:hover {
+    transform: translateY(-4px);
+  }
+}

@@ -1,0 +1,108 @@
+/* ========================================
+   ZURTO UI - TYPOGRAPHY TOKENS
+   Font families, sizes, weights, and line heights
+======================================== */
+
+:root {
+  /* Font Families */
+  --z-font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --z-font-mono: "JetBrains Mono", "Fira Code", "SF Mono", Consolas,
+    "Liberation Mono", Menlo, monospace;
+  --z-font-display: "Inter", var(--z-font-sans);
+
+  /* Font Sizes */
+  --z-text-xs: 0.75rem; /* 12px */
+  --z-text-sm: 0.875rem; /* 14px */
+  --z-text-base: 1rem; /* 16px */
+  --z-text-lg: 1.125rem; /* 18px */
+  --z-text-xl: 1.25rem; /* 20px */
+  --z-text-2xl: 1.5rem; /* 24px */
+  --z-text-3xl: 1.875rem; /* 30px */
+  --z-text-4xl: 2.25rem; /* 36px */
+  --z-text-5xl: 3rem; /* 48px */
+  --z-text-6xl: 3.75rem; /* 60px */
+
+  /* Font Weights */
+  --z-font-thin: 100;
+  --z-font-light: 300;
+  --z-font-normal: 400;
+  --z-font-medium: 500;
+  --z-font-semibold: 600;
+  --z-font-bold: 700;
+  --z-font-extrabold: 800;
+  --z-font-black: 900;
+
+  /* Line Heights */
+  --z-leading-none: 1;
+  --z-leading-tight: 1.25;
+  --z-leading-snug: 1.375;
+  --z-leading-normal: 1.5;
+  --z-leading-relaxed: 1.625;
+  --z-leading-loose: 2;
+
+  /* Letter Spacing */
+  --z-tracking-tighter: -0.05em;
+  --z-tracking-tight: -0.025em;
+  --z-tracking-normal: 0;
+  --z-tracking-wide: 0.025em;
+  --z-tracking-wider: 0.05em;
+  --z-tracking-widest: 0.1em;
+}
+
+/* Base typography reset */
+.z-text-xs {
+  font-size: var(--z-text-xs);
+}
+.z-text-sm {
+  font-size: var(--z-text-sm);
+}
+.z-text-base {
+  font-size: var(--z-text-base);
+}
+.z-text-lg {
+  font-size: var(--z-text-lg);
+}
+.z-text-xl {
+  font-size: var(--z-text-xl);
+}
+.z-text-2xl {
+  font-size: var(--z-text-2xl);
+}
+.z-text-3xl {
+  font-size: var(--z-text-3xl);
+}
+.z-text-4xl {
+  font-size: var(--z-text-4xl);
+}
+.z-text-5xl {
+  font-size: var(--z-text-5xl);
+}
+.z-text-6xl {
+  font-size: var(--z-text-6xl);
+}
+
+.z-font-thin {
+  font-weight: var(--z-font-thin);
+}
+.z-font-light {
+  font-weight: var(--z-font-light);
+}
+.z-font-normal {
+  font-weight: var(--z-font-normal);
+}
+.z-font-medium {
+  font-weight: var(--z-font-medium);
+}
+.z-font-semibold {
+  font-weight: var(--z-font-semibold);
+}
+.z-font-bold {
+  font-weight: var(--z-font-bold);
+}
+.z-font-extrabold {
+  font-weight: var(--z-font-extrabold);
+}
+.z-font-black {
+  font-weight: var(--z-font-black);
+}

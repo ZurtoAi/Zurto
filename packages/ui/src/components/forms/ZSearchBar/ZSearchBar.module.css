@@ -1,0 +1,144 @@
+/* ========================================
+   ZSearchBar - Search Bar Styles
+======================================== */
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: var(--z-space-3);
+  color: var(--z-text-tertiary);
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  padding: var(--z-space-3);
+  padding-left: var(--z-space-10);
+  padding-right: var(--z-space-10);
+  background: var(--z-bg-primary);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-md);
+  color: var(--z-text-primary);
+  font-size: var(--z-text-base);
+  transition: border-color 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--z-accent-color);
+}
+
+.input::placeholder {
+  color: var(--z-text-tertiary);
+}
+
+.clearButton {
+  position: absolute;
+  right: var(--z-space-3);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: var(--z-radius-sm);
+  color: var(--z-text-tertiary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clearButton:hover {
+  background: var(--z-secondary-bg);
+  color: var(--z-text-primary);
+}
+
+.clearButton svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ========================================
+   Sizes
+======================================== */
+
+.container.sm .input {
+  padding: var(--z-space-2);
+  padding-left: var(--z-space-8);
+  padding-right: var(--z-space-8);
+  font-size: var(--z-text-sm);
+}
+
+.container.sm .searchIcon {
+  left: var(--z-space-2);
+  width: 16px;
+  height: 16px;
+}
+
+.container.lg .input {
+  padding: var(--z-space-4);
+  padding-left: var(--z-space-12);
+  padding-right: var(--z-space-12);
+  font-size: var(--z-text-lg);
+}
+
+/* ========================================
+   Suggestions
+======================================== */
+
+.suggestions {
+  position: absolute;
+  top: calc(100% + var(--z-space-1));
+  left: 0;
+  right: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  background: var(--z-bg-primary);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-md);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.suggestion {
+  display: block;
+  width: 100%;
+  padding: var(--z-space-3);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--z-border-color);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.suggestion:last-child {
+  border-bottom: none;
+}
+
+.suggestion:hover,
+.suggestion.selected {
+  background: var(--z-secondary-bg);
+}
+
+.suggestionText {
+  font-size: var(--z-text-sm);
+  font-weight: 500;
+  color: var(--z-text-primary);
+}
+
+.suggestionDesc {
+  font-size: var(--z-text-xs);
+  color: var(--z-text-tertiary);
+  margin-top: var(--z-space-1);
+}

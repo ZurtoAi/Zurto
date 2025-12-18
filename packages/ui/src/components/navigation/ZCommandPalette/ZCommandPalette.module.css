@@ -1,0 +1,232 @@
+/* ========================================
+   ZCommandPalette - Command Palette Styles
+======================================== */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 15vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  animation: overlay-in var(--z-duration-fast);
+}
+
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ========================================
+   Palette Container
+======================================== */
+
+.palette {
+  width: 100%;
+  max-width: 560px;
+  background: var(--z-bg-elevated);
+  border: 1px solid var(--z-border);
+  border-radius: var(--z-radius-xl);
+  box-shadow: var(--z-shadow-xl);
+  overflow: hidden;
+  animation: palette-in var(--z-duration-fast) var(--z-ease-out);
+}
+
+@keyframes palette-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ========================================
+   Header / Search
+======================================== */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-3);
+  padding: var(--z-space-4);
+  border-bottom: 1px solid var(--z-border);
+}
+
+.searchIcon {
+  flex-shrink: 0;
+  color: var(--z-text-muted);
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--z-text-primary);
+  font-size: var(--z-text-base);
+  font-family: inherit;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--z-text-muted);
+}
+
+.shortcut {
+  flex-shrink: 0;
+  padding: var(--z-space-1) var(--z-space-2);
+  background: var(--z-bg-secondary);
+  border: 1px solid var(--z-border);
+  border-radius: var(--z-radius-sm);
+  font-size: var(--z-text-xs);
+  color: var(--z-text-muted);
+  font-family: inherit;
+}
+
+/* ========================================
+   List
+======================================== */
+
+.list {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: var(--z-space-2);
+}
+
+.group {
+  margin-bottom: var(--z-space-2);
+}
+
+.group:last-child {
+  margin-bottom: 0;
+}
+
+.groupLabel {
+  padding: var(--z-space-2) var(--z-space-3);
+  font-size: var(--z-text-xs);
+  font-weight: var(--z-font-semibold);
+  color: var(--z-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ========================================
+   Item
+======================================== */
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-3);
+  padding: var(--z-space-2-5) var(--z-space-3);
+  border-radius: var(--z-radius-md);
+  cursor: pointer;
+  transition: var(--z-transition);
+}
+
+.item:hover,
+.item.focused {
+  background: var(--z-bg-secondary);
+}
+
+.item.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.itemIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: var(--z-text-muted);
+}
+
+.item.focused .itemIcon,
+.item:hover .itemIcon {
+  color: var(--z-primary);
+}
+
+.itemContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.itemLabel {
+  display: block;
+  font-size: var(--z-text-sm);
+  font-weight: var(--z-font-medium);
+  color: var(--z-text-primary);
+}
+
+.itemDesc {
+  display: block;
+  font-size: var(--z-text-xs);
+  color: var(--z-text-muted);
+  margin-top: var(--z-space-0-5);
+}
+
+.itemShortcut {
+  flex-shrink: 0;
+  padding: var(--z-space-0-5) var(--z-space-1-5);
+  background: var(--z-bg-tertiary);
+  border: 1px solid var(--z-border);
+  border-radius: var(--z-radius-sm);
+  font-size: var(--z-text-xs);
+  color: var(--z-text-muted);
+  font-family: inherit;
+}
+
+/* ========================================
+   Empty State
+======================================== */
+
+.empty {
+  padding: var(--z-space-8);
+  text-align: center;
+  color: var(--z-text-muted);
+  font-size: var(--z-text-sm);
+}
+
+/* ========================================
+   Footer
+======================================== */
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-4);
+  padding: var(--z-space-3) var(--z-space-4);
+  border-top: 1px solid var(--z-border);
+  background: var(--z-bg-secondary);
+  font-size: var(--z-text-xs);
+  color: var(--z-text-muted);
+}
+
+.footer kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 var(--z-space-1);
+  background: var(--z-bg-tertiary);
+  border: 1px solid var(--z-border);
+  border-radius: var(--z-radius-sm);
+  font-size: var(--z-text-xs);
+  margin-right: var(--z-space-1);
+}

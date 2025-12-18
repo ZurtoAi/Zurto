@@ -1,0 +1,154 @@
+/* ========================================
+   ZSwitch - Toggle Switch Component Styles
+======================================== */
+
+.wrapper {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--z-space-3);
+  cursor: pointer;
+  user-select: none;
+}
+
+.wrapper.labelLeft {
+  flex-direction: row;
+}
+
+.wrapper.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   Switch Visual
+======================================== */
+
+.switchWrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  margin: 0;
+}
+
+.input:disabled {
+  cursor: not-allowed;
+}
+
+.track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--z-bg-tertiary);
+  border: 1px solid var(--z-border);
+  border-radius: var(--z-radius-full);
+  transition: var(--z-transition);
+}
+
+.thumb {
+  position: absolute;
+  background: var(--z-text-secondary);
+  border-radius: var(--z-radius-full);
+  transition: var(--z-transition);
+  box-shadow: var(--z-shadow-sm);
+}
+
+/* Hover */
+.wrapper:hover:not(.disabled) .track {
+  border-color: var(--z-border-hover);
+}
+
+/* Focus */
+.input:focus-visible + .track {
+  box-shadow: var(--z-focus-ring);
+}
+
+/* Checked */
+.input:checked + .track {
+  background: var(--z-primary);
+  border-color: var(--z-primary);
+}
+
+.input:checked + .track .thumb {
+  background: var(--z-text-primary);
+}
+
+/* ========================================
+   Sizes
+======================================== */
+
+.sm .track {
+  width: 32px;
+  height: 18px;
+}
+
+.sm .thumb {
+  width: 14px;
+  height: 14px;
+  left: 2px;
+}
+
+.sm .input:checked + .track .thumb {
+  transform: translateX(14px);
+}
+
+.md .track {
+  width: 44px;
+  height: 24px;
+}
+
+.md .thumb {
+  width: 20px;
+  height: 20px;
+  left: 2px;
+}
+
+.md .input:checked + .track .thumb {
+  transform: translateX(20px);
+}
+
+.lg .track {
+  width: 56px;
+  height: 30px;
+}
+
+.lg .thumb {
+  width: 26px;
+  height: 26px;
+  left: 2px;
+}
+
+.lg .input:checked + .track .thumb {
+  transform: translateX(26px);
+}
+
+/* ========================================
+   Content
+======================================== */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-0-5);
+}
+
+.label {
+  font-size: var(--z-text-sm);
+  font-weight: var(--z-font-medium);
+  color: var(--z-text-primary);
+  line-height: var(--z-leading-tight);
+}
+
+.description {
+  font-size: var(--z-text-xs);
+  color: var(--z-text-muted);
+  line-height: var(--z-leading-normal);
+}

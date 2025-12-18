@@ -1,0 +1,122 @@
+/* ========================================
+   ZTagInput - Tag Input Styles
+======================================== */
+
+.container {
+  min-height: 42px;
+  padding: var(--z-space-2);
+  background: var(--z-primary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-md);
+  cursor: text;
+  transition: all 0.2s ease;
+}
+
+.container:hover {
+  border-color: var(--z-accent);
+}
+
+.container:focus-within {
+  border-color: var(--z-accent);
+  box-shadow: 0 0 0 3px rgba(223, 62, 83, 0.1);
+}
+
+.container.error {
+  border-color: var(--z-error);
+}
+
+.container.error:focus-within {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.container.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--z-secondary-bg);
+}
+
+/* ========================================
+   Tags Container
+======================================== */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--z-space-2);
+  align-items: center;
+}
+
+/* ========================================
+   Tag
+======================================== */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--z-space-1);
+  padding: var(--z-space-1) var(--z-space-2);
+  background: var(--z-accent);
+  color: white;
+  font-size: var(--z-text-sm);
+  font-weight: var(--z-font-medium);
+  border-radius: var(--z-radius-sm);
+  animation: tagEnter 0.2s ease;
+}
+
+@keyframes tagEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.removeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: var(--z-radius-full);
+  transition: all 0.2s ease;
+}
+
+.removeButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.removeButton svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ========================================
+   Input
+======================================== */
+
+.input {
+  flex: 1;
+  min-width: 120px;
+  padding: var(--z-space-1);
+  background: transparent;
+  border: none;
+  color: var(--z-text-primary);
+  font-size: var(--z-text-base);
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--z-text-tertiary);
+}
+
+.input:disabled {
+  cursor: not-allowed;
+}

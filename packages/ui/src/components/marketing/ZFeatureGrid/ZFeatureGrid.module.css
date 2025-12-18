@@ -1,0 +1,153 @@
+/* ========================================
+   ZFeatureGrid - Feature Grid Styles
+======================================== */
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--z-space-12) var(--z-space-6);
+}
+
+/* ========================================
+   Header
+======================================== */
+
+.header {
+  text-align: center;
+  margin-bottom: var(--z-space-12);
+}
+
+.title {
+  font-size: var(--z-text-3xl);
+  font-weight: var(--z-font-bold);
+  color: var(--z-text-primary);
+  margin-bottom: var(--z-space-3);
+}
+
+.description {
+  font-size: var(--z-text-lg);
+  color: var(--z-text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   Grid Layout
+======================================== */
+
+.grid {
+  display: grid;
+  gap: var(--z-space-6);
+}
+
+.columns2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.columns3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.columns4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ========================================
+   Feature Items
+======================================== */
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-3);
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--z-radius-md);
+  background: rgba(223, 62, 83, 0.1);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.featureTitle {
+  font-size: var(--z-text-xl);
+  font-weight: var(--z-font-semibold);
+  color: var(--z-text-primary);
+  margin: 0;
+}
+
+.featureDescription {
+  font-size: var(--z-text-base);
+  line-height: 1.6;
+  color: var(--z-text-secondary);
+  margin: 0;
+}
+
+/* ========================================
+   Variant: Cards
+======================================== */
+
+.cards .feature {
+  padding: var(--z-space-6);
+  background: var(--z-secondary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-lg);
+  transition: all 0.2s ease;
+}
+
+.cards .feature:hover {
+  transform: translateY(-2px);
+  border-color: var(--z-accent);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   Variant: Minimal
+======================================== */
+
+.minimal .iconWrapper {
+  background: transparent;
+}
+
+.minimal .featureTitle {
+  font-size: var(--z-text-lg);
+}
+
+.minimal .featureDescription {
+  font-size: var(--z-text-sm);
+}
+
+/* ========================================
+   Responsive
+======================================== */
+
+@media (max-width: 1024px) {
+  .columns4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .columns2,
+  .columns3,
+  .columns4 {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    margin-bottom: var(--z-space-8);
+  }
+
+  .title {
+    font-size: var(--z-text-2xl);
+  }
+}

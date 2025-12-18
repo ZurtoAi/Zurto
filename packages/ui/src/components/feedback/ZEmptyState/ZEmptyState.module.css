@@ -1,0 +1,95 @@
+/* ========================================
+   ZEmptyState - Empty State Placeholder Styles
+======================================== */
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--z-space-8);
+}
+
+/* ========================================
+   Sizes
+======================================== */
+
+.sm {
+  padding: var(--z-space-6);
+}
+
+.sm .icon {
+  font-size: 32px;
+  margin-bottom: var(--z-space-3);
+}
+
+.sm .title {
+  font-size: var(--z-text-sm);
+}
+
+.sm .description {
+  font-size: var(--z-text-xs);
+}
+
+.md {
+  padding: var(--z-space-8);
+}
+
+.md .icon {
+  font-size: 48px;
+  margin-bottom: var(--z-space-4);
+}
+
+.md .title {
+  font-size: var(--z-text-base);
+}
+
+.md .description {
+  font-size: var(--z-text-sm);
+}
+
+.lg {
+  padding: var(--z-space-12);
+}
+
+.lg .icon {
+  font-size: 64px;
+  margin-bottom: var(--z-space-5);
+}
+
+.lg .title {
+  font-size: var(--z-text-lg);
+}
+
+.lg .description {
+  font-size: var(--z-text-base);
+}
+
+/* ========================================
+   Elements
+======================================== */
+
+.icon {
+  color: var(--z-text-muted);
+  opacity: 0.6;
+}
+
+.title {
+  font-weight: var(--z-font-semibold);
+  color: var(--z-text-primary);
+  margin: 0;
+}
+
+.description {
+  color: var(--z-text-muted);
+  margin: var(--z-space-2) 0 0;
+  max-width: 320px;
+  line-height: var(--z-leading-relaxed);
+}
+
+.action {
+  margin-top: var(--z-space-4);
+  display: flex;
+  gap: var(--z-space-2);
+}

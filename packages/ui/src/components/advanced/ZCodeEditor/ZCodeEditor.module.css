@@ -1,0 +1,140 @@
+/**
+ * ZCodeEditor styles
+ */
+
+.container {
+  display: flex;
+  background: var(--z-bg-primary);
+  border: 1px solid var(--z-border);
+  border-radius: var(--z-radius-md);
+  font-family: var(--z-font-mono);
+  font-size: var(--z-font-size-sm);
+  line-height: 1.6;
+  overflow: hidden;
+}
+
+.container.focused {
+  border-color: var(--z-primary);
+  box-shadow: 0 0 0 3px var(--z-primary-alpha);
+}
+
+/* Line numbers */
+.lineNumbers {
+  display: flex;
+  flex-direction: column;
+  padding: var(--z-spacing-md) var(--z-spacing-sm);
+  background: var(--z-bg-secondary);
+  border-right: 1px solid var(--z-border);
+  user-select: none;
+  text-align: right;
+  min-width: 40px;
+}
+
+.lineNumber {
+  color: var(--z-text-tertiary);
+  padding: 0 var(--z-spacing-xs);
+}
+
+.lineNumber.highlighted {
+  background: var(--z-primary-alpha);
+  color: var(--z-primary);
+  border-radius: var(--z-radius-xs);
+}
+
+/* Editor area */
+.editor {
+  position: relative;
+  flex: 1;
+  overflow: auto;
+}
+
+.pre,
+.textarea {
+  margin: 0;
+  padding: var(--z-spacing-md);
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  white-space: pre;
+  overflow: auto;
+}
+
+.pre {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  color: var(--z-text-primary);
+}
+
+.textarea {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: transparent;
+  caret-color: var(--z-text-primary);
+  resize: none;
+}
+
+.wordWrap {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.placeholder {
+  color: var(--z-text-tertiary);
+  font-style: italic;
+}
+
+/* Syntax highlighting */
+.comment {
+  color: #6a737d;
+  font-style: italic;
+}
+
+.string {
+  color: #a5d6ff;
+}
+
+.keyword {
+  color: #ff7b72;
+}
+
+.boolean {
+  color: #79c0ff;
+}
+
+.number {
+  color: #79c0ff;
+}
+
+.className {
+  color: #ffa657;
+}
+
+.type {
+  color: #7ee787;
+}
+
+.function {
+  color: #d2a8ff;
+}
+
+.property {
+  color: #79c0ff;
+}
+
+.selector {
+  color: #7ee787;
+}
+
+.color {
+  color: #ffa657;
+}
+
+/* Dark theme adjustments */
+:root[data-theme="dark"] .comment {
+  color: #8b949e;
+}

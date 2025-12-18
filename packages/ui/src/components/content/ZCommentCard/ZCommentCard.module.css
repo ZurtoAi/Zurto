@@ -1,0 +1,126 @@
+/* ========================================
+   ZCommentCard - Comment Card Styles
+======================================== */
+
+.card {
+  display: flex;
+  gap: var(--z-space-3);
+  padding: var(--z-space-4);
+  background: var(--z-primary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-lg);
+}
+
+/* ========================================
+   Avatar
+======================================== */
+
+.avatar {
+  flex-shrink: 0;
+}
+
+.avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.defaultAvatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--z-accent-color);
+  color: white;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: var(--z-text-base);
+}
+
+/* ========================================
+   Content
+======================================== */
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-2);
+  margin-bottom: var(--z-space-2);
+  flex-wrap: wrap;
+}
+
+.author {
+  font-size: var(--z-text-sm);
+  font-weight: 600;
+  color: var(--z-text-primary);
+}
+
+.badge {
+  padding: 2px var(--z-space-2);
+  background: var(--z-accent-color);
+  color: white;
+  font-size: var(--z-text-xs);
+  font-weight: 600;
+  border-radius: var(--z-radius-sm);
+}
+
+.timestamp {
+  font-size: var(--z-text-xs);
+  color: var(--z-text-tertiary);
+  margin-left: auto;
+}
+
+.body {
+  font-size: var(--z-text-sm);
+  color: var(--z-text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--z-space-3);
+}
+
+/* ========================================
+   Actions
+======================================== */
+
+.actions {
+  display: flex;
+  gap: var(--z-space-3);
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-1);
+  padding: var(--z-space-1) var(--z-space-2);
+  background: transparent;
+  border: none;
+  border-radius: var(--z-radius-sm);
+  color: var(--z-text-tertiary);
+  font-size: var(--z-text-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action:hover {
+  background: var(--z-secondary-bg);
+  color: var(--z-text-primary);
+}
+
+.action svg {
+  width: 16px;
+  height: 16px;
+}
+
+.action.liked {
+  color: var(--z-accent-color);
+}
+
+.action.liked svg {
+  fill: currentColor;
+}

@@ -1,0 +1,13 @@
+/* ========================================
+   ZFadeIn - Fade In Animation Styles
+======================================== */
+
+.fadeIn {
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fadeIn.visible {
+  opacity: 1;
+  transform: translate(0, 0) !important;
+}

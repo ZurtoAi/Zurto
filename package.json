@@ -1,0 +1,39 @@
+{
+  "name": "zurto",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Zurto - AI-powered task management, component library, and VS Code extension",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=@zurto/web",
+    "dev:api": "npm run dev --workspace=@zurto/api",
+    "dev:web": "npm run dev --workspace=@zurto/web",
+    "dev:ui": "npm run docs:dev --workspace=@zurto/ui",
+    "build": "npm run build --workspaces --if-present",
+    "build:api": "npm run build --workspace=@zurto/api",
+    "build:web": "npm run build --workspace=@zurto/web",
+    "build:ui": "npm run build --workspace=@zurto/ui",
+    "build:extension": "npm run build --workspace=@zurto/extension",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "docker:build": "docker compose build --no-cache",
+    "docker:logs": "docker compose logs -f"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZurtoAi/Zurto.git"
+  },
+  "author": "ZurtoAi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZurtoAi/Zurto/issues"
+  },
+  "homepage": "https://zurto.app",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

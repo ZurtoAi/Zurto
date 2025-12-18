@@ -1,0 +1,57 @@
+/* ========================================
+   ZGroup - Group Layout Styles
+======================================== */
+
+.group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.group.wrap {
+  flex-wrap: wrap;
+}
+
+.group.grow > * {
+  flex: 1;
+}
+
+/* ========================================
+   Spacing
+======================================== */
+
+.group.spacing-xs {
+  gap: var(--z-space-1);
+}
+
+.group.spacing-sm {
+  gap: var(--z-space-2);
+}
+
+.group.spacing-md {
+  gap: var(--z-space-3);
+}
+
+.group.spacing-lg {
+  gap: var(--z-space-4);
+}
+
+/* ========================================
+   Position
+======================================== */
+
+.group.position-left {
+  justify-content: flex-start;
+}
+
+.group.position-center {
+  justify-content: center;
+}
+
+.group.position-right {
+  justify-content: flex-end;
+}
+
+.group.position-apart {
+  justify-content: space-between;
+}

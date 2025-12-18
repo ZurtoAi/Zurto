@@ -1,0 +1,379 @@
+/* Project Card Styles */
+
+.project-card {
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-color), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover {
+  border-color: var(--accent-color);
+  background: var(--tertiary-bg);
+  box-shadow: 0 4px 16px rgba(223, 62, 83, 0.1);
+  transform: translateY(-2px);
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+/* Thumbnail Section */
+.project-thumbnail {
+  position: relative;
+  height: 120px;
+  background: linear-gradient(
+    135deg,
+    rgba(223, 62, 83, 0.1) 0%,
+    rgba(139, 92, 246, 0.1) 100%
+  );
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.project-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.thumbnail-placeholder svg {
+  width: 32px;
+  height: 32px;
+}
+
+.framework-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.live-indicator {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  background: rgba(16, 185, 129, 0.9);
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  animation: livePulse 1.5s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* Card Header */
+.project-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 14px 14px 0 14px;
+}
+
+.project-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  word-break: break-word;
+  flex: 1;
+}
+
+/* Menu Button */
+.project-menu {
+  position: relative;
+}
+
+.menu-button {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-tertiary);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+  transition: var(--transition);
+  line-height: 1;
+}
+
+.menu-button:hover {
+  color: var(--accent-color);
+  background: var(--surface);
+  border-color: var(--border-color);
+}
+
+.card-menu-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  min-width: 140px;
+  margin-top: 4px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  overflow: hidden;
+}
+
+.card-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: left;
+}
+
+.card-menu-item:hover {
+  background: var(--surface);
+  color: var(--text-primary);
+}
+
+.card-menu-item.danger {
+  color: #ef4444;
+}
+
+.card-menu-item.danger:hover {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+/* Card Body */
+.project-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 14px;
+}
+
+/* Project Description */
+.project-description {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Project Meta (Status + Team) */
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Team Badge */
+.team-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.team-badge svg {
+  width: 12px;
+  height: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.team-name {
+  font-weight: 500;
+  color: var(--accent-color);
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  padding: 4px 10px;
+  border: 1px solid;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-text {
+  text-transform: capitalize;
+}
+
+/* Stats */
+.project-stats {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-secondary);
+}
+
+.stat svg {
+  width: 14px;
+  height: 14px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.stat.resource svg {
+  color: rgba(139, 92, 246, 0.6);
+}
+
+.stat-value {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.stat-label {
+  color: var(--text-tertiary);
+  font-size: 11px;
+}
+
+/* Card Footer */
+.project-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-top: 1px solid var(--border-color);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.footer-left svg,
+.footer-right svg {
+  width: 12px;
+  height: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.last-modified,
+.last-deploy {
+  font-size: 11px;
+  color: var(--text-tertiary);
+}
+
+.footer-right {
+  color: #48bb78;
+}
+
+.footer-right .last-deploy {
+  color: rgba(72, 187, 120, 0.8);
+}
+
+.footer-right svg {
+  color: #48bb78;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-card {
+    gap: 0;
+  }
+
+  .project-thumbnail {
+    height: 100px;
+  }
+
+  .project-name {
+    font-size: 15px;
+  }
+
+  .project-stats {
+    gap: 10px;
+  }
+
+  .project-card-footer {
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+  }
+}

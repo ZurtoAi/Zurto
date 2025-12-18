@@ -1,0 +1,180 @@
+/* ========================================
+   ZRadio - Radio Button Component Styles
+======================================== */
+
+.wrapper {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--z-space-2);
+  cursor: pointer;
+  user-select: none;
+}
+
+.wrapper.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   Radio Visual
+======================================== */
+
+.radioWrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  margin: 0;
+}
+
+.input:disabled {
+  cursor: not-allowed;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--z-bg-secondary);
+  border: 2px solid var(--z-border);
+  border-radius: var(--z-radius-full);
+  transition: var(--z-transition);
+}
+
+.dot {
+  background: var(--z-text-primary);
+  border-radius: var(--z-radius-full);
+  opacity: 0;
+  transform: scale(0);
+  transition: var(--z-transition);
+}
+
+/* Hover */
+.wrapper:hover:not(.disabled) .radio {
+  border-color: var(--z-border-hover);
+}
+
+/* Focus */
+.input:focus-visible + .radio {
+  box-shadow: var(--z-focus-ring);
+}
+
+/* Checked */
+.input:checked + .radio {
+  background: var(--z-primary);
+  border-color: var(--z-primary);
+}
+
+.input:checked + .radio .dot {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Error */
+.wrapper.error .radio {
+  border-color: var(--z-error);
+}
+
+.wrapper.error .input:checked + .radio {
+  background: var(--z-error);
+  border-color: var(--z-error);
+}
+
+/* ========================================
+   Sizes
+======================================== */
+
+.sm .radio {
+  width: 16px;
+  height: 16px;
+}
+.sm .dot {
+  width: 6px;
+  height: 6px;
+}
+
+.md .radio {
+  width: 20px;
+  height: 20px;
+}
+.md .dot {
+  width: 8px;
+  height: 8px;
+}
+
+.lg .radio {
+  width: 24px;
+  height: 24px;
+}
+.lg .dot {
+  width: 10px;
+  height: 10px;
+}
+
+/* ========================================
+   Content
+======================================== */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-0-5);
+  padding-top: 1px;
+}
+
+.label {
+  font-size: var(--z-text-sm);
+  font-weight: var(--z-font-medium);
+  color: var(--z-text-primary);
+  line-height: var(--z-leading-tight);
+}
+
+.description {
+  font-size: var(--z-text-xs);
+  color: var(--z-text-muted);
+  line-height: var(--z-leading-normal);
+}
+
+.wrapper.error .label {
+  color: var(--z-error);
+}
+
+/* ========================================
+   Radio Group
+======================================== */
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-2);
+}
+
+.groupLabel {
+  font-size: var(--z-text-sm);
+  font-weight: var(--z-font-medium);
+  color: var(--z-text-secondary);
+  margin-bottom: var(--z-space-1);
+}
+
+.groupItems {
+  display: flex;
+  gap: var(--z-space-3);
+}
+
+.groupItems.vertical {
+  flex-direction: column;
+}
+
+.groupItems.horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+}

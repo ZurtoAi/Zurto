@@ -1,0 +1,159 @@
+/**
+ * Canvas Navigator Styles
+ */
+
+.canvas-navigator {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 14px;
+  background: rgba(30, 30, 46, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid #45475a;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  max-width: calc(100% - 200px);
+}
+
+/* Path display (Level 0) */
+.navigator-path {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #cdd6f4;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.path-icon {
+  font-size: 16px;
+}
+
+.path-label {
+  color: #a6adc8;
+}
+
+/* Back Button */
+.nav-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #313244;
+  color: #cdd6f4;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.nav-back-btn:hover {
+  background: #45475a;
+  transform: translateX(-2px);
+}
+
+.back-icon {
+  font-size: 14px;
+}
+
+/* Breadcrumb */
+.navigator-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  overflow: hidden;
+}
+
+.breadcrumb-separator {
+  color: #585b70;
+  font-size: 14px;
+  user-select: none;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  background: transparent;
+  color: #a6adc8;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.breadcrumb-item:hover {
+  background: #313244;
+  color: #cdd6f4;
+}
+
+.breadcrumb-item.home {
+  padding: 4px 6px;
+}
+
+.breadcrumb-item.home .item-icon {
+  font-size: 14px;
+}
+
+.breadcrumb-item.current {
+  background: #313244;
+  color: #89b4fa;
+  font-weight: 500;
+  cursor: default;
+}
+
+.breadcrumb-item.current:hover {
+  background: #313244;
+}
+
+.item-icon {
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.item-name {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Level Badge */
+.navigator-level {
+  padding: 4px 10px;
+  background: #45475a;
+  color: #a6adc8;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .canvas-navigator {
+    max-width: calc(100% - 24px);
+  }
+
+  .breadcrumb-item .item-name {
+    display: none;
+  }
+
+  .breadcrumb-item.current .item-name {
+    display: inline;
+    max-width: 80px;
+  }
+
+  .nav-back-btn .back-label {
+    display: none;
+  }
+}

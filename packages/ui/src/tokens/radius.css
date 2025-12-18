@@ -1,0 +1,54 @@
+/* ========================================
+   ZURTO UI - BORDER RADIUS TOKENS
+   Consistent border radius scale
+======================================== */
+
+:root {
+  /* Border Radius Scale */
+  --z-radius-none: 0;
+  --z-radius-xs: 2px;
+  --z-radius-sm: 4px;
+  --z-radius-md: 6px;
+  --z-radius-lg: 8px;
+  --z-radius-xl: 12px;
+  --z-radius-2xl: 16px;
+  --z-radius-3xl: 24px;
+  --z-radius-full: 9999px;
+
+  /* Component-specific radius */
+  --z-radius-button: var(--z-radius-md);
+  --z-radius-input: var(--z-radius-md);
+  --z-radius-card: var(--z-radius-lg);
+  --z-radius-modal: var(--z-radius-xl);
+  --z-radius-badge: var(--z-radius-full);
+  --z-radius-avatar: var(--z-radius-full);
+}
+
+/* Utility classes */
+.z-rounded-none {
+  border-radius: var(--z-radius-none);
+}
+.z-rounded-xs {
+  border-radius: var(--z-radius-xs);
+}
+.z-rounded-sm {
+  border-radius: var(--z-radius-sm);
+}
+.z-rounded-md {
+  border-radius: var(--z-radius-md);
+}
+.z-rounded-lg {
+  border-radius: var(--z-radius-lg);
+}
+.z-rounded-xl {
+  border-radius: var(--z-radius-xl);
+}
+.z-rounded-2xl {
+  border-radius: var(--z-radius-2xl);
+}
+.z-rounded-3xl {
+  border-radius: var(--z-radius-3xl);
+}
+.z-rounded-full {
+  border-radius: var(--z-radius-full);
+}

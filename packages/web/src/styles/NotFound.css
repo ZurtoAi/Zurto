@@ -1,0 +1,149 @@
+/* 404 Not Found Page Styles */
+
+.not-found {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--primary-bg) 0%,
+    var(--secondary-bg) 100%
+  );
+  background-color: #0a0a0a;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.not-found-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1000px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  align-items: center;
+}
+
+.not-found-content {
+  animation: slideIn 0.5s ease-out;
+}
+
+.not-found-title {
+  font-size: 6rem;
+  font-weight: 800;
+  background: linear-gradient(
+    135deg,
+    var(--accent-color) 0%,
+    var(--accent-hover) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  line-height: 1;
+}
+
+.not-found-heading {
+  font-size: 2rem;
+  margin: 1rem 0;
+  color: var(--text-primary);
+}
+
+.not-found-text {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.not-found-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.not-found-actions .btn {
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+}
+
+.not-found-decoration {
+  position: relative;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.decoration-circle {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 2px solid var(--accent-dim);
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
+}
+
+.decoration-circle::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.decoration-square {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  transform: rotate(45deg);
+  animation: rotate 30s linear infinite reverse;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.decoration-square {
+  animation: rotate 30s linear infinite reverse;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .not-found-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .not-found-title {
+    font-size: 4rem;
+  }
+
+  .not-found-heading {
+    font-size: 1.5rem;
+  }
+
+  .not-found-decoration {
+    display: none;
+  }
+
+  .not-found-actions {
+    flex-direction: column;
+  }
+
+  .not-found-actions .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,81 @@
+/* ========================================
+   ZTreeView - Tree View Styles
+======================================== */
+
+.tree {
+  width: 100%;
+  user-select: none;
+}
+
+.node {
+  width: 100%;
+}
+
+.nodeButton {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-2);
+  width: 100%;
+  padding: var(--z-space-2) var(--z-space-3);
+  background: transparent;
+  border: none;
+  border-radius: var(--z-radius-sm);
+  color: var(--z-text-primary);
+  font-size: var(--z-text-sm);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.nodeButton:hover {
+  background: var(--z-secondary-bg);
+}
+
+.nodeButton.selected {
+  background: var(--z-accent-color);
+  color: white;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.toggle svg {
+  width: 14px;
+  height: 14px;
+}
+
+.spacer {
+  width: 16px;
+  flex-shrink: 0;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.label {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.children {
+  padding-left: 0;
+}

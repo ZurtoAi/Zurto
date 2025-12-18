@@ -1,0 +1,49 @@
+/* ========================================
+   ZCopyButton - Copy Button Styles
+======================================== */
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: var(--z-secondary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-md);
+  color: var(--z-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.iconButton:hover {
+  border-color: var(--z-accent);
+  color: var(--z-accent);
+}
+
+.iconButton.copied {
+  border-color: var(--z-success);
+  color: var(--z-success);
+  background: rgba(34, 197, 94, 0.1);
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* ========================================
+   Text/Both Variants (ZButton wrapper)
+======================================== */
+
+.copiedButton {
+  border-color: var(--z-success);
+  color: var(--z-success);
+  background: rgba(34, 197, 94, 0.1);
+}
+
+.copiedButton:hover {
+  border-color: var(--z-success);
+  background: rgba(34, 197, 94, 0.15);
+}

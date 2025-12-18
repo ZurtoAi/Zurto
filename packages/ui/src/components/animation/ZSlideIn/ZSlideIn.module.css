@@ -1,0 +1,30 @@
+/* ========================================
+   ZSlideIn - Slide In Animation Styles
+======================================== */
+
+.container {
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.container.left {
+  transform: translateX(-50px);
+}
+
+.container.right {
+  transform: translateX(50px);
+}
+
+.container.up {
+  transform: translateY(50px);
+}
+
+.container.down {
+  transform: translateY(-50px);
+}
+
+.container.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}

@@ -1,0 +1,378 @@
+/* Port Management - Dark Theme Styles for DraggablePanel */
+
+.port-management-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 4px;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Stats Grid */
+.port-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.stat-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.stat-icon.active {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+.stat-icon.available {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-number {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Usage Progress Section */
+.port-usage-section {
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+}
+
+.usage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.usage-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.usage-range {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: "SF Mono", Consolas, monospace;
+}
+
+.usage-bar-container {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.usage-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.usage-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Filter Tabs */
+.port-filter-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+}
+
+.filter-tab {
+  flex: 1;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-tab:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.filter-tab.active {
+  background: rgba(223, 62, 83, 0.15);
+  color: #df3e53;
+}
+
+/* Error Message */
+.port-error-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 8px;
+  color: #ef4444;
+  font-size: 12px;
+}
+
+.port-error-message span {
+  flex: 1;
+}
+
+.port-error-message button {
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  opacity: 0.7;
+}
+
+.port-error-message button:hover {
+  opacity: 1;
+}
+
+/* Port List Container */
+.port-list-container {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.port-list-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.port-list-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.port-list-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.port-list-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Loading & Empty States */
+.port-loading-state,
+.port-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  color: rgba(255, 255, 255, 0.4);
+  gap: 12px;
+}
+
+.loading-spinner {
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #df3e53;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.port-empty-state svg {
+  opacity: 0.3;
+}
+
+.port-empty-state p {
+  margin: 0;
+  font-size: 13px;
+}
+
+/* Port Items List */
+.port-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.port-item-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.port-item-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.port-item-card.status-active {
+  border-left: 2px solid #10b981;
+}
+
+.port-item-card.status-inactive {
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
+  opacity: 0.7;
+}
+
+.port-item-card.status-reserved {
+  border-left: 2px solid #f59e0b;
+}
+
+.port-item-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.port-status-dot {
+  font-size: 10px;
+  line-height: 1;
+}
+
+.port-status-dot.active {
+  color: #10b981;
+}
+
+.port-status-dot.inactive {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.port-status-dot.reserved {
+  color: #f59e0b;
+}
+
+.port-number-display {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  font-family: "SF Mono", Consolas, monospace;
+  min-width: 45px;
+}
+
+.port-service-name {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  flex: 1;
+}
+
+.port-item-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.port-project-name {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.port-date {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.3);
+  font-family: "SF Mono", Consolas, monospace;
+}
+
+/* Footer */
+.port-footer {
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.refresh-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.refresh-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.refresh-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.refresh-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.refresh-btn:hover:not(:disabled) svg {
+  transform: rotate(180deg);
+}

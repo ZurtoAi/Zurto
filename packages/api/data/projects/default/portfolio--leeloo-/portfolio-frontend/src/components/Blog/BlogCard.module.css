@@ -1,0 +1,304 @@
+/* BlogCard.module.css */
+/* Blog card styling with neon borders, animations, and interactive effects */
+
+.blogCard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  background: linear-gradient(135deg, rgba(15, 15, 30, 0.8) 0%, rgba(20, 20, 40, 0.8) 100%);
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 24px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.blogCard:hover {
+  border-color: rgba(0, 255, 255, 0.6);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2), inset 0 0 20px rgba(0, 255, 255, 0.05);
+}
+
+/* Gradient overlay for depth */
+.blogCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.blogCard:hover::before {
+  opacity: 1;
+}
+
+/* Header section with category and date */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* Category badge */
+.category {
+  display: inline-block;
+  padding: 6px 12px;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.2) 0%, rgba(100, 200, 255, 0.1) 100%);
+  border: 1px solid rgba(0, 255, 255, 0.4);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #00ffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.blogCard:hover .category {
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.3) 0%, rgba(100, 200, 255, 0.15) 100%);
+  border-color: rgba(0, 255, 255, 0.6);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+/* Publish date */
+.date {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.blogCard:hover .date {
+  color: rgba(0, 255, 255, 0.7);
+}
+
+/* Title section */
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.4;
+  margin: 8px 0;
+  transition: all 0.3s ease;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blogCard:hover .title {
+  color: #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+/* Excerpt/description text */
+.excerpt {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.blogCard:hover .excerpt {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Footer section with metadata */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  border-top: 1px solid rgba(0, 255, 255, 0.2);
+  padding-top: 12px;
+}
+
+/* Author information */
+.author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.authorAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.3) 0%, rgba(100, 200, 255, 0.2) 100%);
+  border: 1px solid rgba(0, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #00ffff;
+  transition: all 0.3s ease;
+}
+
+.blogCard:hover .authorAvatar {
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+}
+
+.authorName {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease;
+}
+
+.blogCard:hover .authorName {
+  color: #00ffff;
+}
+
+/* Reading time indicator */
+.readingTime {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease;
+}
+
+.blogCard:hover .readingTime {
+  color: rgba(0, 255, 255, 0.7);
+}
+
+/* Read more link/CTA */
+.cta {
+  font-size: 12px;
+  font-weight: 600;
+  color: #00ffff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cta::after {
+  content: '→';
+  transition: transform 0.3s ease;
+}
+
+.blogCard:hover .cta {
+  color: #00ffff;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+.blogCard:hover .cta::after {
+  transform: translateX(4px);
+}
+
+/* Tags section */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 4px;
+  font-size: 11px;
+  color: rgba(0, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+
+.blogCard:hover .tag {
+  background: rgba(0, 255, 255, 0.15);
+  border-color: rgba(0, 255, 255, 0.4);
+}
+
+/* Animation states */
+.blogCard.entering {
+  animation: cardEnter 0.6s ease-out;
+}
+
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Focus state for accessibility */
+.blogCard:focus-within {
+  outline: 2px solid rgba(0, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .blogCard {
+    min-height: 300px;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .excerpt {
+    font-size: 13px;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .blogCard {
+    min-height: 280px;
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .excerpt {
+    font-size: 12px;
+    -webkit-line-clamp: 2;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .date {
+    order: -1;
+  }
+}

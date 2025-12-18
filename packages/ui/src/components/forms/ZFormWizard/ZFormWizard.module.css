@@ -1,0 +1,126 @@
+/* ========================================
+   ZFormWizard - Form Wizard Styles
+======================================== */
+
+.wizard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-6);
+}
+
+/* ========================================
+   Steps
+======================================== */
+
+.steps {
+  display: flex;
+  gap: var(--z-space-2);
+}
+
+.step {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-3);
+  padding: var(--z-space-3);
+  background: var(--z-secondary-bg);
+  border: 2px solid var(--z-border-color);
+  border-radius: var(--z-radius-md);
+  color: var(--z-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.step:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.step.active {
+  background: var(--z-bg-primary);
+  border-color: var(--z-accent-color);
+  color: var(--z-text-primary);
+}
+
+.step.completed {
+  border-color: var(--z-accent-color);
+}
+
+.stepIndicator {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--z-border-color);
+  border-radius: var(--z-radius-full);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.step.active .stepIndicator {
+  background: var(--z-accent-color);
+  color: white;
+}
+
+.step.completed .stepIndicator {
+  background: var(--z-accent-color);
+  color: white;
+}
+
+.checkIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.stepContent {
+  flex: 1;
+  text-align: left;
+}
+
+.stepTitle {
+  font-weight: 600;
+  font-size: var(--z-text-sm);
+}
+
+.stepDesc {
+  font-size: var(--z-text-xs);
+  color: var(--z-text-tertiary);
+  margin-top: var(--z-space-1);
+}
+
+/* ========================================
+   Content
+======================================== */
+
+.content {
+  padding: var(--z-space-6);
+  background: var(--z-bg-primary);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-lg);
+}
+
+/* ========================================
+   Actions
+======================================== */
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--z-space-3);
+}
+
+/* ========================================
+   Responsive
+======================================== */
+
+@media (max-width: 768px) {
+  .steps {
+    flex-direction: column;
+  }
+
+  .step {
+    width: 100%;
+  }
+}

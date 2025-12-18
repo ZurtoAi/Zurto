@@ -1,0 +1,546 @@
+/**
+ * ============================================
+ * ZURTO UI - CLEAN OPEN NAVIGATION THEME
+ * Enhanced UX with minimal clutter, maximum clarity
+ * ============================================
+ */
+
+:root {
+  /* ============ UPDATED COLOR SYSTEM ============ */
+  /* Darker red gradient for logo and accents */
+  --zurto-primary-dark: #a02030;
+  --zurto-primary: #c73548;
+  --zurto-primary-light: #df3e53;
+  --zurto-primary-glow: rgba(199, 53, 72, 0.5);
+
+  /* Gradient definitions */
+  --zurto-gradient-primary: linear-gradient(
+    135deg,
+    #a02030 0%,
+    #c73548 50%,
+    #df3e53 100%
+  );
+  --zurto-gradient-dark: linear-gradient(180deg, #7a1a25 0%, #a02030 100%);
+
+  /* ============ CLEANER SPACING ============ */
+  --zurto-nav-width: 240px;
+  --zurto-content-width: 900px;
+  --zurto-toc-width: 200px;
+
+  /* More breathing room */
+  --zurto-space-unit: 8px;
+  --zurto-space-xs: calc(var(--zurto-space-unit) * 1); /* 8px */
+  --zurto-space-sm: calc(var(--zurto-space-unit) * 2); /* 16px */
+  --zurto-space-md: calc(var(--zurto-space-unit) * 3); /* 24px */
+  --zurto-space-lg: calc(var(--zurto-space-unit) * 4); /* 32px */
+  --zurto-space-xl: calc(var(--zurto-space-unit) * 6); /* 48px */
+  --zurto-space-2xl: calc(var(--zurto-space-unit) * 8); /* 64px */
+
+  /* ============ REFINED BACKGROUNDS ============ */
+  --zurto-bg-base: #000000;
+  --zurto-bg-elevated: #0a0a0a;
+  --zurto-bg-surface: #0f0f0f;
+  --zurto-bg-subtle: rgba(255, 255, 255, 0.02);
+
+  /* ============ CLEANER TEXT HIERARCHY ============ */
+  --zurto-text-primary: #ffffff;
+  --zurto-text-secondary: #b0b0b0;
+  --zurto-text-tertiary: #707070;
+  --zurto-text-muted: #4a4a4a;
+
+  /* ============ MINIMAL BORDERS ============ */
+  --zurto-border-subtle: rgba(255, 255, 255, 0.04);
+  --zurto-border-default: rgba(255, 255, 255, 0.08);
+  --zurto-border-strong: rgba(255, 255, 255, 0.12);
+
+  /* VitePress overrides */
+  --vp-c-brand-1: var(--zurto-primary);
+  --vp-c-brand-2: var(--zurto-primary-light);
+  --vp-c-brand-3: var(--zurto-primary-dark);
+  --vp-sidebar-width: var(--zurto-nav-width);
+}
+
+/* ============================================
+   CLEAN NAVIGATION LAYOUT
+============================================ */
+
+/* Hide clutter by default */
+.VPSidebar {
+  background: transparent !important;
+  border-right: none !important;
+  padding: var(--zurto-space-md) 0;
+}
+
+/* Collapsible sections - cleaner approach */
+.VPSidebarItem.level-0 {
+  margin: var(--zurto-space-sm) 0;
+}
+
+.VPSidebarItem.level-0 > .item {
+  padding: var(--zurto-space-xs) var(--zurto-space-sm);
+}
+
+/* Minimize visual noise */
+.VPSidebarItem .text {
+  color: var(--zurto-text-secondary);
+  font-weight: 500;
+  font-size: 14px;
+  padding: var(--zurto-space-xs) var(--zurto-space-sm);
+  border-radius: 8px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.VPSidebarItem:hover .text {
+  color: var(--zurto-text-primary);
+  background: var(--zurto-bg-subtle);
+}
+
+.VPSidebarItem.is-active .text {
+  color: var(--zurto-primary-light);
+  background: rgba(199, 53, 72, 0.15);
+  font-weight: 600;
+}
+
+/* Category headers - minimal style */
+.VPSidebarItem.level-0.has-active > .item > .text,
+.VPSidebarItem.level-0 > .item > .indicator {
+  opacity: 0.6;
+}
+
+/* Collapse indicators - subtle */
+.VPSidebarItem.level-0.has-active .text {
+  color: var(--zurto-text-secondary);
+}
+
+/* ============================================
+   SPACIOUS CONTENT AREA
+============================================ */
+
+.VPDoc .container {
+  max-width: var(--zurto-content-width);
+  padding: 0 var(--zurto-space-xl);
+}
+
+.VPDoc .content {
+  padding-top: var(--zurto-space-2xl);
+  padding-bottom: var(--zurto-space-2xl);
+}
+
+/* More breathing room for headings */
+.vp-doc h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin-bottom: var(--zurto-space-lg);
+  background: var(--zurto-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+}
+
+.vp-doc h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: var(--zurto-space-2xl);
+  margin-bottom: var(--zurto-space-md);
+  padding-bottom: var(--zurto-space-sm);
+  border-bottom: 1px solid var(--zurto-border-subtle);
+  color: var(--zurto-text-primary);
+}
+
+.vp-doc h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: var(--zurto-space-xl);
+  margin-bottom: var(--zurto-space-sm);
+  color: var(--zurto-text-primary);
+}
+
+.vp-doc p {
+  color: var(--zurto-text-secondary);
+  line-height: 1.8;
+  margin: var(--zurto-space-md) 0;
+  font-size: 1.05rem;
+}
+
+/* ============================================
+   MINIMAL TOP NAVIGATION
+============================================ */
+
+.VPNav {
+  background: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--zurto-border-subtle);
+}
+
+.VPNavBar {
+  padding: 0 var(--zurto-space-lg);
+  height: 64px;
+}
+
+.VPNavBarTitle {
+  padding: 0;
+}
+
+.VPNavBarTitle .title {
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  background: var(--zurto-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Clean nav links */
+.VPNavBarMenuLink {
+  font-weight: 500;
+  color: var(--zurto-text-secondary);
+  padding: var(--zurto-space-xs) var(--zurto-space-sm);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.VPNavBarMenuLink:hover {
+  color: var(--zurto-text-primary);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.VPNavBarMenuLink.active {
+  color: var(--zurto-primary-light);
+  background: rgba(199, 53, 72, 0.15);
+}
+
+/* ============================================
+   CLEAN TABLE OF CONTENTS
+============================================ */
+
+.VPDocAsideOutline {
+  padding: 0;
+  border: none;
+}
+
+.VPDocAsideOutline .outline-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--zurto-text-muted);
+  margin-bottom: var(--zurto-space-sm);
+  padding: 0 var(--zurto-space-sm);
+}
+
+.VPDocOutlineItem {
+  margin: 2px 0;
+}
+
+.VPDocOutlineItem .outline-link {
+  color: var(--zurto-text-secondary);
+  font-size: 13px;
+  padding: 6px var(--zurto-space-sm);
+  border-radius: 6px;
+  border-left: 2px solid transparent;
+  transition: all 0.2s ease;
+  display: block;
+}
+
+.VPDocOutlineItem .outline-link:hover {
+  color: var(--zurto-text-primary);
+  background: rgba(255, 255, 255, 0.06);
+  border-left-color: var(--zurto-border-default);
+}
+
+.VPDocOutlineItem.is-active .outline-link {
+  color: var(--zurto-primary-light);
+  background: rgba(199, 53, 72, 0.12);
+  border-left-color: var(--zurto-primary);
+  font-weight: 600;
+}
+
+/* ============================================
+   LOGO WITH DARKER GRADIENT
+============================================ */
+
+.VPNavBarTitle .logo {
+  filter: drop-shadow(0 2px 8px var(--zurto-primary-glow));
+}
+
+/* If logo is SVG, apply gradient */
+.logo svg,
+.logo img {
+  filter: drop-shadow(0 2px 12px rgba(160, 32, 48, 0.6));
+}
+
+/* ============================================
+   CLEANER CODE BLOCKS
+============================================ */
+
+.vp-doc [class*="language-"] {
+  background: var(--zurto-bg-base) !important;
+  border: 1px solid var(--zurto-border-subtle);
+  border-radius: 10px;
+  margin: var(--zurto-space-lg) 0;
+  overflow: hidden;
+}
+
+.vp-doc [class*="language-"] code {
+  padding: var(--zurto-space-md);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Inline code - cleaner look */
+.vp-doc :not(pre) > code {
+  background: rgba(199, 53, 72, 0.12) !important;
+  color: var(--zurto-primary-light) !important;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  font-weight: 600;
+  border: 1px solid rgba(199, 53, 72, 0.2);
+}
+
+/* ============================================
+   CLEANER HERO SECTION
+============================================ */
+
+.VPHero {
+  padding: var(--zurto-space-2xl) var(--zurto-space-xl);
+  text-align: center;
+}
+
+.VPHero .name {
+  font-size: 4.5rem !important;
+  font-weight: 900;
+  background: var(--zurto-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  margin-bottom: var(--zurto-space-md);
+  filter: drop-shadow(0 4px 24px rgba(160, 32, 48, 0.5));
+}
+
+.VPHero .text {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--zurto-text-secondary);
+  margin-bottom: var(--zurto-space-sm);
+  line-height: 1.4;
+}
+
+.VPHero .tagline {
+  font-size: 1.125rem;
+  color: var(--zurto-text-tertiary);
+  max-width: 700px;
+  margin: 0 auto var(--zurto-space-xl);
+  line-height: 1.7;
+}
+
+/* ============================================
+   REFINED BUTTONS
+============================================ */
+
+.VPButton {
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.VPButton.brand {
+  background: var(--zurto-gradient-primary);
+  border: none;
+  box-shadow: 0 4px 16px rgba(160, 32, 48, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.VPButton.brand:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(160, 32, 48, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.VPButton.alt {
+  background: var(--zurto-bg-subtle);
+  border: 1px solid var(--zurto-border-default);
+  color: var(--zurto-text-primary);
+}
+
+.VPButton.alt:hover {
+  background: var(--zurto-bg-surface);
+  border-color: var(--zurto-border-strong);
+  transform: translateY(-1px);
+}
+
+/* ============================================
+   CLEANER FEATURE CARDS
+============================================ */
+
+.VPFeatures {
+  padding: var(--zurto-space-2xl) var(--zurto-space-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.VPFeature {
+  background: var(--zurto-bg-subtle) !important;
+  border: 1px solid var(--zurto-border-subtle) !important;
+  border-radius: 12px;
+  padding: var(--zurto-space-lg) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.VPFeature:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(199, 53, 72, 0.4) !important;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 32px rgba(199, 53, 72, 0.15);
+}
+
+.VPFeature:hover .title {
+  color: var(--zurto-primary-light) !important;
+}
+
+.VPFeature:hover .details {
+  color: var(--zurto-text-secondary) !important;
+}
+
+.VPFeature .icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--zurto-space-sm);
+  filter: drop-shadow(0 2px 8px rgba(199, 53, 72, 0.3));
+}
+
+.VPFeature .title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--zurto-text-primary);
+  margin-bottom: var(--zurto-space-xs);
+}
+
+.VPFeature .details {
+  font-size: 0.95rem;
+  color: var(--zurto-text-tertiary);
+  line-height: 1.6;
+}
+
+/* ============================================
+   REMOVE DUPLICATE EFFECTS
+============================================ */
+
+/* Ensure no double shadows */
+.VPNav,
+.VPSidebar,
+.VPButton {
+  box-shadow: none !important;
+}
+
+.VPButton.brand {
+  box-shadow: 0 4px 16px rgba(160, 32, 48, 0.4) !important;
+}
+
+.VPButton.brand:hover {
+  box-shadow: 0 8px 24px rgba(160, 32, 48, 0.6) !important;
+}
+
+/* No double borders */
+.VPDoc,
+.vp-doc {
+  border: none !important;
+}
+
+/* ============================================
+   CLEANER SCROLLBARS
+============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--zurto-primary);
+}
+
+/* ============================================
+   RESPONSIVE REFINEMENTS
+============================================ */
+
+@media (max-width: 960px) {
+  :root {
+    --zurto-space-unit: 6px;
+  }
+
+  .VPHero .name {
+    font-size: 3rem !important;
+  }
+
+  .VPHero .text {
+    font-size: 1.25rem;
+  }
+
+  .vp-doc h1 {
+    font-size: 2.25rem;
+  }
+
+  .VPDoc .container {
+    padding: 0 var(--zurto-space-md);
+  }
+}
+
+/* ============================================
+   SMOOTH ANIMATIONS
+============================================ */
+
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes gentleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.VPFeature {
+  animation: gentleFadeIn 0.6s ease backwards;
+}
+
+.VPFeature:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.VPFeature:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.VPFeature:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.VPFeature:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.VPFeature:nth-child(5) {
+  animation-delay: 0.25s;
+}
+.VPFeature:nth-child(6) {
+  animation-delay: 0.3s;
+}

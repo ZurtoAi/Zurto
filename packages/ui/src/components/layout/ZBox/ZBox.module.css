@@ -1,0 +1,82 @@
+/* ========================================
+   ZBox - Primitive Layout Component Styles
+======================================== */
+
+.box {
+  box-sizing: border-box;
+}
+
+/* ========================================
+   Background
+======================================== */
+
+.bg-transparent {
+  background: transparent;
+}
+.bg-primary {
+  background: var(--z-bg-primary);
+}
+.bg-secondary {
+  background: var(--z-bg-secondary);
+}
+.bg-tertiary {
+  background: var(--z-bg-tertiary);
+}
+.bg-elevated {
+  background: var(--z-bg-elevated);
+}
+.bg-glass {
+  background: var(--z-glass-light);
+  backdrop-filter: blur(var(--z-blur-md));
+}
+
+/* ========================================
+   Border Radius
+======================================== */
+
+.radius-none {
+  border-radius: var(--z-radius-none);
+}
+.radius-sm {
+  border-radius: var(--z-radius-sm);
+}
+.radius-md {
+  border-radius: var(--z-radius-md);
+}
+.radius-lg {
+  border-radius: var(--z-radius-lg);
+}
+.radius-xl {
+  border-radius: var(--z-radius-xl);
+}
+.radius-full {
+  border-radius: var(--z-radius-full);
+}
+
+/* ========================================
+   Border
+======================================== */
+
+.border {
+  border: 1px solid var(--z-border);
+}
+
+/* ========================================
+   Shadow
+======================================== */
+
+.shadow-none {
+  box-shadow: none;
+}
+.shadow-sm {
+  box-shadow: var(--z-shadow-sm);
+}
+.shadow-md {
+  box-shadow: var(--z-shadow-md);
+}
+.shadow-lg {
+  box-shadow: var(--z-shadow-lg);
+}
+.shadow-xl {
+  box-shadow: var(--z-shadow-xl);
+}

@@ -1,0 +1,167 @@
+/**
+ * ZInlineEdit styles
+ */
+
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--z-spacing-xs);
+  position: relative;
+}
+
+.display {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--z-spacing-xs);
+  padding: var(--z-spacing-xs) var(--z-spacing-sm);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--z-radius-sm);
+  color: var(--z-text-primary);
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--z-transition-fast);
+  text-align: left;
+}
+
+.display:hover:not(.disabled) {
+  background: var(--z-bg-tertiary);
+  border-color: var(--z-border);
+}
+
+.display:focus {
+  outline: none;
+  border-color: var(--z-primary);
+  box-shadow: 0 0 0 2px var(--z-primary-alpha);
+}
+
+.display.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.display.placeholder .text {
+  color: var(--z-text-tertiary);
+  font-style: italic;
+}
+
+.text {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.editIcon {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  color: var(--z-text-tertiary);
+  opacity: 0;
+  transition: opacity var(--z-transition-fast);
+}
+
+.display:hover .editIcon,
+.display:focus .editIcon {
+  opacity: 1;
+}
+
+.editIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.input {
+  flex: 1;
+  min-width: 100px;
+  padding: var(--z-spacing-xs) var(--z-spacing-sm);
+  background: var(--z-bg-secondary);
+  border: 1px solid var(--z-primary);
+  border-radius: var(--z-radius-sm);
+  color: var(--z-text-primary);
+  font-family: inherit;
+  outline: none;
+  box-shadow: 0 0 0 2px var(--z-primary-alpha);
+}
+
+.input.hasError {
+  border-color: var(--z-error);
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+}
+
+.error {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: var(--z-spacing-xxs);
+  font-size: var(--z-font-size-xs);
+  color: var(--z-error);
+  white-space: nowrap;
+}
+
+.actions {
+  display: flex;
+  gap: var(--z-spacing-xxs);
+}
+
+.saveButton,
+.cancelButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  border-radius: var(--z-radius-sm);
+  cursor: pointer;
+  transition: all var(--z-transition-fast);
+}
+
+.saveButton {
+  background: var(--z-success);
+  color: white;
+}
+
+.saveButton:hover {
+  background: var(--z-success);
+  filter: brightness(1.1);
+}
+
+.cancelButton {
+  background: var(--z-bg-tertiary);
+  color: var(--z-text-secondary);
+}
+
+.cancelButton:hover {
+  background: var(--z-error);
+  color: white;
+}
+
+.saveButton svg,
+.cancelButton svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Sizes */
+.sm {
+  font-size: var(--z-font-size-sm);
+}
+
+.sm .input {
+  padding: var(--z-spacing-xxs) var(--z-spacing-xs);
+}
+
+.md {
+  font-size: var(--z-font-size-base);
+}
+
+.lg {
+  font-size: var(--z-font-size-lg);
+}
+
+.lg .input {
+  padding: var(--z-spacing-sm) var(--z-spacing-md);
+}

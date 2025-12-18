@@ -1,0 +1,53 @@
+/* ========================================
+   ZURTO UI - Z-INDEX TOKENS
+   Layering system for stacking contexts
+======================================== */
+
+:root {
+  /* Z-Index Scale */
+  --z-index-hide: -1;
+  --z-index-base: 0;
+  --z-index-docked: 10;
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1100;
+  --z-index-banner: 1200;
+  --z-index-overlay: 1300;
+  --z-index-modal: 1400;
+  --z-index-popover: 1500;
+  --z-index-skipLink: 1600;
+  --z-index-toast: 1700;
+  --z-index-tooltip: 1800;
+  --z-index-max: 2147483647;
+}
+
+/* Utility classes */
+.z-index-hide {
+  z-index: var(--z-index-hide);
+}
+.z-index-base {
+  z-index: var(--z-index-base);
+}
+.z-index-docked {
+  z-index: var(--z-index-docked);
+}
+.z-index-dropdown {
+  z-index: var(--z-index-dropdown);
+}
+.z-index-sticky {
+  z-index: var(--z-index-sticky);
+}
+.z-index-overlay {
+  z-index: var(--z-index-overlay);
+}
+.z-index-modal {
+  z-index: var(--z-index-modal);
+}
+.z-index-popover {
+  z-index: var(--z-index-popover);
+}
+.z-index-toast {
+  z-index: var(--z-index-toast);
+}
+.z-index-tooltip {
+  z-index: var(--z-index-tooltip);
+}

@@ -1,0 +1,125 @@
+/* ========================================
+   ZStatCard - Statistics Card Styles
+======================================== */
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  background: var(--z-bg-secondary);
+  border: 1px solid var(--z-border);
+  border-radius: var(--z-radius-lg);
+  transition: var(--z-transition);
+}
+
+.statCard:hover {
+  border-color: var(--z-border-hover);
+}
+
+/* Glass variant */
+.glass {
+  background: var(--z-glass-light);
+  backdrop-filter: blur(var(--z-blur-md));
+  border-color: var(--z-glass-border);
+}
+
+/* ========================================
+   Sizes
+======================================== */
+
+.sm {
+  padding: var(--z-space-3);
+}
+
+.sm .value {
+  font-size: var(--z-text-xl);
+}
+
+.md {
+  padding: var(--z-space-4);
+}
+
+.md .value {
+  font-size: var(--z-text-2xl);
+}
+
+.lg {
+  padding: var(--z-space-5);
+}
+
+.lg .value {
+  font-size: var(--z-text-3xl);
+}
+
+/* ========================================
+   Header
+======================================== */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--z-space-2);
+}
+
+.label {
+  font-size: var(--z-text-sm);
+  font-weight: var(--z-font-medium);
+  color: var(--z-text-muted);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--z-bg-tertiary);
+  border-radius: var(--z-radius-md);
+  color: var(--z-text-secondary);
+}
+
+/* ========================================
+   Body
+======================================== */
+
+.body {
+  display: flex;
+  align-items: baseline;
+  gap: var(--z-space-2);
+}
+
+.value {
+  font-weight: var(--z-font-bold);
+  color: var(--z-text-primary);
+  line-height: 1.2;
+}
+
+.change {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--z-space-0-5);
+  font-size: var(--z-text-sm);
+  font-weight: var(--z-font-medium);
+}
+
+.trend-up {
+  color: var(--z-success);
+}
+
+.trend-down {
+  color: var(--z-error);
+}
+
+.trend-neutral {
+  color: var(--z-text-muted);
+}
+
+/* ========================================
+   Help Text
+======================================== */
+
+.helpText {
+  margin-top: var(--z-space-2);
+  font-size: var(--z-text-xs);
+  color: var(--z-text-muted);
+}

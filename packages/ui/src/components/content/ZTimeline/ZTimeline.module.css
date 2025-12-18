@@ -1,0 +1,122 @@
+/* ========================================
+   ZTimeline - Timeline Styles
+======================================== */
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* ========================================
+   Item
+======================================== */
+
+.item {
+  display: flex;
+  gap: var(--z-space-4);
+  padding-bottom: var(--z-space-6);
+}
+
+.item.last {
+  padding-bottom: 0;
+}
+
+.item.active .title {
+  color: var(--z-accent);
+}
+
+/* ========================================
+   Marker
+======================================== */
+
+.marker {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.dot {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--z-radius-full);
+  color: white;
+  font-size: var(--z-text-sm);
+  font-weight: var(--z-font-semibold);
+  z-index: 1;
+}
+
+.line {
+  width: 2px;
+  flex: 1;
+  background: var(--z-border-color);
+  margin-top: var(--z-space-2);
+}
+
+/* ========================================
+   Content
+======================================== */
+
+.content {
+  flex: 1;
+  padding-top: var(--z-space-1);
+}
+
+.time {
+  font-size: var(--z-text-xs);
+  color: var(--z-text-tertiary);
+  margin-bottom: var(--z-space-1);
+}
+
+.title {
+  font-size: var(--z-text-base);
+  font-weight: var(--z-font-semibold);
+  color: var(--z-text-primary);
+  margin-bottom: var(--z-space-2);
+}
+
+.description {
+  font-size: var(--z-text-sm);
+  color: var(--z-text-secondary);
+  line-height: 1.6;
+}
+
+/* ========================================
+   Variant: Alternate
+======================================== */
+
+.alternate .item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.alternate .item:nth-child(even) .content {
+  text-align: right;
+}
+
+/* ========================================
+   Variant: Compact
+======================================== */
+
+.compact .item {
+  padding-bottom: var(--z-space-4);
+}
+
+.compact .dot {
+  width: 24px;
+  height: 24px;
+  font-size: var(--z-text-xs);
+}
+
+.compact .title {
+  font-size: var(--z-text-sm);
+  margin-bottom: var(--z-space-1);
+}
+
+.compact .description {
+  font-size: var(--z-text-xs);
+}

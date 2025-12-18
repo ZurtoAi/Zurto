@@ -1,0 +1,431 @@
+/**
+ * Code Editor Panel Styles
+ * Dark theme with syntax highlighting
+ */
+
+/* Panel Container */
+.code-editor-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #1a1a1a;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.code-editor-panel.fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  border: none;
+  border-radius: 0;
+}
+
+/* Header */
+.editor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  min-height: 48px;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.file-icon {
+  color: #4299e1;
+}
+
+.file-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: white;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.language-badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.unsaved-dot {
+  color: #f6ad55;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.icon-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.icon-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.icon-btn.save.active {
+  color: #48bb78;
+}
+
+.icon-btn.close:hover {
+  background: rgba(245, 101, 101, 0.2);
+  color: #f56565;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.search-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-group input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 13px;
+  width: 150px;
+}
+
+.search-group input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.search-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.search-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.search-close {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+}
+
+.search-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* Path Bar */
+.path-bar {
+  padding: 6px 16px;
+  background: rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.path {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Editor Content */
+.editor-content {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.editor-content.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.loading-overlay,
+.error-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(26, 26, 26, 0.95);
+  z-index: 10;
+}
+
+.loading-overlay span,
+.error-overlay span {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+.error-overlay {
+  color: #f56565;
+}
+
+.error-overlay button {
+  margin-top: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  cursor: pointer;
+}
+
+/* Editor Wrapper */
+.editor-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Line Numbers */
+.line-numbers {
+  width: 48px;
+  padding: 12px 0;
+  background: rgba(0, 0, 0, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  user-select: none;
+  overflow: hidden;
+}
+
+.line-number {
+  height: 20px;
+  padding-right: 12px;
+  font-size: 12px;
+  font-family: "JetBrains Mono", monospace;
+  color: rgba(255, 255, 255, 0.3);
+  text-align: right;
+  line-height: 20px;
+}
+
+/* Highlight Layer (syntax highlighting) */
+.highlight-layer {
+  position: absolute;
+  top: 0;
+  left: 48px;
+  right: 0;
+  bottom: 0;
+  padding: 12px;
+  overflow: auto;
+  pointer-events: none;
+}
+
+.highlight-layer pre {
+  margin: 0;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 13px;
+  line-height: 20px;
+  white-space: pre;
+}
+
+.code-line {
+  height: 20px;
+  min-height: 20px;
+}
+
+/* Textarea (editable layer) */
+.code-textarea {
+  position: absolute;
+  top: 0;
+  left: 48px;
+  right: 0;
+  bottom: 0;
+  padding: 12px;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 13px;
+  line-height: 20px;
+  color: transparent;
+  caret-color: white;
+  white-space: pre;
+  overflow: auto;
+}
+
+.code-textarea::selection {
+  background: rgba(66, 153, 225, 0.3);
+  color: transparent;
+}
+
+/* Scrollbar sync */
+.highlight-layer::-webkit-scrollbar,
+.code-textarea::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.highlight-layer::-webkit-scrollbar-track,
+.code-textarea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.highlight-layer::-webkit-scrollbar-thumb,
+.code-textarea::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.highlight-layer::-webkit-scrollbar-thumb:hover,
+.code-textarea::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Preview Pane (Split View) */
+.preview-pane {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.preview-header {
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.preview-content {
+  flex: 1;
+  padding: 12px;
+  overflow: auto;
+}
+
+.preview-content pre {
+  margin: 0;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+/* Footer */
+.editor-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 6px 16px;
+  background: rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.editor-footer span {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.editor-footer .status {
+  margin-left: auto;
+}
+
+.editor-footer .encoding {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Token Colors (One Dark Pro inspired) */
+.token-keyword {
+  color: #c678dd;
+}
+.token-string {
+  color: #98c379;
+}
+.token-comment {
+  color: #5c6370;
+  font-style: italic;
+}
+.token-number {
+  color: #d19a66;
+}
+.token-operator {
+  color: #56b6c2;
+}
+.token-function {
+  color: #61afef;
+}
+.token-class {
+  color: #e5c07b;
+}
+.token-variable {
+  color: #e06c75;
+}
+.token-punctuation {
+  color: #abb2bf;
+}

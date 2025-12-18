@@ -1,0 +1,128 @@
+/* ========================================
+   ZComparison - Comparison Table Styles
+======================================== */
+
+.comparison {
+  width: 100%;
+  background: var(--z-secondary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-lg);
+  overflow: hidden;
+}
+
+/* ========================================
+   Header
+======================================== */
+
+.header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--z-space-4);
+  padding: var(--z-space-4);
+  background: var(--z-primary-bg);
+  border-bottom: 2px solid var(--z-border-color);
+}
+
+.featureHeader {
+  font-size: var(--z-text-sm);
+  font-weight: var(--z-font-semibold);
+  color: var(--z-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.optionHeader {
+  font-size: var(--z-text-base);
+  font-weight: var(--z-font-bold);
+  color: var(--z-text-primary);
+  text-align: center;
+  padding: var(--z-space-3);
+  border-radius: var(--z-radius-md);
+  transition: all 0.2s ease;
+}
+
+.optionHeader.highlighted {
+  background: rgba(223, 62, 83, 0.1);
+  border: 2px solid var(--z-accent);
+  color: var(--z-accent);
+}
+
+/* ========================================
+   Body
+======================================== */
+
+.body {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--z-space-4);
+  padding: var(--z-space-4);
+  border-bottom: 1px solid var(--z-border-color);
+  transition: background 0.2s ease;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.row:hover {
+  background: var(--z-primary-bg);
+}
+
+.feature {
+  font-size: var(--z-text-sm);
+  color: var(--z-text-primary);
+  display: flex;
+  align-items: center;
+}
+
+.value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--z-text-sm);
+  color: var(--z-text-secondary);
+  padding: var(--z-space-2);
+  border-radius: var(--z-radius-sm);
+  transition: all 0.2s ease;
+}
+
+.value.highlighted {
+  background: rgba(223, 62, 83, 0.05);
+}
+
+.checkIcon {
+  width: 20px;
+  height: 20px;
+  color: var(--z-success);
+}
+
+.xIcon {
+  width: 20px;
+  height: 20px;
+  color: var(--z-error);
+}
+
+/* ========================================
+   Responsive
+======================================== */
+
+@media (max-width: 768px) {
+  .header,
+  .row {
+    grid-template-columns: 1fr;
+    gap: var(--z-space-2);
+  }
+
+  .optionHeader {
+    text-align: left;
+  }
+
+  .value {
+    justify-content: flex-start;
+  }
+}

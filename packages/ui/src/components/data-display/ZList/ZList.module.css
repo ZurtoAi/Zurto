@@ -1,0 +1,113 @@
+/* ========================================
+   ZList - List Component Styles
+======================================== */
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ========================================
+   Sizes
+======================================== */
+
+.sm .item {
+  padding: var(--z-space-2) var(--z-space-3);
+  font-size: var(--z-text-sm);
+}
+
+.md .item {
+  padding: var(--z-space-3) var(--z-space-4);
+  font-size: var(--z-text-sm);
+}
+
+.lg .item {
+  padding: var(--z-space-4) var(--z-space-5);
+  font-size: var(--z-text-base);
+}
+
+/* ========================================
+   Variants
+======================================== */
+
+.bordered {
+  border: 1px solid var(--z-border);
+  border-radius: var(--z-radius-lg);
+  overflow: hidden;
+}
+
+.bordered .item:not(:last-child) {
+  border-bottom: 1px solid var(--z-border);
+}
+
+.separated .item:not(:last-child) {
+  border-bottom: 1px solid var(--z-border);
+}
+
+/* ========================================
+   List Item
+======================================== */
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-3);
+  transition: var(--z-transition);
+}
+
+.hoverable .item:hover {
+  background: var(--z-bg-secondary);
+}
+
+.item.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.item.selected {
+  background: var(--z-primary-subtle);
+}
+
+.item.clickable {
+  cursor: pointer;
+}
+
+/* ========================================
+   Item Content
+======================================== */
+
+.left {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-0-5);
+}
+
+.primary {
+  color: var(--z-text-primary);
+  font-weight: var(--z-font-medium);
+  line-height: var(--z-leading-tight);
+}
+
+.secondary {
+  color: var(--z-text-muted);
+  font-size: 0.9em;
+  line-height: var(--z-leading-normal);
+}
+
+.right {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-2);
+  color: var(--z-text-muted);
+}

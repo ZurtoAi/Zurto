@@ -1,0 +1,36 @@
+/* ========================================
+   ZContainer - Responsive Container Styles
+======================================== */
+
+.container {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========================================
+   Sizes (max-width)
+======================================== */
+
+.sm {
+  max-width: var(--z-screen-sm);
+}
+.md {
+  max-width: var(--z-screen-md);
+}
+.lg {
+  max-width: var(--z-screen-lg);
+}
+.xl {
+  max-width: var(--z-screen-xl);
+}
+.\32xl {
+  max-width: var(--z-screen-2xl);
+}
+.full {
+  max-width: 100%;
+}

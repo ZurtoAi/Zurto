@@ -1,0 +1,91 @@
+/* ========================================
+   ZStack - Flexbox Stack Component Styles
+======================================== */
+
+.stack {
+  display: flex;
+}
+
+.inline {
+  display: inline-flex;
+}
+
+/* ========================================
+   Direction
+======================================== */
+
+.horizontal {
+  flex-direction: row;
+}
+
+.vertical {
+  flex-direction: column;
+}
+
+/* ========================================
+   Align Items
+======================================== */
+
+.align-start {
+  align-items: flex-start;
+}
+.align-center {
+  align-items: center;
+}
+.align-end {
+  align-items: flex-end;
+}
+.align-stretch {
+  align-items: stretch;
+}
+.align-baseline {
+  align-items: baseline;
+}
+
+/* ========================================
+   Justify Content
+======================================== */
+
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+/* ========================================
+   Wrap
+======================================== */
+
+.nowrap {
+  flex-wrap: nowrap;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+.wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+/* ========================================
+   Size Modifiers
+======================================== */
+
+.fullWidth {
+  width: 100%;
+}
+.fullHeight {
+  height: 100%;
+}

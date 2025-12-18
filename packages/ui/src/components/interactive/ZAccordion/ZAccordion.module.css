@@ -1,0 +1,97 @@
+/* ========================================
+   ZAccordion - Accordion Component Styles
+======================================== */
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-2);
+  width: 100%;
+}
+
+/* ========================================
+   Accordion Item
+======================================== */
+
+.item {
+  border: 1px solid var(--z-border-subtle);
+  border-radius: var(--z-radius-md);
+  background: var(--z-surface);
+  overflow: hidden;
+  transition: var(--z-transition);
+}
+
+.item:hover {
+  border-color: var(--z-border-hover);
+}
+
+.item.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ========================================
+   Accordion Trigger
+======================================== */
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--z-space-4);
+  font-family: var(--z-font-sans);
+  font-size: var(--z-text-md);
+  font-weight: var(--z-font-medium);
+  color: var(--z-text-primary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: var(--z-transition);
+  outline: none;
+}
+
+.trigger:hover {
+  background: var(--z-hover-bg);
+}
+
+.trigger:focus-visible {
+  box-shadow: inset var(--z-focus-ring);
+}
+
+.triggerText {
+  flex: 1;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 200ms ease;
+  color: var(--z-text-secondary);
+}
+
+.trigger.open .icon {
+  transform: rotate(180deg);
+}
+
+/* ========================================
+   Accordion Content
+======================================== */
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 300ms ease;
+}
+
+.content.open {
+  max-height: 1000px;
+}
+
+.contentInner {
+  padding: 0 var(--z-space-4) var(--z-space-4);
+  color: var(--z-text-secondary);
+  font-size: var(--z-text-sm);
+  line-height: 1.6;
+}

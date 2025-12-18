@@ -1,0 +1,889 @@
+/* Shared Zurto UI Component Styles for Documentation */
+
+/* =========================================
+   BASE STYLES
+   ========================================= */
+
+.demo-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.demo-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.demo-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+/* =========================================
+   BUTTON STYLES
+   ========================================= */
+
+.z-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.z-btn:focus-visible {
+  outline: 2px solid #df3e53;
+  outline-offset: 2px;
+}
+
+.z-btn-primary {
+  background: linear-gradient(135deg, #df3e53 0%, #c43347 100%);
+  color: #fff;
+  border-color: #df3e53;
+}
+
+.z-btn-primary:hover {
+  background: linear-gradient(135deg, #e85566 0%, #d43d51 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(223, 62, 83, 0.4);
+}
+
+.z-btn-secondary {
+  background: #252525;
+  color: #e0e0e0;
+  border-color: #333;
+}
+
+.z-btn-secondary:hover {
+  background: #2a2a2a;
+  border-color: #444;
+}
+
+.z-btn-ghost {
+  background: transparent;
+  color: #e0e0e0;
+}
+
+.z-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.z-btn-danger {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: #fff;
+  border-color: #ef4444;
+}
+
+.z-btn-danger:hover {
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+.z-btn-outline {
+  background: transparent;
+  color: #df3e53;
+  border-color: #df3e53;
+}
+
+.z-btn-outline:hover {
+  background: rgba(223, 62, 83, 0.1);
+}
+
+.z-btn-sm {
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 6px;
+}
+
+.z-btn-lg {
+  padding: 14px 28px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.z-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   INPUT STYLES
+   ========================================= */
+
+.z-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.z-input-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #e0e0e0;
+}
+
+.z-input-label .required {
+  color: #df3e53;
+  margin-left: 2px;
+}
+
+.z-input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #e0e0e0;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.z-input::placeholder {
+  color: #6b6b6b;
+}
+
+.z-input:focus {
+  border-color: #df3e53;
+  box-shadow: 0 0 0 3px rgba(223, 62, 83, 0.15);
+}
+
+.z-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #151515;
+}
+
+.z-input-error {
+  border-color: #ef4444 !important;
+}
+
+.z-input-error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+.z-input-success {
+  border-color: #22c55e !important;
+}
+
+.z-input-hint {
+  font-size: 12px;
+  color: #6b6b6b;
+}
+
+.z-input-error-text {
+  font-size: 12px;
+  color: #ef4444;
+}
+
+.z-input-sm {
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.z-input-lg {
+  padding: 14px 18px;
+  font-size: 16px;
+}
+
+.z-input-with-icon {
+  position: relative;
+}
+
+.z-input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b6b6b;
+  pointer-events: none;
+}
+
+.z-input-with-icon .z-input {
+  padding-left: 40px;
+}
+
+/* =========================================
+   CARD STYLES
+   ========================================= */
+
+.z-card {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 26, 0.9) 0%,
+    rgba(20, 20, 20, 0.95) 100%
+  );
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.z-card-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.z-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin: 0;
+}
+
+.z-card-subtitle {
+  font-size: 13px;
+  color: #6b6b6b;
+  margin: 4px 0 0 0;
+}
+
+.z-card-body {
+  padding: 20px;
+}
+
+.z-card-footer {
+  padding: 16px 20px;
+  border-top: 1px solid #2a2a2a;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.z-card-glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.z-card-elevated {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.z-card-interactive {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.z-card-interactive:hover {
+  border-color: #df3e53;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(223, 62, 83, 0.15);
+}
+
+/* =========================================
+   MODAL STYLES
+   ========================================= */
+
+.z-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.z-modal {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+}
+
+.z-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.z-modal-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin: 0;
+}
+
+.z-modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: #6b6b6b;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.z-modal-close:hover {
+  background: #252525;
+  color: #e0e0e0;
+}
+
+.z-modal-body {
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.z-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px 24px;
+  border-top: 1px solid #2a2a2a;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Demo modal container (non-fixed for docs) */
+.z-modal-demo {
+  position: relative;
+  background: #0d0d0d;
+  border-radius: 12px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.z-modal-demo .z-modal-backdrop {
+  position: absolute;
+  border-radius: 12px;
+}
+
+/* =========================================
+   SELECT STYLES
+   ========================================= */
+
+.z-select {
+  appearance: none;
+  width: 100%;
+  max-width: 320px;
+  padding: 10px 40px 10px 14px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #e0e0e0;
+  background: #1a1a1a
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")
+    no-repeat right 12px center;
+  border: 1px solid #333;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.z-select:focus {
+  border-color: #df3e53;
+  box-shadow: 0 0 0 3px rgba(223, 62, 83, 0.15);
+}
+
+/* =========================================
+   CHECKBOX & RADIO STYLES
+   ========================================= */
+
+.z-checkbox-wrapper,
+.z-radio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.z-checkbox,
+.z-radio {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #1a1a1a;
+  border: 2px solid #444;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.z-checkbox {
+  border-radius: 4px;
+}
+
+.z-radio {
+  border-radius: 50%;
+}
+
+.z-checkbox:checked,
+.z-radio:checked {
+  background: #df3e53;
+  border-color: #df3e53;
+}
+
+.z-checkbox:checked {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.z-radio:checked {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Ccircle cx='4' cy='4' r='4' fill='white'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.z-checkbox:focus-visible,
+.z-radio:focus-visible {
+  outline: 2px solid #df3e53;
+  outline-offset: 2px;
+}
+
+.z-checkbox-label,
+.z-radio-label {
+  font-size: 14px;
+  color: #e0e0e0;
+}
+
+/* =========================================
+   SWITCH STYLES
+   ========================================= */
+
+.z-switch-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.z-switch {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background: #333;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.z-switch::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: #e0e0e0;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.z-switch.checked {
+  background: #df3e53;
+}
+
+.z-switch.checked::after {
+  transform: translateX(20px);
+}
+
+/* =========================================
+   BADGE STYLES
+   ========================================= */
+
+.z-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 9999px;
+}
+
+.z-badge-default {
+  background: #333;
+  color: #e0e0e0;
+}
+
+.z-badge-primary {
+  background: rgba(223, 62, 83, 0.15);
+  color: #df3e53;
+}
+
+.z-badge-success {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.z-badge-warning {
+  background: rgba(234, 179, 8, 0.15);
+  color: #eab308;
+}
+
+.z-badge-error {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+/* =========================================
+   AVATAR STYLES
+   ========================================= */
+
+.z-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #df3e53 0%, #c43347 100%);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.z-avatar-sm {
+  width: 32px;
+  height: 32px;
+  font-size: 12px;
+}
+
+.z-avatar-md {
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+}
+
+.z-avatar-lg {
+  width: 56px;
+  height: 56px;
+  font-size: 18px;
+}
+
+.z-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.z-avatar-group {
+  display: flex;
+}
+
+.z-avatar-group .z-avatar {
+  border: 2px solid #0d0d0d;
+  margin-left: -8px;
+}
+
+.z-avatar-group .z-avatar:first-child {
+  margin-left: 0;
+}
+
+/* =========================================
+   SPINNER STYLES
+   ========================================= */
+
+.z-spinner {
+  display: inline-block;
+  border: 2px solid rgba(223, 62, 83, 0.2);
+  border-top-color: #df3e53;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.z-spinner-sm {
+  width: 16px;
+  height: 16px;
+}
+
+.z-spinner-md {
+  width: 24px;
+  height: 24px;
+}
+
+.z-spinner-lg {
+  width: 40px;
+  height: 40px;
+  border-width: 3px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================
+   PROGRESS STYLES
+   ========================================= */
+
+.z-progress {
+  width: 100%;
+  height: 8px;
+  background: #252525;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.z-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #df3e53 0%, #e85566 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.z-progress-striped .z-progress-bar {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.1) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 20px 20px;
+}
+
+.z-progress-animated .z-progress-bar {
+  animation: progress-stripes 1s linear infinite;
+}
+
+@keyframes progress-stripes {
+  from {
+    background-position: 20px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+/* =========================================
+   TOOLTIP STYLES
+   ========================================= */
+
+.z-tooltip-trigger {
+  position: relative;
+  display: inline-block;
+}
+
+.z-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 12px;
+  font-size: 13px;
+  color: #fff;
+  background: #333;
+  border-radius: 6px;
+  white-space: nowrap;
+  z-index: 100;
+}
+
+.z-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #333;
+}
+
+/* =========================================
+   ALERT STYLES
+   ========================================= */
+
+.z-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.z-alert-info {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #3b82f6;
+}
+
+.z-alert-success {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #22c55e;
+}
+
+.z-alert-warning {
+  background: rgba(234, 179, 8, 0.1);
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  color: #eab308;
+}
+
+.z-alert-error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+
+.z-alert-icon {
+  flex-shrink: 0;
+}
+
+.z-alert-content {
+  flex: 1;
+}
+
+.z-alert-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.z-alert-description {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* =========================================
+   TABS STYLES
+   ========================================= */
+
+.z-tabs {
+  width: 100%;
+}
+
+.z-tabs-list {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid #2a2a2a;
+  padding-bottom: 1px;
+}
+
+.z-tab {
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b6b6b;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: -1px;
+}
+
+.z-tab:hover {
+  color: #a0a0a0;
+}
+
+.z-tab.active {
+  color: #df3e53;
+  border-bottom-color: #df3e53;
+}
+
+.z-tabs-panel {
+  padding: 20px 0;
+  color: #b0b0b0;
+}
+
+/* =========================================
+   SKELETON STYLES
+   ========================================= */
+
+.z-skeleton {
+  background: linear-gradient(90deg, #1a1a1a 0%, #252525 50%, #1a1a1a 100%);
+  background-size: 200% 100%;
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+  border-radius: 4px;
+}
+
+.z-skeleton-text {
+  height: 16px;
+  width: 100%;
+}
+
+.z-skeleton-circle {
+  border-radius: 50%;
+}
+
+.z-skeleton-button {
+  height: 40px;
+  width: 100px;
+  border-radius: 8px;
+}
+
+@keyframes skeleton-pulse {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* =========================================
+   TABLE STYLES
+   ========================================= */
+
+.z-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #2a2a2a;
+}
+
+.z-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.z-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b6b6b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: #151515;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.z-table td {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #e0e0e0;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.z-table tr:last-child td {
+  border-bottom: none;
+}
+
+.z-table tr:hover td {
+  background: rgba(223, 62, 83, 0.03);
+}

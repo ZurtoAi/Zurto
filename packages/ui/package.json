@@ -1,0 +1,110 @@
+{
+  "name": "@zurto/ui",
+  "version": "2.0.0",
+  "type": "module",
+  "publishConfig": {
+    "name": "zurto-ui"
+  },
+  "description": "Official UI component library for Zurto - 32 Modern React components with dark theme and glassmorphism",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:css": "postcss src/tokens/index.css -o dist/tokens.css",
+    "lint": "eslint src --ext .ts,.tsx",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "docs:generate": "node scripts/generate-preview-docs.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zurto/zurto-ui.git"
+  },
+  "keywords": [
+    "zurto",
+    "ui",
+    "react",
+    "components",
+    "design-system",
+    "dark-theme",
+    "glassmorphism",
+    "typescript"
+  ],
+  "author": "Zurto Team",
+  "license": "MIT",
+  "homepage": "https://ui.zurto.app",
+  "bugs": {
+    "url": "https://github.com/zurto/zurto-ui/issues"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "dependencies": {
+    "clsx": "^2.1.0",
+    "lucide-react": "^0.468.0"
+  },
+  "devDependencies": {
+    "@axe-core/react": "^4.11.0",
+    "@babel/standalone": "^7.28.5",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.1",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "@vitest/ui": "^1.6.1",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "happy-dom": "^20.0.11",
+    "jest-axe": "^10.0.0",
+    "jsdom": "^27.3.0",
+    "lucide-vue-next": "^0.562.0",
+    "postcss": "^8.4.32",
+    "postcss-cli": "^11.0.0",
+    "prism-react-renderer": "^2.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-live": "^4.1.8",
+    "sandpack-vue3": "^3.1.12",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.8",
+    "vite-plugin-css-injected-by-js": "^3.3.1",
+    "vite-plugin-dts": "^3.7.0",
+    "vitepress": "^1.6.4",
+    "vitest": "^1.6.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./tokens": {
+      "import": "./dist/tokens.css"
+    },
+    "./styles": {
+      "import": "./dist/styles.css"
+    }
+  }
+}

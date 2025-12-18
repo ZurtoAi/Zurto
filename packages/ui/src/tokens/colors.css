@@ -1,0 +1,93 @@
+/* ========================================
+   ZURTO UI - COLOR TOKENS
+   Primary, semantic, and theme colors
+======================================== */
+
+:root {
+  /* Primary Brand Colors */
+  --z-primary: #df3e53;
+  --z-primary-hover: #e85566;
+  --z-primary-active: #c73548;
+  --z-primary-light: rgba(223, 62, 83, 0.15);
+  --z-primary-glow: rgba(223, 62, 83, 0.4);
+
+  /* Background Colors */
+  --z-bg-primary: #0a0a0a;
+  --z-bg-secondary: #111111;
+  --z-bg-tertiary: #1a1a1a;
+  --z-bg-elevated: #222222;
+  --z-bg-hover: #2a2a2a;
+  --z-bg-active: #333333;
+
+  /* Glass Effect */
+  --z-glass-bg: rgba(255, 255, 255, 0.05);
+  --z-glass-bg-hover: rgba(255, 255, 255, 0.08);
+  --z-glass-border: rgba(255, 255, 255, 0.1);
+  --z-glass-border-hover: rgba(255, 255, 255, 0.15);
+
+  /* Text Colors */
+  --z-text-primary: #ffffff;
+  --z-text-secondary: #a0a0a0;
+  --z-text-muted: #666666;
+  --z-text-disabled: #444444;
+  --z-text-inverse: #0a0a0a;
+
+  /* Semantic Colors - Success */
+  --z-success: #22c55e;
+  --z-success-hover: #16a34a;
+  --z-success-light: rgba(34, 197, 94, 0.15);
+  --z-success-text: #4ade80;
+
+  /* Semantic Colors - Warning */
+  --z-warning: #f59e0b;
+  --z-warning-hover: #d97706;
+  --z-warning-light: rgba(245, 158, 11, 0.15);
+  --z-warning-text: #fbbf24;
+
+  /* Semantic Colors - Error */
+  --z-error: #ef4444;
+  --z-error-hover: #dc2626;
+  --z-error-light: rgba(239, 68, 68, 0.15);
+  --z-error-text: #f87171;
+
+  /* Semantic Colors - Info */
+  --z-info: #3b82f6;
+  --z-info-hover: #2563eb;
+  --z-info-light: rgba(59, 130, 246, 0.15);
+  --z-info-text: #60a5fa;
+
+  /* Border Colors */
+  --z-border: rgba(255, 255, 255, 0.1);
+  --z-border-hover: rgba(255, 255, 255, 0.2);
+  --z-border-focus: var(--z-primary);
+  --z-border-error: var(--z-error);
+
+  /* Overlay */
+  --z-overlay: rgba(0, 0, 0, 0.7);
+  --z-overlay-light: rgba(0, 0, 0, 0.5);
+
+  /* Focus Ring */
+  --z-focus-ring: 0 0 0 2px var(--z-bg-primary), 0 0 0 4px var(--z-primary);
+}
+
+/* Light theme (optional override) */
+[data-theme="light"] {
+  --z-bg-primary: #ffffff;
+  --z-bg-secondary: #f8f8f8;
+  --z-bg-tertiary: #f0f0f0;
+  --z-bg-elevated: #ffffff;
+  --z-bg-hover: #e8e8e8;
+  --z-bg-active: #e0e0e0;
+
+  --z-text-primary: #0a0a0a;
+  --z-text-secondary: #666666;
+  --z-text-muted: #999999;
+
+  --z-glass-bg: rgba(0, 0, 0, 0.03);
+  --z-glass-border: rgba(0, 0, 0, 0.08);
+
+  --z-border: rgba(0, 0, 0, 0.1);
+  --z-border-hover: rgba(0, 0, 0, 0.2);
+
+  --z-overlay: rgba(0, 0, 0, 0.5);
+}

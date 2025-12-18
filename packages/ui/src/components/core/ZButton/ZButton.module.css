@@ -1,0 +1,230 @@
+/* ========================================
+   ZButton - Button Component Styles
+======================================== */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--z-space-2);
+  font-family: var(--z-font-sans);
+  font-weight: var(--z-font-medium);
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: var(--z-radius-button);
+  transition: var(--z-transition);
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: var(--z-focus-ring);
+}
+
+.button:disabled,
+.button[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* ========================================
+   Size Variants
+======================================== */
+
+.xs {
+  height: 28px;
+  padding: 0 var(--z-space-2);
+  font-size: var(--z-text-xs);
+  border-radius: var(--z-radius-sm);
+}
+
+.sm {
+  height: 32px;
+  padding: 0 var(--z-space-3);
+  font-size: var(--z-text-sm);
+}
+
+.md {
+  height: 40px;
+  padding: 0 var(--z-space-4);
+  font-size: var(--z-text-sm);
+}
+
+.lg {
+  height: 48px;
+  padding: 0 var(--z-space-5);
+  font-size: var(--z-text-base);
+}
+
+.xl {
+  height: 56px;
+  padding: 0 var(--z-space-6);
+  font-size: var(--z-text-lg);
+  border-radius: var(--z-radius-lg);
+}
+
+/* ========================================
+   Color Variants
+======================================== */
+
+/* Primary */
+.primary {
+  background: var(--z-primary);
+  color: var(--z-text-primary);
+  border-color: var(--z-primary);
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--z-primary-hover);
+  border-color: var(--z-primary-hover);
+  box-shadow: var(--z-glow-primary);
+}
+
+.primary:active:not(:disabled) {
+  background: var(--z-primary-active);
+  border-color: var(--z-primary-active);
+}
+
+/* Secondary */
+.secondary {
+  background: var(--z-bg-elevated);
+  color: var(--z-text-primary);
+  border-color: var(--z-border);
+}
+
+.secondary:hover:not(:disabled) {
+  background: var(--z-bg-hover);
+  border-color: var(--z-border-hover);
+}
+
+.secondary:active:not(:disabled) {
+  background: var(--z-bg-active);
+}
+
+/* Ghost */
+.ghost {
+  background: transparent;
+  color: var(--z-text-secondary);
+  border-color: transparent;
+}
+
+.ghost:hover:not(:disabled) {
+  background: var(--z-glass-bg);
+  color: var(--z-text-primary);
+}
+
+.ghost:active:not(:disabled) {
+  background: var(--z-glass-bg-hover);
+}
+
+/* Outline */
+.outline {
+  background: transparent;
+  color: var(--z-primary);
+  border-color: var(--z-primary);
+}
+
+.outline:hover:not(:disabled) {
+  background: var(--z-primary-light);
+}
+
+.outline:active:not(:disabled) {
+  background: var(--z-primary);
+  color: var(--z-text-primary);
+}
+
+/* Danger */
+.danger {
+  background: var(--z-error);
+  color: var(--z-text-primary);
+  border-color: var(--z-error);
+}
+
+.danger:hover:not(:disabled) {
+  background: var(--z-error-hover);
+  border-color: var(--z-error-hover);
+  box-shadow: var(--z-glow-error);
+}
+
+.danger:active:not(:disabled) {
+  background: #b91c1c;
+}
+
+/* Success */
+.success {
+  background: var(--z-success);
+  color: var(--z-text-primary);
+  border-color: var(--z-success);
+}
+
+.success:hover:not(:disabled) {
+  background: var(--z-success-hover);
+  border-color: var(--z-success-hover);
+  box-shadow: var(--z-glow-success);
+}
+
+.success:active:not(:disabled) {
+  background: #15803d;
+}
+
+/* ========================================
+   Modifiers
+======================================== */
+
+.fullWidth {
+  width: 100%;
+}
+
+.iconOnly {
+  padding: 0;
+}
+
+.iconOnly.xs {
+  width: 28px;
+}
+.iconOnly.sm {
+  width: 32px;
+}
+.iconOnly.md {
+  width: 40px;
+}
+.iconOnly.lg {
+  width: 48px;
+}
+.iconOnly.xl {
+  width: 56px;
+}
+
+/* ========================================
+   Loading State
+======================================== */
+
+.loading {
+  pointer-events: none;
+}
+
+.spinner {
+  width: 1em;
+  height: 1em;
+  animation: z-spin 1s linear infinite;
+}
+
+/* ========================================
+   Icons
+======================================== */
+
+.leftIcon,
+.rightIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.leftIcon svg,
+.rightIcon svg {
+  width: 1em;
+  height: 1em;
+}

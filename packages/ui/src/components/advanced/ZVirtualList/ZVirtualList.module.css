@@ -1,0 +1,95 @@
+/**
+ * ZVirtualList styles
+ */
+
+.container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.content {
+  position: relative;
+}
+
+.viewport {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  will-change: transform;
+}
+
+.item {
+  box-sizing: border-box;
+}
+
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--z-text-tertiary);
+  font-size: var(--z-font-size-base);
+}
+
+.empty p {
+  margin: 0;
+}
+
+.loading {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--z-spacing-md);
+  background: linear-gradient(to top, var(--z-bg-primary), transparent);
+  display: flex;
+  justify-content: center;
+}
+
+.spinner {
+  display: flex;
+  align-items: center;
+  gap: var(--z-spacing-sm);
+  color: var(--z-text-secondary);
+  font-size: var(--z-font-size-sm);
+}
+
+.spinner svg {
+  width: 20px;
+  height: 20px;
+}
+
+.spinnerPath {
+  animation: spin 1s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Scrollbar */
+.container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container::-webkit-scrollbar-track {
+  background: var(--z-bg-secondary);
+  border-radius: 4px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: var(--z-border);
+  border-radius: 4px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background: var(--z-border-hover);
+}

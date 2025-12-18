@@ -1,0 +1,74 @@
+/**
+ * ZFieldGroup styles
+ */
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-spacing-xs);
+  margin-bottom: var(--z-spacing-md);
+}
+
+.fieldGroup.horizontal {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--z-spacing-md);
+}
+
+.fieldGroup.horizontal .label {
+  min-width: 120px;
+  padding-top: var(--z-spacing-sm);
+}
+
+.fieldGroup.horizontal .control {
+  flex: 1;
+}
+
+.label {
+  display: block;
+  font-size: var(--z-font-size-sm);
+  font-weight: var(--z-font-weight-medium);
+  color: var(--z-text-primary);
+}
+
+.required {
+  color: var(--z-error);
+  margin-left: var(--z-spacing-xxs);
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-spacing-xxs);
+}
+
+.description {
+  font-size: var(--z-font-size-xs);
+  color: var(--z-text-secondary);
+  margin: 0;
+}
+
+.error {
+  font-size: var(--z-font-size-xs);
+  color: var(--z-error);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--z-spacing-xxs);
+}
+
+.error::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--z-error);
+}
+
+.fieldGroup.disabled {
+  opacity: 0.6;
+}
+
+.fieldGroup.hasError .label {
+  color: var(--z-error);
+}

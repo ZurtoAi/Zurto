@@ -1,0 +1,68 @@
+/* ========================================
+   ZCollapsible - Collapsible Styles
+======================================== */
+
+.collapsible {
+  width: 100%;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--z-space-3);
+  background: var(--z-secondary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-md);
+  color: var(--z-text-primary);
+  font-size: var(--z-text-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.trigger:hover {
+  background: var(--z-border-color);
+}
+
+.triggerContent {
+  flex: 1;
+  text-align: left;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease;
+}
+
+.icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ========================================
+   Content
+======================================== */
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.content.open {
+  max-height: 1000px;
+}
+
+.inner {
+  padding: var(--z-space-4);
+  border: 1px solid var(--z-border-color);
+  border-top: none;
+  border-bottom-left-radius: var(--z-radius-md);
+  border-bottom-right-radius: var(--z-radius-md);
+}

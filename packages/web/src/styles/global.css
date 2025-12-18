@@ -1,0 +1,606 @@
+/* Global Styles - Luxury Railway.app Aesthetic */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ==================== COLOR SYSTEM ==================== */
+
+:root {
+  /* Primary Colors - Deep blacks and whites */
+  --primary-bg: #0a0a0a;
+  --secondary-bg: #121212;
+  --tertiary-bg: #1a1a1a;
+
+  /* RGB versions for rgba() usage with transparency */
+  --primary-bg-rgb: 10, 10, 10;
+  --secondary-bg-rgb: 18, 18, 18;
+  --tertiary-bg-rgb: 26, 26, 26;
+  --header-bg-rgb: 15, 15, 15;
+
+  /* Surface Colors - Subtle layers */
+  --surface: #1f1f1f;
+  --surface-light: #2a2a2a;
+  --surface-lighter: #333333;
+
+  /* Header & UI */
+  --header-bg: #0f0f0f;
+  --tabs-bg: #0f0f0f;
+  --dropdown-bg: #161616;
+
+  /* Border & Dividers - Subtle, refined */
+  --border-color: #2a2a2a;
+  --border-color-hover: #3a3a3a;
+  --border-subtle: #1a1a1a;
+
+  /* Text Colors - High contrast */
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --text-tertiary: #707070;
+  --text-muted: #505050;
+
+  /* Accent Colors */
+  --accent-color: #df3e53;
+  --accent-hover: #c2355a;
+  --accent-light: rgba(223, 62, 83, 0.1);
+
+  /* Status Colors */
+  --success-color: #10b981;
+  --success-light: rgba(16, 185, 129, 0.1);
+  --warning-color: #f59e0b;
+  --warning-light: rgba(245, 158, 11, 0.1);
+  --error-color: #ef4444;
+  --error-light: rgba(239, 68, 68, 0.1);
+
+  /* Environment Badge */
+  --env-badge-bg: rgba(16, 185, 129, 0.08);
+  --env-badge-border: rgba(16, 185, 129, 0.2);
+  --env-badge-text: #10b981;
+
+  /* Avatar */
+  --avatar-bg: rgba(223, 62, 83, 0.1);
+  --avatar-bg-hover: rgba(223, 62, 83, 0.15);
+
+  /* Hover States */
+  --hover-bg: rgba(255, 255, 255, 0.05);
+
+  /* Shadows - Depth and elegance */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.7);
+  --shadow-2xl: 0 20px 40px rgba(0, 0, 0, 0.8);
+
+  /* Gradients */
+  --gradient-accent: linear-gradient(
+    135deg,
+    var(--accent-color),
+    var(--accent-hover)
+  );
+
+  /* Transitions - Smooth, intentional */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==================== TYPOGRAPHY ==================== */
+
+html,
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--primary-bg);
+  background-color: #0a0a0a;
+  color: var(--text-primary);
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  background: var(--primary-bg);
+  background-color: #0a0a0a;
+  min-height: 100vh;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ==================== COMPONENTS ==================== */
+
+/* Buttons - Refined interaction */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+/* Links */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 8px 12px;
+  transition: all var(--transition-fast);
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+  border-color: var(--border-color-hover);
+  background: var(--tertiary-bg);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  background: var(--tertiary-bg);
+  box-shadow: 0 0 0 3px rgba(88, 101, 242, 0.1);
+}
+
+/* Scrollbars - Refined */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-light);
+  border-radius: 4px;
+  transition: background var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--surface-lighter);
+}
+
+/* ==================== UTILITIES ==================== */
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-75 {
+  opacity: 0.75;
+}
+
+/* Spacing - 8px grid system */
+.p-2 {
+  padding: 8px;
+}
+.p-3 {
+  padding: 12px;
+}
+.p-4 {
+  padding: 16px;
+}
+.p-6 {
+  padding: 24px;
+}
+.p-8 {
+  padding: 32px;
+}
+
+.m-2 {
+  margin: 8px;
+}
+.m-3 {
+  margin: 12px;
+}
+.m-4 {
+  margin: 16px;
+}
+.m-6 {
+  margin: 24px;
+}
+
+.gap-2 {
+  gap: 8px;
+}
+.gap-3 {
+  gap: 12px;
+}
+.gap-4 {
+  gap: 16px;
+}
+
+/* Flex utilities */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+/* ==================== ANIMATIONS ==================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* ==================== THEME TRANSITIONS ==================== */
+
+* {
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+button,
+a,
+input {
+  transition: all var(--transition-base);
+}
+
+/* ==================== DARK MODE (Default) ==================== */
+
+body {
+  background: var(--primary-bg);
+  color: var(--text-primary);
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  body {
+    font-size: 13px;
+  }
+}
+
+/* ==================== REACT FLOW DARK THEME OVERRIDES ==================== */
+/* Override React Flow's default white backgrounds for dark theme */
+
+.react-flow {
+  background: #0a0a0a !important;
+}
+
+.react-flow__pane,
+.react-flow__container,
+.react-flow__viewport,
+.react-flow__renderer {
+  background: transparent !important;
+}
+
+/* Override default node styles - white backgrounds */
+.react-flow__node-default,
+.react-flow__node-input,
+.react-flow__node-output,
+.react-flow__node-group {
+  background-color: var(--secondary-bg, #121212) !important;
+  border-color: var(--border-color, #2a2a2a) !important;
+  color: var(--text-primary, #ffffff) !important;
+}
+
+.react-flow__node-default.selectable:hover,
+.react-flow__node-input.selectable:hover,
+.react-flow__node-output.selectable:hover,
+.react-flow__node-group.selectable:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+.react-flow__node-default.selectable.selected,
+.react-flow__node-input.selectable.selected,
+.react-flow__node-output.selectable.selected,
+.react-flow__node-group.selectable.selected {
+  box-shadow: 0 0 0 2px var(--accent-color, #5865f2) !important;
+}
+
+/* Edge text background - override white */
+.react-flow__edge-textbg {
+  fill: var(--secondary-bg, #121212) !important;
+}
+
+.react-flow__edge-text {
+  fill: var(--text-primary, #ffffff) !important;
+}
+
+/* Edge paths - darker stroke */
+.react-flow__edge-path,
+.react-flow__connection-path {
+  stroke: var(--border-color, #2a2a2a) !important;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: var(--accent-color, #5865f2) !important;
+}
+
+/* Handle (connection points) */
+.react-flow__handle {
+  background: var(--accent-color, #5865f2) !important;
+  border-color: var(--secondary-bg, #121212) !important;
+}
+
+/* Controls panel */
+.react-flow__controls {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.react-flow__controls-button {
+  background: var(--secondary-bg, #121212) !important;
+  border-bottom-color: var(--border-color, #2a2a2a) !important;
+  fill: var(--text-primary, #ffffff) !important;
+}
+
+.react-flow__controls-button:hover {
+  background: var(--tertiary-bg, #1a1a1a) !important;
+}
+
+.react-flow__controls-button svg {
+  fill: var(--text-primary, #ffffff) !important;
+}
+
+/* Minimap */
+.react-flow__minimap {
+  background-color: var(--secondary-bg, #121212) !important;
+}
+
+/* Selection box */
+.react-flow__nodesselection-rect,
+.react-flow__selection {
+  background: rgba(88, 101, 242, 0.1) !important;
+  border-color: var(--accent-color, #5865f2) !important;
+}
+
+/* Attribution (if visible) */
+.react-flow__attribution {
+  background: var(--secondary-bg, #121212) !important;
+}
+
+.react-flow__attribution a {
+  color: var(--text-tertiary, #707070) !important;
+}
+
+/* ==================== PERFORMANCE MODES ==================== */
+
+/* Low performance mode - disable heavy effects */
+.perf-low * {
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+  transition-duration: 0s !important;
+}
+
+.perf-low .canvas-parallax-bg,
+.perf-low .canvas-glow-orb {
+  display: none !important;
+}
+
+.perf-low .service-node {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.perf-low .sidebar-btn {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Medium performance mode - reduce effects */
+.perf-medium .canvas-glow-orb {
+  animation: none !important;
+  opacity: 0.15 !important;
+}
+
+.perf-medium .service-node {
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+}
+
+.perf-medium .canvas-parallax-bg {
+  transition: none !important;
+}
+
+/* High performance mode (default) - all effects enabled */
+.perf-high {
+  /* Full effects - no overrides needed */
+}
+
+/* Prefers reduced motion - system preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .canvas-glow-orb,
+  .canvas-parallax-bg::before {
+    animation: none !important;
+  }
+}

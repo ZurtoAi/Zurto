@@ -1,0 +1,219 @@
+/* ========================================
+   ZSteps - Step Indicator Styles
+======================================== */
+
+.steps {
+  display: flex;
+  width: 100%;
+}
+
+.steps.horizontal {
+  flex-direction: row;
+}
+
+.steps.vertical {
+  flex-direction: column;
+}
+
+/* ========================================
+   Step
+======================================== */
+
+.step {
+  position: relative;
+  display: flex;
+  flex: 1;
+}
+
+.step.clickable {
+  cursor: pointer;
+}
+
+.step.clickable:hover .circle {
+  transform: scale(1.1);
+}
+
+.horizontal .step {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.vertical .step {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+/* ========================================
+   Indicator
+======================================== */
+
+.indicator {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.horizontal .indicator {
+  flex-direction: column;
+  width: 100%;
+}
+
+.vertical .indicator {
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--z-secondary-bg);
+  border: 2px solid var(--z-border-color);
+  border-radius: var(--z-radius-full);
+  color: var(--z-text-secondary);
+  transition: all 0.3s ease;
+}
+
+.step.active .circle {
+  background: var(--z-accent);
+  border-color: var(--z-accent);
+  color: white;
+}
+
+.step.completed .circle {
+  background: var(--z-accent);
+  border-color: var(--z-accent);
+  color: white;
+}
+
+.number {
+  font-size: var(--z-text-sm);
+  font-weight: var(--z-font-semibold);
+}
+
+.checkIcon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ========================================
+   Connector
+======================================== */
+
+.connector {
+  background: var(--z-border-color);
+  transition: background 0.3s ease;
+}
+
+.horizontal .connector {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  right: -50%;
+  height: 2px;
+}
+
+.vertical .connector {
+  width: 2px;
+  height: 40px;
+  margin: var(--z-space-2) 0;
+}
+
+.step.completed .connector {
+  background: var(--z-accent);
+}
+
+/* ========================================
+   Content
+======================================== */
+
+.content {
+  margin-top: var(--z-space-3);
+}
+
+.vertical .content {
+  margin-top: 0;
+  margin-left: var(--z-space-3);
+}
+
+.label {
+  font-size: var(--z-text-sm);
+  font-weight: var(--z-font-medium);
+  color: var(--z-text-secondary);
+}
+
+.step.active .label {
+  color: var(--z-text-primary);
+}
+
+.step.completed .label {
+  color: var(--z-text-primary);
+}
+
+.description {
+  margin-top: var(--z-space-1);
+  font-size: var(--z-text-xs);
+  color: var(--z-text-tertiary);
+}
+
+/* ========================================
+   Variant: Simple
+======================================== */
+
+.simple .circle {
+  width: 32px;
+  height: 32px;
+}
+
+.simple .content {
+  margin-top: var(--z-space-2);
+}
+
+.simple .description {
+  display: none;
+}
+
+/* ========================================
+   Variant: Arrows
+======================================== */
+
+.arrows {
+  gap: 0;
+}
+
+.arrows .step {
+  background: var(--z-secondary-bg);
+  border: 1px solid var(--z-border-color);
+  padding: var(--z-space-4);
+  position: relative;
+}
+
+.arrows .step::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-left: 20px solid var(--z-secondary-bg);
+  z-index: 2;
+}
+
+.arrows .step.active {
+  background: rgba(223, 62, 83, 0.1);
+}
+
+.arrows .step.completed {
+  background: rgba(223, 62, 83, 0.05);
+}
+
+.arrows .indicator {
+  display: none;
+}

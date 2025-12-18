@@ -1,0 +1,116 @@
+/* ========================================
+   ZNotification - Notification Styles
+======================================== */
+
+.notification {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--z-space-3);
+  padding: var(--z-space-4);
+  background: var(--z-bg-primary);
+  border: 1px solid var(--z-border-color);
+  border-left-width: 4px;
+  border-radius: var(--z-radius-md);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ========================================
+   Variants
+======================================== */
+
+.notification.info {
+  border-left-color: #3b82f6;
+}
+
+.notification.info .icon {
+  color: #3b82f6;
+}
+
+.notification.success {
+  border-left-color: #10b981;
+}
+
+.notification.success .icon {
+  color: #10b981;
+}
+
+.notification.warning {
+  border-left-color: #f59e0b;
+}
+
+.notification.warning .icon {
+  color: #f59e0b;
+}
+
+.notification.error {
+  border-left-color: #ef4444;
+}
+
+.notification.error .icon {
+  color: #ef4444;
+}
+
+/* ========================================
+   Elements
+======================================== */
+
+.icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-weight: 600;
+  font-size: var(--z-text-base);
+  color: var(--z-text-primary);
+  margin-bottom: var(--z-space-1);
+}
+
+.message {
+  font-size: var(--z-text-sm);
+  color: var(--z-text-secondary);
+  line-height: 1.5;
+}
+
+.closeButton {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: var(--z-radius-sm);
+  color: var(--z-text-tertiary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+  background: var(--z-secondary-bg);
+  color: var(--z-text-primary);
+}
+
+.closeButton svg {
+  width: 16px;
+  height: 16px;
+}

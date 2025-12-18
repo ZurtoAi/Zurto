@@ -1,0 +1,200 @@
+{
+  "name": "@zurto/extension",
+  "displayName": "Zurto - Copilot Bridge & Project Manager",
+  "description": "VS Code extension with Copilot Bridge, AI questionnaires, and project management for Zurto ecosystem",
+  "version": "0.1.0",
+  "publisher": "ZurtoAi",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZurtoAi/Zurto.git"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Machine Learning"
+  ],
+  "keywords": [
+    "zurto",
+    "copilot",
+    "ai",
+    "project-management",
+    "questionnaire"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "zurto.startBridge",
+        "title": "Start Copilot Bridge",
+        "category": "Zurto"
+      },
+      {
+        "command": "zurto.stopBridge",
+        "title": "Stop Copilot Bridge",
+        "category": "Zurto"
+      },
+      {
+        "command": "zurto.showQuestionnaire",
+        "title": "Open Questionnaire",
+        "category": "Zurto"
+      },
+      {
+        "command": "zurto.createProject",
+        "title": "Create New Project",
+        "category": "Zurto"
+      },
+      {
+        "command": "zurto.syncProjects",
+        "title": "Sync Projects",
+        "category": "Zurto"
+      },
+      {
+        "command": "zurto.showDashboard",
+        "title": "Open Dashboard",
+        "category": "Zurto"
+      },
+      {
+        "command": "zurto.injectContext",
+        "title": "Inject AI Context",
+        "category": "Zurto"
+      },
+      {
+        "command": "zurto.showLogs",
+        "title": "Show Bridge Logs",
+        "category": "Zurto"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "zurto",
+          "title": "Zurto",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "zurto": [
+        {
+          "id": "zurto.projects",
+          "name": "Projects"
+        },
+        {
+          "id": "zurto.tasks",
+          "name": "Tasks"
+        },
+        {
+          "id": "zurto.questionnaires",
+          "name": "Questionnaires"
+        },
+        {
+          "id": "zurto.bridge",
+          "name": "Copilot Bridge"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "zurto.syncProjects",
+          "when": "view == zurto.projects",
+          "group": "navigation"
+        },
+        {
+          "command": "zurto.createProject",
+          "when": "view == zurto.projects",
+          "group": "navigation"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "zurto.startBridge",
+          "when": "true"
+        },
+        {
+          "command": "zurto.stopBridge",
+          "when": "true"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Zurto",
+      "properties": {
+        "zurto.bridgePort": {
+          "type": "number",
+          "default": 8787,
+          "description": "Port for the Copilot Bridge HTTP server"
+        },
+        "zurto.apiUrl": {
+          "type": "string",
+          "default": "https://api.zurto.app",
+          "description": "Zurto API base URL"
+        },
+        "zurto.teamToken": {
+          "type": "string",
+          "default": "",
+          "description": "Team authentication token"
+        },
+        "zurto.autoStartBridge": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically start the Copilot Bridge on extension activation"
+        },
+        "zurto.contextInjection": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable automatic context injection for AI assistants"
+        },
+        "zurto.logLevel": {
+          "type": "string",
+          "enum": [
+            "debug",
+            "info",
+            "warn",
+            "error"
+          ],
+          "default": "info",
+          "description": "Logging level for the extension"
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "zurto.showQuestionnaire",
+        "key": "ctrl+shift+q",
+        "mac": "cmd+shift+q"
+      },
+      {
+        "command": "zurto.showDashboard",
+        "key": "ctrl+shift+z",
+        "mac": "cmd+shift+z"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package --no-dependencies",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "@vscode/test-electron": "^2.3.8",
+    "@vscode/vsce": "^3.7.1",
+    "eslint": "^8.55.0",
+    "typescript": "^5.3.0"
+  }
+}

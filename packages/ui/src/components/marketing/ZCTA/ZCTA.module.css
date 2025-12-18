@@ -1,0 +1,160 @@
+/* ========================================
+   ZCTA - Call To Action Styles
+======================================== */
+
+.cta {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--z-secondary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-lg);
+}
+
+.gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(223, 62, 83, 0.1) 0%,
+    rgba(194, 53, 90, 0.1) 100%
+  );
+  border-color: rgba(223, 62, 83, 0.3);
+}
+
+.gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top right,
+    rgba(223, 62, 83, 0.2),
+    transparent 70%
+  );
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ========================================
+   Content & Layout
+======================================== */
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--z-space-8);
+  padding: var(--z-space-8);
+}
+
+.text {
+  flex: 1;
+}
+
+.title {
+  font-size: var(--z-text-2xl);
+  font-weight: var(--z-font-bold);
+  color: var(--z-text-primary);
+  margin: 0 0 var(--z-space-2) 0;
+}
+
+.description {
+  font-size: var(--z-text-base);
+  color: var(--z-text-secondary);
+  margin: 0;
+  max-width: 600px;
+}
+
+.actions {
+  display: flex;
+  gap: var(--z-space-3);
+  flex-shrink: 0;
+}
+
+/* ========================================
+   Variant: Banner
+======================================== */
+
+.banner {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+}
+
+.banner .content {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   Variant: Card
+======================================== */
+
+.card .content {
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: var(--z-space-12);
+}
+
+.card .text {
+  max-width: 600px;
+}
+
+.card .description {
+  margin: 0 auto;
+}
+
+/* ========================================
+   Size Variants
+======================================== */
+
+.sm {
+  border-radius: var(--z-radius-md);
+}
+
+.sm .content {
+  padding: var(--z-space-6);
+  gap: var(--z-space-4);
+}
+
+.sm .title {
+  font-size: var(--z-text-xl);
+}
+
+.sm .description {
+  font-size: var(--z-text-sm);
+}
+
+.lg .content {
+  padding: var(--z-space-12);
+}
+
+.lg .title {
+  font-size: var(--z-text-3xl);
+}
+
+.lg .description {
+  font-size: var(--z-text-lg);
+}
+
+/* ========================================
+   Responsive
+======================================== */
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--z-space-6);
+  }
+
+  .actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: var(--z-text-xl);
+  }
+}

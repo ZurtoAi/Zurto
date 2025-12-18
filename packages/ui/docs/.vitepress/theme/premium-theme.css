@@ -1,0 +1,786 @@
+/**
+ * ============================================
+ * ZURTO UI - PREMIUM DARK THEME
+ * Complete visual redesign with modern aesthetics
+ * ============================================
+ */
+
+:root {
+  /* ============ BRAND COLORS ============ */
+  --zurto-primary: #df3e53;
+  --zurto-primary-hover: #ff4d66;
+  --zurto-primary-active: #c73548;
+  --zurto-primary-soft: rgba(223, 62, 83, 0.12);
+  --zurto-primary-glow: rgba(223, 62, 83, 0.4);
+
+  /* ============ BACKGROUNDS ============ */
+  --zurto-bg-base: #000000;
+  --zurto-bg-elevated: #0a0a0a;
+  --zurto-bg-surface: #141414;
+  --zurto-bg-card: #1a1a1a;
+  --zurto-bg-hover: #1f1f1f;
+  --zurto-bg-code: #0d0d0d;
+
+  /* Glassmorphism */
+  --zurto-glass: rgba(255, 255, 255, 0.03);
+  --zurto-glass-hover: rgba(255, 255, 255, 0.06);
+  --zurto-glass-border: rgba(255, 255, 255, 0.08);
+
+  /* ============ TEXT COLORS ============ */
+  --zurto-text-primary: #ffffff;
+  --zurto-text-secondary: #a8a8a8;
+  --zurto-text-tertiary: #6b6b6b;
+  --zurto-text-muted: #4a4a4a;
+
+  /* ============ BORDERS & DIVIDERS ============ */
+  --zurto-border: rgba(255, 255, 255, 0.08);
+  --zurto-border-hover: rgba(255, 255, 255, 0.16);
+  --zurto-divider: rgba(255, 255, 255, 0.06);
+
+  /* ============ SHADOWS ============ */
+  --zurto-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --zurto-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --zurto-shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.6);
+  --zurto-shadow-glow: 0 0 32px var(--zurto-primary-glow);
+
+  /* ============ SPACING ============ */
+  --zurto-space-xs: 4px;
+  --zurto-space-sm: 8px;
+  --zurto-space-md: 16px;
+  --zurto-space-lg: 24px;
+  --zurto-space-xl: 32px;
+  --zurto-space-2xl: 48px;
+
+  /* ============ BORDER RADIUS ============ */
+  --zurto-radius-sm: 6px;
+  --zurto-radius-md: 10px;
+  --zurto-radius-lg: 16px;
+  --zurto-radius-xl: 24px;
+
+  /* ============ TRANSITIONS ============ */
+  --zurto-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --zurto-transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --zurto-transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* VitePress Variable Overrides */
+  --vp-c-brand-1: var(--zurto-primary);
+  --vp-c-brand-2: var(--zurto-primary-hover);
+  --vp-c-brand-3: var(--zurto-primary-active);
+  --vp-c-brand-soft: var(--zurto-primary-soft);
+
+  --vp-c-bg: var(--zurto-bg-base);
+  --vp-c-bg-alt: var(--zurto-bg-elevated);
+  --vp-c-bg-elv: var(--zurto-bg-surface);
+  --vp-c-bg-soft: var(--zurto-bg-card);
+
+  --vp-c-text-1: var(--zurto-text-primary);
+  --vp-c-text-2: var(--zurto-text-secondary);
+  --vp-c-text-3: var(--zurto-text-tertiary);
+
+  --vp-c-border: var(--zurto-border);
+  --vp-c-divider: var(--zurto-divider);
+  --vp-c-gutter: var(--zurto-bg-elevated);
+
+  --vp-code-block-bg: var(--zurto-bg-code);
+  --vp-sidebar-bg-color: var(--zurto-bg-elevated);
+  --vp-nav-bg-color: var(--zurto-bg-elevated);
+}
+
+/* ============================================
+   GLOBAL RESETS & BASE STYLES
+============================================ */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--zurto-bg-base);
+  color: var(--zurto-text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, sans-serif;
+}
+
+/* ============================================
+   LAYOUT STRUCTURE
+============================================ */
+.Layout {
+  background: var(--zurto-bg-base);
+}
+
+.VPContent {
+  background: var(--zurto-bg-base);
+}
+
+.VPDoc {
+  background: var(--zurto-bg-base) !important;
+}
+
+/* ============================================
+   NAVIGATION BAR
+============================================ */
+.VPNav {
+  background: var(--zurto-glass) !important;
+  backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid var(--zurto-glass-border);
+  box-shadow: var(--zurto-shadow-sm);
+}
+
+.VPNavBar {
+  background: transparent !important;
+}
+
+.VPNavBarTitle .title {
+  color: var(--zurto-text-primary);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+}
+
+.VPNavBarMenuLink {
+  color: var(--zurto-text-secondary);
+  transition: color var(--zurto-transition-fast);
+  font-weight: 500;
+}
+
+.VPNavBarMenuLink:hover,
+.VPNavBarMenuLink.active {
+  color: var(--zurto-primary);
+}
+
+/* ============================================
+   SIDEBAR
+============================================ */
+.VPSidebar {
+  background: var(--zurto-glass) !important;
+  backdrop-filter: blur(24px) saturate(180%);
+  border-right: 1px solid var(--zurto-glass-border);
+  box-shadow: var(--zurto-shadow-md);
+}
+
+.VPSidebarItem {
+  margin: 2px 0;
+}
+
+.VPSidebarItem .text {
+  color: var(--zurto-text-secondary);
+  font-weight: 500;
+  transition: all var(--zurto-transition-fast);
+  padding: 8px 12px;
+  border-radius: var(--zurto-radius-sm);
+}
+
+.VPSidebarItem:hover .text {
+  color: var(--zurto-text-primary);
+  background: var(--zurto-bg-hover);
+}
+
+.VPSidebarItem.is-active .text {
+  color: var(--zurto-primary);
+  background: var(--zurto-primary-soft);
+  font-weight: 600;
+}
+
+.VPSidebarItem.level-0.has-active > .item > .text {
+  color: var(--zurto-primary);
+  font-weight: 700;
+}
+
+/* Category section headers */
+.VPSidebarItem.level-0 > .item > .text {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--zurto-text-tertiary);
+  font-weight: 700;
+  margin-top: 16px;
+}
+
+/* ============================================
+   HERO SECTION
+============================================ */
+.VPHome {
+  background: radial-gradient(
+    ellipse at top,
+    rgba(223, 62, 83, 0.08) 0%,
+    transparent 50%
+  );
+}
+
+.VPHero {
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
+}
+
+.VPHero .name {
+  background: linear-gradient(135deg, #ffffff 0%, #df3e53 50%, #e85566 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 4rem !important;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  text-shadow: 0 0 80px var(--zurto-primary-glow);
+}
+
+.VPHero .text {
+  font-size: 1.5rem;
+  color: var(--zurto-text-secondary);
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+.VPHero .tagline {
+  color: var(--zurto-text-tertiary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 24px auto 0;
+}
+
+.VPHero .actions {
+  margin-top: 40px;
+  gap: 16px;
+}
+
+/* ============================================
+   BUTTONS
+============================================ */
+.VPButton {
+  border-radius: var(--zurto-radius-md);
+  font-weight: 600;
+  padding: 14px 32px;
+  transition: all var(--zurto-transition-base);
+  border: none;
+  font-size: 1rem;
+}
+
+.VPButton.brand {
+  background: linear-gradient(
+    135deg,
+    var(--zurto-primary) 0%,
+    var(--zurto-primary-active) 100%
+  );
+  box-shadow: 0 4px 16px var(--zurto-primary-glow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.VPButton.brand::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity var(--zurto-transition-base);
+}
+
+.VPButton.brand:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--zurto-primary-glow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.VPButton.brand:hover::before {
+  opacity: 1;
+}
+
+.VPButton.alt {
+  background: var(--zurto-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--zurto-glass-border);
+  color: var(--zurto-text-primary);
+}
+
+.VPButton.alt:hover {
+  background: var(--zurto-glass-hover);
+  border-color: var(--zurto-border-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--zurto-shadow-sm);
+}
+
+/* ============================================
+   FEATURES SECTION
+============================================ */
+.VPFeatures {
+  padding: 80px 24px;
+}
+
+.VPFeature {
+  background: var(--zurto-glass) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid var(--zurto-glass-border) !important;
+  border-radius: var(--zurto-radius-lg);
+  padding: 32px !important;
+  transition: all var(--zurto-transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.VPFeature::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--zurto-primary) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity var(--zurto-transition-base);
+}
+
+.VPFeature:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--zurto-shadow-lg), 0 0 0 1px var(--zurto-primary-soft);
+  border-color: var(--zurto-primary-soft) !important;
+}
+
+.VPFeature:hover::before {
+  opacity: 1;
+}
+
+.VPFeature .icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 4px 12px var(--zurto-primary-glow));
+}
+
+.VPFeature .title {
+  color: var(--zurto-text-primary);
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.VPFeature .details {
+  color: var(--zurto-text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   CONTENT AREA
+============================================ */
+.VPDoc .container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.VPDoc .content {
+  padding: 48px 32px;
+}
+
+.vp-doc {
+  line-height: 1.7;
+}
+
+.vp-doc h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+  color: var(--zurto-text-primary);
+  background: linear-gradient(135deg, #ffffff 0%, var(--zurto-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.vp-doc h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-top: 48px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--zurto-divider);
+  color: var(--zurto-text-primary);
+}
+
+.vp-doc h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  color: var(--zurto-text-primary);
+}
+
+.vp-doc p {
+  color: var(--zurto-text-secondary);
+  margin: 16px 0;
+}
+
+.vp-doc a {
+  color: var(--zurto-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all var(--zurto-transition-fast);
+  border-bottom: 1px solid transparent;
+}
+
+.vp-doc a:hover {
+  color: var(--zurto-primary-hover);
+  border-bottom-color: var(--zurto-primary-hover);
+}
+
+/* ============================================
+   CODE BLOCKS
+============================================ */
+.vp-doc [class*="language-"] {
+  background: var(--zurto-bg-code) !important;
+  border: 1px solid var(--zurto-border);
+  border-radius: var(--zurto-radius-md);
+  box-shadow: var(--zurto-shadow-sm);
+  margin: 24px 0;
+  overflow: hidden;
+}
+
+.vp-doc [class*="language-"] code {
+  font-family: "Monaco", "Menlo", "Consolas", monospace;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.vp-code-group {
+  margin: 24px 0;
+  border: 1px solid var(--zurto-border);
+  border-radius: var(--zurto-radius-md);
+  overflow: hidden;
+  background: var(--zurto-bg-code);
+}
+
+.vp-code-group .tabs {
+  background: var(--zurto-bg-surface);
+  border-bottom: 1px solid var(--zurto-border);
+  padding: 0 12px;
+}
+
+.vp-code-group .tabs label {
+  padding: 12px 20px;
+  color: var(--zurto-text-tertiary);
+  font-weight: 600;
+  transition: all var(--zurto-transition-fast);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.vp-code-group .tabs label:hover {
+  color: var(--zurto-text-secondary);
+}
+
+.vp-code-group .tabs input:checked + label {
+  color: var(--zurto-primary);
+  border-bottom-color: var(--zurto-primary);
+}
+
+/* Inline code */
+.vp-doc :not(pre) > code {
+  background: var(--zurto-primary-soft) !important;
+  color: var(--zurto-primary) !important;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  font-weight: 600;
+  border: 1px solid rgba(223, 62, 83, 0.2);
+}
+
+/* ============================================
+   TABLES
+============================================ */
+.vp-doc table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 24px 0;
+  border: 1px solid var(--zurto-border);
+  border-radius: var(--zurto-radius-md);
+  overflow: hidden;
+  background: var(--zurto-bg-card);
+}
+
+.vp-doc thead {
+  background: var(--zurto-bg-surface);
+}
+
+.vp-doc th {
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 700;
+  color: var(--zurto-text-primary);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--zurto-border);
+}
+
+.vp-doc td {
+  padding: 14px 16px;
+  color: var(--zurto-text-secondary);
+  border-bottom: 1px solid var(--zurto-divider);
+}
+
+.vp-doc tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.vp-doc tbody tr {
+  transition: background-color var(--zurto-transition-fast);
+}
+
+.vp-doc tbody tr:hover {
+  background: var(--zurto-bg-hover);
+}
+
+/* ============================================
+   CUSTOM BLOCKS
+============================================ */
+.custom-block {
+  margin: 24px 0;
+  padding: 20px 24px;
+  border-radius: var(--zurto-radius-md);
+  border-left: 4px solid var(--zurto-primary);
+  background: var(--zurto-glass);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--zurto-shadow-sm);
+}
+
+.custom-block.tip {
+  border-left-color: #00d4aa;
+  background: rgba(0, 212, 170, 0.08);
+}
+
+.custom-block.warning {
+  border-left-color: #ffb300;
+  background: rgba(255, 179, 0, 0.08);
+}
+
+.custom-block.danger {
+  border-left-color: var(--zurto-primary);
+  background: var(--zurto-primary-soft);
+}
+
+.custom-block-title {
+  font-weight: 700;
+  color: var(--zurto-text-primary);
+  margin-bottom: 8px;
+}
+
+/* ============================================
+   ASIDE / TABLE OF CONTENTS
+============================================ */
+.VPDocAsideOutline {
+  padding-left: 20px;
+  border-left: 2px solid var(--zurto-divider);
+}
+
+.VPDocAsideOutline .outline-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--zurto-text-tertiary);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.VPDocOutlineItem {
+  margin: 4px 0;
+}
+
+.VPDocOutlineItem .outline-link {
+  color: var(--zurto-text-tertiary);
+  font-size: 0.9rem;
+  transition: all var(--zurto-transition-fast);
+  padding: 6px 12px;
+  border-radius: var(--zurto-radius-sm);
+  display: block;
+}
+
+.VPDocOutlineItem .outline-link:hover {
+  color: var(--zurto-text-secondary);
+  background: var(--zurto-bg-hover);
+}
+
+.VPDocOutlineItem.is-active .outline-link {
+  color: var(--zurto-primary);
+  font-weight: 600;
+  background: var(--zurto-primary-soft);
+}
+
+/* ============================================
+   SCROLLBAR
+============================================ */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--zurto-bg-elevated);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--zurto-border);
+  border-radius: 5px;
+  border: 2px solid var(--zurto-bg-elevated);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--zurto-primary);
+}
+
+/* ============================================
+   COMPONENT PREVIEW CONTAINERS
+============================================ */
+.component-preview {
+  background: var(--zurto-glass);
+  backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid var(--zurto-glass-border);
+  border-radius: var(--zurto-radius-lg);
+  padding: 32px;
+  margin: 32px 0;
+  box-shadow: var(--zurto-shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.component-preview::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--zurto-primary) 0%, transparent 100%);
+}
+
+.component-preview__title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--zurto-text-tertiary);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.component-preview__content {
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================
+   PROPS TABLE
+============================================ */
+.props-table {
+  width: 100%;
+  margin: 32px 0;
+}
+
+.props-table th {
+  background: var(--zurto-bg-surface);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+}
+
+.props-table code {
+  background: var(--zurto-primary-soft) !important;
+  color: var(--zurto-primary) !important;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+============================================ */
+@media (max-width: 960px) {
+  .VPHero .name {
+    font-size: 2.5rem !important;
+  }
+
+  .VPHero .text {
+    font-size: 1.25rem;
+  }
+
+  .VPFeature {
+    padding: 24px !important;
+  }
+
+  .vp-doc h1 {
+    font-size: 2rem;
+  }
+
+  .vp-doc h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ============================================
+   ANIMATIONS & EFFECTS
+============================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.VPFeature {
+  animation: fadeInUp 0.5s ease-out backwards;
+}
+
+.VPFeature:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.VPFeature:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.VPFeature:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.VPFeature:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.VPFeature:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.VPFeature:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Smooth hover glow effect */
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(223, 62, 83, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(223, 62, 83, 0.4);
+  }
+}
+
+.VPButton.brand:hover {
+  animation: glow-pulse 2s ease-in-out infinite;
+}

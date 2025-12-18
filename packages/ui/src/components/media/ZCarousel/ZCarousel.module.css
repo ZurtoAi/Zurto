@@ -1,0 +1,136 @@
+/* ========================================
+   ZCarousel - Carousel Component Styles
+======================================== */
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ========================================
+   Viewport & Container
+======================================== */
+
+.viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+/* ========================================
+   Navigation Arrows
+======================================== */
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: var(--z-radius-full);
+  color: var(--z-text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.arrow:hover:not(:disabled) {
+  background: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.prevArrow {
+  left: var(--z-space-4);
+}
+
+.nextArrow {
+  right: var(--z-space-4);
+}
+
+.arrow svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ========================================
+   Dots
+======================================== */
+
+.dots {
+  position: absolute;
+  bottom: var(--z-space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--z-space-2);
+  z-index: 10;
+}
+
+.dot {
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dot svg {
+  width: 12px;
+  height: 12px;
+  fill: rgba(255, 255, 255, 0.5);
+  stroke: white;
+  transition: all 0.2s ease;
+}
+
+.dot:hover svg,
+.dot.activeDot svg {
+  fill: white;
+}
+
+/* ========================================
+   Variant: Cards
+======================================== */
+
+.cards .slide {
+  padding: 0 var(--z-space-2);
+}
+
+/* ========================================
+   Variant: Fade
+======================================== */
+
+.fade .container {
+  transition: opacity 0.5s ease;
+}
+
+.fade .slide {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.fade .slide:first-child {
+  position: relative;
+  opacity: 1;
+}

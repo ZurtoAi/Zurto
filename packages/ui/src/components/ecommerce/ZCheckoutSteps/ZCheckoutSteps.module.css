@@ -1,0 +1,125 @@
+/* ========================================
+   ZCheckoutSteps - Checkout Steps Styles
+======================================== */
+
+.steps {
+  display: flex;
+  gap: var(--z-space-2);
+  width: 100%;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-3);
+  flex: 1;
+}
+
+.step.clickable {
+  cursor: pointer;
+}
+
+.step.clickable:hover .stepNumber {
+  transform: scale(1.1);
+}
+
+/* ========================================
+   Step Number
+======================================== */
+
+.stepNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background: var(--z-secondary-bg);
+  border: 2px solid var(--z-border-color);
+  border-radius: 50%;
+  color: var(--z-text-secondary);
+  font-size: var(--z-text-base);
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.step.active .stepNumber {
+  background: var(--z-accent-color);
+  border-color: var(--z-accent-color);
+  color: white;
+  box-shadow: 0 0 0 4px rgba(223, 62, 83, 0.1);
+}
+
+.step.completed .stepNumber {
+  background: #10b981;
+  border-color: #10b981;
+  color: white;
+}
+
+.stepNumber svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ========================================
+   Step Content
+======================================== */
+
+.stepContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.stepLabel {
+  font-size: var(--z-text-sm);
+  font-weight: 600;
+  color: var(--z-text-primary);
+  margin-bottom: var(--z-space-1);
+}
+
+.step.active .stepLabel {
+  color: var(--z-accent-color);
+}
+
+.stepDescription {
+  font-size: var(--z-text-xs);
+  color: var(--z-text-tertiary);
+  line-height: 1.4;
+}
+
+/* ========================================
+   Connector
+======================================== */
+
+.connector {
+  position: absolute;
+  left: calc(100% - 20px);
+  width: calc(100% - 40px);
+  height: 2px;
+  background: var(--z-border-color);
+  top: 20px;
+  z-index: -1;
+  transition: background 0.3s ease;
+}
+
+.step.completed .connector {
+  background: #10b981;
+}
+
+/* ========================================
+   Responsive
+======================================== */
+
+@media (max-width: 640px) {
+  .steps {
+    flex-direction: column;
+  }
+
+  .connector {
+    left: 20px;
+    top: calc(100% - 20px);
+    width: 2px;
+    height: calc(100% - 40px);
+  }
+}

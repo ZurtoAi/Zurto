@@ -1,0 +1,115 @@
+/* ========================================
+   ZMetric - Dashboard Metric Styles
+======================================== */
+
+.metric {
+  padding: var(--z-space-6);
+  background: var(--z-primary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-lg);
+}
+
+.metric.sm {
+  padding: var(--z-space-4);
+}
+
+.metric.lg {
+  padding: var(--z-space-8);
+}
+
+/* ========================================
+   Header
+======================================== */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--z-space-3);
+}
+
+.label {
+  font-size: var(--z-text-sm);
+  font-weight: 500;
+  color: var(--z-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--z-secondary-bg);
+  border-radius: var(--z-radius-md);
+  color: var(--z-accent-color);
+}
+
+.icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ========================================
+   Value
+======================================== */
+
+.value {
+  display: flex;
+  align-items: baseline;
+  gap: var(--z-space-1);
+  font-size: var(--z-text-3xl);
+  font-weight: 700;
+  color: var(--z-text-primary);
+  margin-bottom: var(--z-space-2);
+}
+
+.metric.sm .value {
+  font-size: var(--z-text-2xl);
+}
+
+.metric.lg .value {
+  font-size: var(--z-text-4xl);
+}
+
+.prefix,
+.suffix {
+  font-size: var(--z-text-xl);
+  color: var(--z-text-tertiary);
+}
+
+/* ========================================
+   Change/Trend
+======================================== */
+
+.change {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-2);
+  font-size: var(--z-text-sm);
+  font-weight: 600;
+}
+
+.change.trend-up {
+  color: #10b981;
+}
+
+.change.trend-down {
+  color: #ef4444;
+}
+
+.change.trend-neutral {
+  color: var(--z-text-tertiary);
+}
+
+.trendIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.changeLabel {
+  font-weight: 400;
+  color: var(--z-text-tertiary);
+}

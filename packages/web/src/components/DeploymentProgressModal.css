@@ -1,0 +1,407 @@
+.deployment-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  backdrop-filter: blur(8px);
+}
+
+/* Carousel Style Modal */
+.deployment-modal.carousel-style {
+  background: linear-gradient(180deg, #1a1a2e 0%, #16162a 100%);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 24px;
+  width: 380px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.5),
+    0 0 80px rgba(99, 102, 241, 0.1);
+}
+
+/* Carousel Container */
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 20px 0;
+}
+
+/* Carousel Step Base */
+.carousel-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  justify-content: center;
+}
+
+/* Previous Step (faint, above) */
+.carousel-step.prev-step {
+  opacity: 0.25;
+  transform: scale(0.85) translateY(-8px);
+  filter: blur(1px);
+}
+
+.carousel-step.prev-step .carousel-name {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-step.prev-step .carousel-icon {
+  width: 24px;
+  height: 24px;
+  font-size: 12px;
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+/* Current Step (prominent, center) */
+.carousel-step.current-step {
+  opacity: 1;
+  transform: scale(1);
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 16px;
+}
+
+.current-step-icon-wrapper {
+  position: relative;
+}
+
+.carousel-step.current-step .carousel-icon {
+  width: 64px;
+  height: 64px;
+  font-size: 24px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+}
+
+.carousel-step.current-step .carousel-icon.completed {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  box-shadow: 0 8px 24px rgba(34, 197, 94, 0.4);
+}
+
+.carousel-step.current-step .carousel-icon.success-icon {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  box-shadow: 0 8px 24px rgba(34, 197, 94, 0.4);
+}
+
+.carousel-step.current-step.failed .carousel-icon {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4);
+}
+
+.current-step-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.carousel-step.current-step .carousel-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.carousel-message {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-progress {
+  width: 120px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.carousel-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  transition: width 0.3s ease;
+}
+
+/* Next Step (faint, below) */
+.carousel-step.next-step {
+  opacity: 0.25;
+  transform: scale(0.85) translateY(8px);
+  filter: blur(1px);
+}
+
+.carousel-step.next-step .carousel-name {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-step.next-step .carousel-icon {
+  width: 24px;
+  height: 24px;
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Carousel Icon Base */
+.carousel-icon {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.carousel-placeholder {
+  height: 24px;
+}
+
+/* Spinner Animation */
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Step Counter */
+.step-counter {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+.step-current {
+  font-size: 24px;
+  font-weight: 700;
+  color: #6366f1;
+}
+
+.step-divider {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.step-total {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.step-label {
+  margin-left: 4px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Step Dots */
+.step-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.step-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+.step-dot.completed,
+.step-dot.skipped {
+  background: #22c55e;
+}
+
+.step-dot.running,
+.step-dot.active {
+  background: #6366f1;
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.6);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.step-dot.failed {
+  background: #ef4444;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* Live Files Compact */
+.live-files-compact {
+  width: 100%;
+  max-height: 80px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 8px;
+  font-family: "Monaco", "Menlo", "Consolas", monospace;
+  font-size: 11px;
+}
+
+.file-item-compact {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 4px;
+  opacity: 0.7;
+  animation: slideIn 0.2s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 0.7;
+    transform: translateX(0);
+  }
+}
+
+.file-item-compact.created {
+  color: #22c55e;
+}
+
+.file-item-compact.modified {
+  color: #f59e0b;
+}
+
+.file-item-compact.deleted {
+  color: #ef4444;
+}
+
+.file-action-icon {
+  font-weight: bold;
+  width: 12px;
+  text-align: center;
+}
+
+.file-path-compact {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Error Compact */
+.deployment-error-compact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  width: 100%;
+}
+
+.deployment-error-compact .error-icon {
+  color: #ef4444;
+  font-size: 16px;
+}
+
+.deployment-error-compact .error-text {
+  font-size: 13px;
+  color: #fca5a5;
+}
+
+/* Actions Compact */
+.deployment-actions-compact {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  width: 100%;
+}
+
+.deployment-actions-compact button {
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary-compact {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  color: #fff;
+  flex: 1;
+}
+
+.btn-primary-compact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+}
+
+.btn-secondary-compact {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-secondary-compact:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.btn-cancel-compact {
+  background: transparent;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+}
+
+.btn-cancel-compact:hover {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.btn-retry-compact {
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #22c55e;
+  flex: 1;
+}
+
+.btn-retry-compact:hover {
+  background: rgba(34, 197, 94, 0.25);
+}

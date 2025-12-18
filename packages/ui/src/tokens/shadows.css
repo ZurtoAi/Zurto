@@ -1,0 +1,82 @@
+/* ========================================
+   ZURTO UI - SHADOW TOKENS
+   Box shadows, glows, and elevation
+======================================== */
+
+:root {
+  /* Standard Shadows */
+  --z-shadow-none: none;
+  --z-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --z-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --z-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --z-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4),
+    0 4px 6px -2px rgba(0, 0, 0, 0.25);
+  --z-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5),
+    0 10px 10px -5px rgba(0, 0, 0, 0.3);
+  --z-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+
+  /* Inner Shadows */
+  --z-shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  --z-shadow-inner-lg: inset 0 4px 8px rgba(0, 0, 0, 0.4);
+
+  /* Glow Effects */
+  --z-glow-primary: 0 0 20px rgba(223, 62, 83, 0.3);
+  --z-glow-primary-lg: 0 0 40px rgba(223, 62, 83, 0.4);
+  --z-glow-success: 0 0 20px rgba(34, 197, 94, 0.3);
+  --z-glow-warning: 0 0 20px rgba(245, 158, 11, 0.3);
+  --z-glow-error: 0 0 20px rgba(239, 68, 68, 0.3);
+  --z-glow-info: 0 0 20px rgba(59, 130, 246, 0.3);
+
+  /* Glass Shadow (for glassmorphism) */
+  --z-shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  --z-shadow-glass-hover: 0 12px 40px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+  /* Elevation System (for cards, modals, etc.) */
+  --z-elevation-0: none;
+  --z-elevation-1: var(--z-shadow-sm);
+  --z-elevation-2: var(--z-shadow-md);
+  --z-elevation-3: var(--z-shadow-lg);
+  --z-elevation-4: var(--z-shadow-xl);
+  --z-elevation-5: var(--z-shadow-2xl);
+
+  /* Focus Ring */
+  --z-ring: 0 0 0 2px var(--z-bg-primary), 0 0 0 4px var(--z-primary);
+  --z-ring-offset: 2px;
+  --z-ring-color: var(--z-primary);
+}
+
+/* Utility classes */
+.z-shadow-none {
+  box-shadow: var(--z-shadow-none);
+}
+.z-shadow-xs {
+  box-shadow: var(--z-shadow-xs);
+}
+.z-shadow-sm {
+  box-shadow: var(--z-shadow-sm);
+}
+.z-shadow-md {
+  box-shadow: var(--z-shadow-md);
+}
+.z-shadow-lg {
+  box-shadow: var(--z-shadow-lg);
+}
+.z-shadow-xl {
+  box-shadow: var(--z-shadow-xl);
+}
+.z-shadow-2xl {
+  box-shadow: var(--z-shadow-2xl);
+}
+.z-shadow-inner {
+  box-shadow: var(--z-shadow-inner);
+}
+.z-shadow-glass {
+  box-shadow: var(--z-shadow-glass);
+}
+.z-glow-primary {
+  box-shadow: var(--z-glow-primary);
+}

@@ -1,0 +1,53 @@
+/* ========================================
+   ZList - List Component Styles
+======================================== */
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+}
+
+.list.unordered {
+  list-style-type: disc;
+}
+
+.list.ordered {
+  list-style-type: decimal;
+}
+
+/* ========================================
+   Sizes
+======================================== */
+
+.list.sm .item {
+  padding: var(--z-space-1) 0;
+  font-size: var(--z-text-sm);
+}
+
+.list.md .item {
+  padding: var(--z-space-2) 0;
+  font-size: var(--z-text-base);
+}
+
+.list.lg .item {
+  padding: var(--z-space-3) 0;
+  font-size: var(--z-text-lg);
+}
+
+/* ========================================
+   Items
+======================================== */
+
+.item {
+  color: var(--z-text-primary);
+  line-height: 1.6;
+}
+
+.list.withDividers .item {
+  border-bottom: 1px solid var(--z-border-color);
+}
+
+.list.withDividers .item:last-child {
+  border-bottom: none;
+}

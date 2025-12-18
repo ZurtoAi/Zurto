@@ -1,0 +1,329 @@
+/* TextEffects.module.css */
+/* Text effects styling with keyframe animations for typing, morphing, and glitch effects */
+
+/* Container for text effects component */
+.textEffectsContainer {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  perspective: 1000px;
+}
+
+/* Typing effect styles */
+.typingText {
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
+  animation: typingGlow 0.5s ease-in-out infinite;
+}
+
+.typingCursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 4px;
+  background-color: #00ffff;
+  animation: blinkCursor 0.7s step-end infinite;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+}
+
+@keyframes blinkCursor {
+  0%, 49% {
+    opacity: 1;
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+  }
+  50%, 100% {
+    opacity: 0;
+    box-shadow: 0 0 4px rgba(0, 255, 255, 0.4);
+  }
+}
+
+@keyframes typingGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.5), 0 0 50px rgba(0, 255, 255, 0.2);
+  }
+}
+
+/* Morphing effect styles */
+.morphingText {
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: morphingGradient 3s ease infinite;
+  filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.4));
+  letter-spacing: 0.02em;
+}
+
+@keyframes morphingGradient {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+.morphingChar {
+  display: inline-block;
+  transform-origin: center;
+  animation: morphingWave 1s ease-in-out infinite;
+}
+
+@keyframes morphingWave {
+  0%, 100% {
+    transform: translateY(0) scaleY(1);
+  }
+  50% {
+    transform: translateY(-8px) scaleY(1.1);
+  }
+}
+
+/* Glitch effect styles */
+.glitchText {
+  position: relative;
+  display: inline-block;
+  font-weight: 800;
+  font-size: 1em;
+  letter-spacing: 0.08em;
+  color: #00ffff;
+  animation: glitchFlicker 0.15s infinite;
+}
+
+.glitchText::before,
+.glitchText::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.glitchText::before {
+  animation: glitchSlideLeft 0.3s infinite;
+  color: #ff00ff;
+  z-index: -1;
+  text-shadow: -2px 0 #ff00ff;
+}
+
+.glitchText::after {
+  animation: glitchSlideRight 0.3s infinite;
+  color: #00ffff;
+  z-index: -2;
+  text-shadow: 2px 0 #00ffff;
+}
+
+@keyframes glitchSlideLeft {
+  0% {
+    transform: translateX(-2px);
+  }
+  20% {
+    transform: translateX(-2px);
+  }
+  40% {
+    transform: translateX(2px);
+  }
+  60% {
+    transform: translateX(-2px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(-2px);
+  }
+}
+
+@keyframes glitchSlideRight {
+  0% {
+    transform: translateX(2px);
+  }
+  20% {
+    transform: translateX(2px);
+  }
+  40% {
+    transform: translateX(-2px);
+  }
+  60% {
+    transform: translateX(2px);
+  }
+  80% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes glitchFlicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8),
+                 -2px 0 #ff00ff,
+                 2px 0 #00ffff;
+    color: #00ffff;
+  }
+  20%, 24%, 55% {
+    text-shadow: 0 0 5px rgba(255, 0, 255, 0.5),
+                 -2px -2px #ff00ff,
+                 2px 2px #00ffff;
+    color: #ff00ff;
+  }
+}
+
+/* Neon glow effect for all text */
+.neonGlow {
+  text-shadow: 0 0 5px #00ffff,
+               0 0 10px #00ffff,
+               0 0 15px #00ffff,
+               0 0 20px rgba(0, 255, 255, 0.5);
+  filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.4));
+}
+
+/* Gradient text utility */
+.gradientText {
+  background: linear-gradient(90deg, #00ffff 0%, #ff00ff 50%, #00ffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated underline effect */
+.animatedUnderline {
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 4px;
+}
+
+.animatedUnderline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+  animation: expandWidth 0.6s ease-out forwards;
+}
+
+@keyframes expandWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Wave effect for character animation */
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-4px) rotate(2deg);
+  }
+}
+
+.waveChar {
+  display: inline-block;
+  animation: wave 0.6s ease-in-out infinite;
+}
+
+/* Pulse effect for emphasis */
+@keyframes textPulse {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+  50% {
+    opacity: 0.7;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 40px rgba(0, 255, 255, 0.4);
+  }
+}
+
+.pulseText {
+  animation: textPulse 1.5s ease-in-out infinite;
+}
+
+/* Rainbow shift effect */
+@keyframes rainbowShift {
+  0% {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+  }
+  25% {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
+  }
+  50% {
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+  }
+  75% {
+    color: #ffff00;
+    text-shadow: 0 0 10px #ffff00;
+  }
+  100% {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+  }
+}
+
+.rainbowText {
+  animation: rainbowShift 3s linear infinite;
+}
+
+/* Responsive text sizing */
+@media (max-width: 768px) {
+  .typingText,
+  .morphingText,
+  .glitchText {
+    font-size: 0.95em;
+    letter-spacing: 0.03em;
+  }
+
+  .glitchText::before,
+  .glitchText::after {
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 480px) {
+  .typingText,
+  .morphingText,
+  .glitchText {
+    font-size: 0.85em;
+    letter-spacing: 0.02em;
+  }
+
+  .typingCursor {
+    width: 1px;
+    margin-left: 2px;
+  }
+
+  .animatedUnderline::after {
+    height: 1px;
+  }
+}

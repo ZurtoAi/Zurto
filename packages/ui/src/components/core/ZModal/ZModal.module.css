@@ -1,0 +1,175 @@
+/* ========================================
+   ZModal - Modal/Dialog Component Styles
+======================================== */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-index-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--z-space-4);
+  background: var(--z-overlay);
+  backdrop-filter: blur(4px);
+  animation: z-fade-in var(--z-duration-fast) var(--z-ease-out);
+}
+
+/* ========================================
+   Modal Container
+======================================== */
+
+.modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - var(--z-space-8));
+  background: var(--z-bg-secondary);
+  border: 1px solid var(--z-border);
+  border-radius: var(--z-radius-modal);
+  box-shadow: var(--z-shadow-2xl);
+  animation: z-scale-in var(--z-duration-normal) var(--z-ease-out);
+}
+
+/* ========================================
+   Sizes
+======================================== */
+
+.sm {
+  width: 100%;
+  max-width: 400px;
+}
+.md {
+  width: 100%;
+  max-width: 500px;
+}
+.lg {
+  width: 100%;
+  max-width: 700px;
+}
+.xl {
+  width: 100%;
+  max-width: 900px;
+}
+.full {
+  width: calc(100vw - var(--z-space-8));
+  max-width: none;
+  height: calc(100vh - var(--z-space-8));
+}
+
+/* ========================================
+   Header
+======================================== */
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--z-space-4);
+  padding: var(--z-space-4) var(--z-space-5);
+  border-bottom: 1px solid var(--z-border);
+  flex-shrink: 0;
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-1);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--z-text-lg);
+  font-weight: var(--z-font-semibold);
+  color: var(--z-text-primary);
+  line-height: var(--z-leading-tight);
+}
+
+.description {
+  margin: 0;
+  font-size: var(--z-text-sm);
+  color: var(--z-text-secondary);
+  line-height: var(--z-leading-normal);
+}
+
+/* ========================================
+   Close Button
+======================================== */
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin: calc(var(--z-space-1) * -1);
+  background: transparent;
+  border: none;
+  border-radius: var(--z-radius-md);
+  color: var(--z-text-muted);
+  cursor: pointer;
+  transition: var(--z-transition);
+  flex-shrink: 0;
+}
+
+.closeButton:hover {
+  background: var(--z-glass-bg);
+  color: var(--z-text-secondary);
+}
+
+.closeButton:focus-visible {
+  outline: none;
+  box-shadow: var(--z-focus-ring);
+}
+
+/* ========================================
+   Body
+======================================== */
+
+.body {
+  flex: 1;
+  padding: var(--z-space-5);
+  overflow-y: auto;
+}
+
+.full .body {
+  flex: 1;
+}
+
+/* ========================================
+   Footer
+======================================== */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--z-space-2);
+  padding: var(--z-space-4) var(--z-space-5);
+  border-top: 1px solid var(--z-border);
+  flex-shrink: 0;
+}
+
+/* ========================================
+   Animations
+======================================== */
+
+@keyframes z-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes z-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

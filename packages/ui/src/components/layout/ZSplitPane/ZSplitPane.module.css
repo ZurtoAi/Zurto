@@ -1,0 +1,97 @@
+/* ========================================
+   ZSplitPane - Resizable Split Pane Styles
+======================================== */
+
+.splitPane {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.horizontal {
+  flex-direction: row;
+}
+
+.vertical {
+  flex-direction: column;
+}
+
+.dragging {
+  user-select: none;
+}
+
+/* ========================================
+   Panes
+======================================== */
+
+.pane {
+  overflow: auto;
+  transition: none;
+}
+
+.dragging .pane {
+  pointer-events: none;
+}
+
+.second {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* ========================================
+   Resizer
+======================================== */
+
+.resizer {
+  flex-shrink: 0;
+  background: var(--z-border);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--z-duration-fast);
+}
+
+.resizer:hover {
+  background: var(--z-border-hover);
+}
+
+.resizer-horizontal {
+  cursor: col-resize;
+  height: 100%;
+}
+
+.resizer-vertical {
+  cursor: row-resize;
+  width: 100%;
+}
+
+.resizerHandle {
+  position: absolute;
+  background: var(--z-primary);
+  border-radius: var(--z-radius-full);
+  opacity: 0;
+  transition: opacity var(--z-duration-fast);
+}
+
+.resizer:hover .resizerHandle,
+.dragging .resizer .resizerHandle {
+  opacity: 1;
+}
+
+.resizer-horizontal .resizerHandle {
+  width: 4px;
+  height: 40px;
+}
+
+.resizer-vertical .resizerHandle {
+  width: 40px;
+  height: 4px;
+}
+
+/* Active State */
+.dragging .resizer {
+  background: var(--z-primary);
+}

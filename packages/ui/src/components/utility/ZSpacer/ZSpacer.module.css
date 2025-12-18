@@ -1,0 +1,61 @@
+/* ========================================
+   ZSpacer - Spacer Styles
+======================================== */
+
+.spacer {
+  flex-shrink: 0;
+}
+
+/* Vertical spacing */
+.spacer.vertical.xs {
+  height: var(--z-space-1);
+}
+
+.spacer.vertical.sm {
+  height: var(--z-space-2);
+}
+
+.spacer.vertical.md {
+  height: var(--z-space-4);
+}
+
+.spacer.vertical.lg {
+  height: var(--z-space-6);
+}
+
+.spacer.vertical.xl {
+  height: var(--z-space-8);
+}
+
+.spacer.vertical.2xl {
+  height: var(--z-space-12);
+}
+
+/* Horizontal spacing */
+.spacer.horizontal {
+  display: inline-block;
+}
+
+.spacer.horizontal.xs {
+  width: var(--z-space-1);
+}
+
+.spacer.horizontal.sm {
+  width: var(--z-space-2);
+}
+
+.spacer.horizontal.md {
+  width: var(--z-space-4);
+}
+
+.spacer.horizontal.lg {
+  width: var(--z-space-6);
+}
+
+.spacer.horizontal.xl {
+  width: var(--z-space-8);
+}
+
+.spacer.horizontal.2xl {
+  width: var(--z-space-12);
+}

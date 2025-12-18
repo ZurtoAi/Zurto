@@ -1,0 +1,395 @@
+/**
+ * Docker Service Node Styles
+ * Theme: Zurto Glassmorphism
+ */
+
+.docker-service-node {
+  background: linear-gradient(
+    135deg,
+    rgba(20, 20, 35, 0.9) 0%,
+    rgba(15, 15, 25, 0.95) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  min-width: 240px;
+  max-width: 300px;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.docker-service-node::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--node-accent-color, #df3e53),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.docker-service-node:hover::before {
+  opacity: 1;
+}
+
+.docker-service-node.selected {
+  border-color: rgba(223, 62, 83, 0.5);
+  box-shadow:
+    0 0 30px rgba(223, 62, 83, 0.25),
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.docker-service-node.hovered {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(223, 62, 83, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Connection handles */
+.node-handle {
+  width: 10px;
+  height: 10px;
+  background: #667eea;
+  border: 2px solid #1a1a2e;
+}
+
+.node-handle:hover {
+  background: #764ba2;
+}
+
+/* Header */
+.node-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.node-icon {
+  font-size: 1.4rem;
+}
+
+.node-name {
+  flex: 1;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.quick-action-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+.quick-action-btn.start {
+  background: #48bb78;
+  color: white;
+}
+
+.quick-action-btn.start:hover:not(:disabled) {
+  background: #38a169;
+}
+
+.quick-action-btn.stop {
+  background: #e53e3e;
+  color: white;
+}
+
+.quick-action-btn.stop:hover:not(:disabled) {
+  background: #c53030;
+}
+
+.quick-action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Status */
+.node-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.status-label {
+  font-size: 0.8rem;
+  color: #a0aec0;
+  flex: 1;
+}
+
+.port-badge {
+  background: rgba(102, 126, 234, 0.3);
+  color: #667eea;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: monospace;
+}
+
+/* Health indicator */
+.health-indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  color: #a0aec0;
+}
+
+.health-indicator.healthy {
+  color: #48bb78;
+}
+
+.health-indicator.unhealthy {
+  color: #f56565;
+}
+
+.health-indicator.starting {
+  color: #ed8936;
+}
+
+/* Metrics */
+.node-metrics {
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.metric {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.metric-label {
+  font-size: 0.7rem;
+  color: #718096;
+  width: 30px;
+}
+
+.metric-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.metric-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.metric-fill.cpu {
+  background: linear-gradient(90deg, #48bb78 0%, #f6e05e 50%, #f56565 100%);
+}
+
+.metric-fill.memory {
+  background: linear-gradient(90deg, #4299e1 0%, #9f7aea 100%);
+}
+
+.metric-value {
+  font-size: 0.7rem;
+  color: #a0aec0;
+  width: 40px;
+  text-align: right;
+  font-family: monospace;
+}
+
+/* Uptime */
+.node-uptime {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  color: #718096;
+}
+
+/* Action buttons */
+.node-actions {
+  display: flex;
+  gap: 6px;
+  padding: 10px 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.action-btn {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.95rem;
+}
+
+.action-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.action-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.action-btn.logs:hover:not(:disabled) {
+  background: rgba(66, 153, 225, 0.2);
+  border-color: rgba(66, 153, 225, 0.4);
+}
+
+.action-btn.rebuild:hover:not(:disabled) {
+  background: rgba(237, 137, 54, 0.2);
+  border-color: rgba(237, 137, 54, 0.4);
+}
+
+.action-btn.restart:hover:not(:disabled) {
+  background: rgba(72, 187, 120, 0.2);
+  border-color: rgba(72, 187, 120, 0.4);
+}
+
+.action-btn.terminal:hover:not(:disabled) {
+  background: rgba(159, 122, 234, 0.2);
+  border-color: rgba(159, 122, 234, 0.4);
+}
+
+/* Image info */
+.node-image-info {
+  padding: 4px 12px;
+  font-size: 0.65rem;
+  color: #4a5568;
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Double-click hint */
+.double-click-hint {
+  padding: 6px 12px 10px;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  opacity: 0;
+  transition: all 0.2s ease;
+  background: linear-gradient(to top, rgba(223, 62, 83, 0.08), transparent);
+  border-top: 1px solid rgba(223, 62, 83, 0.1);
+  margin-top: 4px;
+}
+
+.docker-service-node:hover .double-click-hint {
+  opacity: 1;
+  color: rgba(223, 62, 83, 0.8);
+}
+
+/* Keyboard hint for accessibility */
+.docker-service-node:focus .double-click-hint {
+  opacity: 1;
+}
+
+/* Animations */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+.action-btn.rebuild.spinning {
+  animation: spin 1s linear infinite;
+}
+
+/* Health icon colors */
+.health-icon.healthy {
+  color: #48bb78;
+}
+
+.health-icon.unhealthy {
+  color: #f56565;
+}
+
+.health-icon.starting {
+  color: #ecc94b;
+}
+
+/* Quick action button icon alignment */
+.quick-action-btn svg {
+  display: block;
+}
+
+/* Node icon alignment */
+.node-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Action button icon alignment */
+.action-btn svg {
+  display: block;
+}

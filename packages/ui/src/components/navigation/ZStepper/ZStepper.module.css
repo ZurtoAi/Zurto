@@ -1,0 +1,172 @@
+/* ========================================
+   ZStepper - Stepper Styles
+======================================== */
+
+.stepper {
+  display: flex;
+}
+
+.stepper.horizontal {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.stepper.vertical {
+  flex-direction: column;
+}
+
+/* ========================================
+   Step Wrapper
+======================================== */
+
+.stepWrapper {
+  display: flex;
+  flex: 1;
+}
+
+.horizontal .stepWrapper {
+  flex-direction: row;
+  align-items: center;
+}
+
+.vertical .stepWrapper {
+  flex-direction: column;
+}
+
+/* ========================================
+   Step
+======================================== */
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-3);
+}
+
+.vertical .step {
+  padding: var(--z-space-3) 0;
+}
+
+/* ========================================
+   Indicator
+======================================== */
+
+.indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--z-secondary-bg);
+  border: 2px solid var(--z-border-color);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.step.completed .indicator {
+  background: var(--z-accent-color);
+  border-color: var(--z-accent-color);
+}
+
+.step.current .indicator {
+  background: var(--z-accent-color);
+  border-color: var(--z-accent-color);
+  box-shadow: 0 0 0 4px rgba(223, 62, 83, 0.1);
+}
+
+.step.upcoming .indicator {
+  background: var(--z-secondary-bg);
+  border-color: var(--z-border-color);
+}
+
+/* ========================================
+   Icons
+======================================== */
+
+.checkIcon {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+.customIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--z-text-primary);
+}
+
+.step.completed .customIcon,
+.step.current .customIcon {
+  color: white;
+}
+
+.number {
+  font-size: var(--z-text-base);
+  font-weight: 700;
+  color: var(--z-text-tertiary);
+}
+
+.step.completed .number,
+.step.current .number {
+  color: white;
+}
+
+/* ========================================
+   Content
+======================================== */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-1);
+}
+
+.label {
+  font-size: var(--z-text-sm);
+  font-weight: 600;
+  color: var(--z-text-primary);
+}
+
+.step.upcoming .label {
+  color: var(--z-text-tertiary);
+}
+
+.description {
+  font-size: var(--z-text-xs);
+  color: var(--z-text-secondary);
+}
+
+.step.upcoming .description {
+  color: var(--z-text-tertiary);
+}
+
+/* ========================================
+   Connector
+======================================== */
+
+.connector {
+  flex: 1;
+  background: var(--z-border-color);
+  transition: background 0.3s ease;
+}
+
+.horizontal .connector {
+  height: 2px;
+  margin: 0 var(--z-space-2);
+  align-self: flex-start;
+  margin-top: 19px;
+}
+
+.vertical .connector {
+  width: 2px;
+  height: 40px;
+  margin-left: 19px;
+}
+
+.connector.completed {
+  background: var(--z-accent-color);
+}

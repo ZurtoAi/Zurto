@@ -1,0 +1,172 @@
+/* ========================================
+   ZPricingTable - Pricing Table Styles
+======================================== */
+
+.table {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--z-space-6);
+  width: 100%;
+}
+
+/* ========================================
+   Plan Card
+======================================== */
+
+.plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--z-space-8);
+  background: var(--z-primary-bg);
+  border: 2px solid var(--z-border-color);
+  border-radius: var(--z-radius-lg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.plan:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.plan.highlighted {
+  border-color: var(--z-accent-color);
+  box-shadow: 0 8px 24px rgba(223, 62, 83, 0.15);
+  transform: scale(1.05);
+}
+
+.plan.highlighted:hover {
+  transform: scale(1.05) translateY(-4px);
+}
+
+/* ========================================
+   Badge
+======================================== */
+
+.badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: var(--z-space-2) var(--z-space-4);
+  background: var(--z-accent-color);
+  color: white;
+  font-size: var(--z-text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: var(--z-radius-full);
+  letter-spacing: 0.5px;
+}
+
+/* ========================================
+   Header
+======================================== */
+
+.header {
+  margin-bottom: var(--z-space-6);
+}
+
+.name {
+  font-size: var(--z-text-2xl);
+  font-weight: 700;
+  color: var(--z-text-primary);
+  margin-bottom: var(--z-space-2);
+}
+
+.description {
+  font-size: var(--z-text-sm);
+  color: var(--z-text-secondary);
+  line-height: 1.5;
+}
+
+/* ========================================
+   Price
+======================================== */
+
+.price {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: var(--z-space-6);
+}
+
+.currency {
+  font-size: var(--z-text-2xl);
+  font-weight: 700;
+  color: var(--z-text-tertiary);
+  margin-right: var(--z-space-1);
+}
+
+.amount {
+  font-size: var(--z-text-5xl);
+  font-weight: 700;
+  color: var(--z-text-primary);
+  line-height: 1;
+}
+
+.period {
+  font-size: var(--z-text-base);
+  color: var(--z-text-tertiary);
+  margin-left: var(--z-space-1);
+}
+
+/* ========================================
+   Features
+======================================== */
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--z-space-8) 0;
+  flex: 1;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--z-space-3);
+  padding: var(--z-space-3) 0;
+  font-size: var(--z-text-sm);
+  color: var(--z-text-secondary);
+  line-height: 1.6;
+}
+
+.checkIcon {
+  width: 18px;
+  height: 18px;
+  color: #10b981;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ========================================
+   Button
+======================================== */
+
+.button {
+  width: 100%;
+  padding: var(--z-space-4);
+  background: var(--z-secondary-bg);
+  border: 2px solid var(--z-border-color);
+  border-radius: var(--z-radius-md);
+  color: var(--z-text-primary);
+  font-size: var(--z-text-base);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  border-color: var(--z-accent-color);
+  color: var(--z-accent-color);
+}
+
+.button.buttonHighlighted {
+  background: var(--z-accent-color);
+  border-color: var(--z-accent-color);
+  color: white;
+}
+
+.button.buttonHighlighted:hover {
+  background: #c2355a;
+  border-color: #c2355a;
+}

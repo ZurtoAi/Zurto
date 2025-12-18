@@ -1,0 +1,515 @@
+/**
+ * Service Detail Panel Styles
+ * Glassmorphism design matching Zurto theme
+ */
+
+/* Overlay */
+.service-detail-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.15s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Panel */
+.service-detail-panel {
+  width: 90%;
+  max-width: 700px;
+  max-height: 80vh;
+  background: rgba(18, 18, 18, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.2s ease-out;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Header */
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.service-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.service-icon.api {
+  background: linear-gradient(135deg, #4299e1, #3182ce);
+}
+.service-icon.web {
+  background: linear-gradient(135deg, #48bb78, #38a169);
+}
+.service-icon.bot {
+  background: linear-gradient(135deg, #9f7aea, #805ad5);
+}
+.service-icon.database {
+  background: linear-gradient(135deg, #ed8936, #dd6b20);
+}
+.service-icon.worker {
+  background: linear-gradient(135deg, #f56565, #e53e3e);
+}
+.service-icon.cache {
+  background: linear-gradient(135deg, #38b2ac, #319795);
+}
+
+.service-meta h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 6px 0;
+}
+
+.service-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.status-badge {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.running {
+  background: rgba(72, 187, 120, 0.2);
+  color: #48bb78;
+}
+
+.status-badge.stopped {
+  background: rgba(160, 174, 192, 0.2);
+  color: #a0aec0;
+}
+
+.status-badge.error {
+  background: rgba(245, 101, 101, 0.2);
+  color: #f56565;
+}
+
+.port-badge {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  font-family: monospace;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.action-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.action-btn.primary {
+  background: rgba(72, 187, 120, 0.2);
+  border-color: rgba(72, 187, 120, 0.3);
+  color: #48bb78;
+}
+
+.action-btn.primary:hover {
+  background: rgba(72, 187, 120, 0.3);
+}
+
+.close-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  transition: all 0.15s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* Search */
+.panel-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.panel-search input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: white;
+}
+
+.panel-search input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Body */
+.panel-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 24px;
+}
+
+.panel-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.panel-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.panel-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+/* Content */
+.service-detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.content-section {
+  margin-bottom: 16px;
+}
+
+.content-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.content-header .count {
+  margin-left: auto;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+}
+
+/* Endpoints List */
+.endpoints-list,
+.commands-list,
+.pages-list,
+.components-list,
+.tables-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.endpoint-item,
+.command-item,
+.page-item,
+.component-item,
+.table-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.endpoint-item:hover,
+.command-item:hover,
+.page-item:hover,
+.component-item:hover,
+.table-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Method Badge */
+.method-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 6px;
+  border-radius: 4px;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* Endpoint */
+.endpoint-path {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  color: white;
+  flex: 1;
+}
+
+.endpoint-desc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.copy-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: none;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.15s ease;
+}
+
+.endpoint-item:hover .copy-btn,
+.command-item:hover .copy-btn {
+  opacity: 1;
+}
+
+.copy-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.chevron {
+  color: rgba(255, 255, 255, 0.3);
+  transition: transform 0.15s ease;
+}
+
+.endpoint-item:hover .chevron,
+.command-item:hover .chevron,
+.page-item:hover .chevron,
+.component-item:hover .chevron,
+.table-item:hover .chevron {
+  transform: translateX(2px);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Commands */
+.command-category {
+  margin-bottom: 16px;
+}
+
+.category-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 0 8px 0;
+  padding-left: 4px;
+}
+
+.command-name {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: #9f7aea;
+  min-width: 100px;
+}
+
+.command-desc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  flex: 1;
+}
+
+.command-usage {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* Pages */
+.page-path {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  color: #48bb78;
+  min-width: 120px;
+}
+
+.page-name {
+  font-size: 13px;
+  color: white;
+  flex: 1;
+}
+
+.page-component {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Components */
+.component-name {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  color: #4299e1;
+  flex: 1;
+}
+
+.component-props {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Tables */
+.table-icon {
+  color: #ed8936;
+}
+
+.table-name {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  color: white;
+  flex: 1;
+}
+
+.table-info {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Empty State */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+
+.empty-state svg {
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.empty-state p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Footer */
+.panel-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 16px 16px;
+}
+
+.footer-hint {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.footer-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}

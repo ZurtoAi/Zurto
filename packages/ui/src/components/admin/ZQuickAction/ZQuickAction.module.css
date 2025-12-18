@@ -1,0 +1,98 @@
+/* ========================================
+   ZQuickAction - Quick Action Button Styles
+======================================== */
+
+.action {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-3);
+  width: 100%;
+  padding: var(--z-space-4);
+  background: var(--z-primary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-lg);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action:hover {
+  border-color: var(--z-accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.action:active {
+  transform: translateY(0);
+}
+
+/* ========================================
+   Icon
+======================================== */
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  background: var(--z-secondary-bg);
+  border-radius: var(--z-radius-md);
+  color: var(--z-text-primary);
+}
+
+.icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ========================================
+   Content
+======================================== */
+
+.content {
+  flex: 1;
+}
+
+.label {
+  font-size: var(--z-text-base);
+  font-weight: 600;
+  color: var(--z-text-primary);
+  margin-bottom: var(--z-space-1);
+}
+
+.description {
+  font-size: var(--z-text-sm);
+  color: var(--z-text-tertiary);
+}
+
+/* ========================================
+   Variants
+======================================== */
+
+.action.primary:hover {
+  background: var(--z-accent-color);
+  border-color: var(--z-accent-color);
+}
+
+.action.primary:hover .icon,
+.action.primary:hover .label,
+.action.primary:hover .description {
+  color: white;
+}
+
+.action.success .icon {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.action.warning .icon {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.action.error .icon {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}

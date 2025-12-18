@@ -1,0 +1,133 @@
+/* ========================================
+   ZText - Text Component Styles
+======================================== */
+
+.text {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ========================================
+   Sizes
+======================================== */
+
+.text.xs {
+  font-size: var(--z-text-xs);
+}
+
+.text.sm {
+  font-size: var(--z-text-sm);
+}
+
+.text.base {
+  font-size: var(--z-text-base);
+}
+
+.text.lg {
+  font-size: var(--z-text-lg);
+}
+
+.text.xl {
+  font-size: var(--z-text-xl);
+}
+
+/* ========================================
+   Weight
+======================================== */
+
+.text.light {
+  font-weight: 300;
+}
+
+.text.normal {
+  font-weight: 400;
+}
+
+.text.medium {
+  font-weight: 500;
+}
+
+.text.semibold {
+  font-weight: 600;
+}
+
+.text.bold {
+  font-weight: 700;
+}
+
+/* ========================================
+   Alignment
+======================================== */
+
+.text.align-left {
+  text-align: left;
+}
+
+.text.align-center {
+  text-align: center;
+}
+
+.text.align-right {
+  text-align: right;
+}
+
+.text.align-justify {
+  text-align: justify;
+}
+
+/* ========================================
+   Transform
+======================================== */
+
+.text.transform-none {
+  text-transform: none;
+}
+
+.text.transform-uppercase {
+  text-transform: uppercase;
+}
+
+.text.transform-lowercase {
+  text-transform: lowercase;
+}
+
+.text.transform-capitalize {
+  text-transform: capitalize;
+}
+
+/* ========================================
+   Color
+======================================== */
+
+.text.color-primary {
+  color: var(--z-text-primary);
+}
+
+.text.color-secondary {
+  color: var(--z-text-secondary);
+}
+
+.text.color-tertiary {
+  color: var(--z-text-tertiary);
+}
+
+.text.color-inherit {
+  color: inherit;
+}
+
+/* ========================================
+   Truncate
+======================================== */
+
+.text.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text.lineClamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

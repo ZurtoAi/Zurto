@@ -1,0 +1,32 @@
+.container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--z-radius-md);
+  background: var(--z-primary-bg);
+}
+
+.container.aspect-16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+.container.aspect-4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+.container.aspect-1-1 {
+  aspect-ratio: 1 / 1;
+}
+
+.container.aspect-21-9 {
+  aspect-ratio: 21 / 9;
+}
+
+.iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}

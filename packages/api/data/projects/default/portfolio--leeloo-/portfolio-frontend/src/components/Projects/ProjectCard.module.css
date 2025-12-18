@@ -1,0 +1,439 @@
+/* ProjectCard.module.css */
+/* Project card styling with neon borders, animations, and interactive effects */
+
+.projectCard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  background: linear-gradient(135deg, rgba(15, 15, 30, 0.8) 0%, rgba(20, 20, 40, 0.8) 100%);
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 24px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.projectCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(0, 255, 255, 0.1) 0%, rgba(255, 0, 255, 0.05) 50%, rgba(0, 255, 255, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+.projectCard:hover::before {
+  opacity: 1;
+}
+
+.projectCard:hover {
+  border-color: rgba(0, 255, 255, 0.8);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), inset 0 0 20px rgba(0, 255, 255, 0.05);
+  transform: translateY(-8px);
+}
+
+.neonBorder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff);
+  background-size: 200% 100%;
+  padding: 2px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  animation: none;
+}
+
+.projectCard:hover .neonBorder {
+  opacity: 1;
+  animation: neonGlow 3s linear infinite;
+}
+
+@keyframes neonGlow {
+  0% {
+    background-position: 0% 0%;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+  }
+  100% {
+    background-position: 200% 0%;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+}
+
+.projectHeader {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.projectTitle {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.projectCard:hover .projectTitle {
+  color: #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+}
+
+.projectBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  background: rgba(0, 255, 255, 0.15);
+  border: 1px solid rgba(0, 255, 255, 0.4);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #00ffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.projectCard:hover .projectBadge {
+  background: rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+.projectDescription {
+  position: relative;
+  z-index: 2;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin: 8px 0;
+  flex-grow: 1;
+  transition: color 0.3s ease;
+}
+
+.projectCard:hover .projectDescription {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.techStack {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 0 0;
+}
+
+.techBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: rgba(0, 255, 255, 0.9);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.projectCard:hover .techBadge {
+  background: rgba(0, 255, 255, 0.2);
+  border-color: rgba(0, 255, 255, 0.6);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.techBadge:nth-child(1) {
+  animation: techPulse 2s ease-in-out infinite;
+}
+
+.techBadge:nth-child(2) {
+  animation: techPulse 2.2s ease-in-out infinite;
+}
+
+.techBadge:nth-child(3) {
+  animation: techPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes techPulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.projectCard:hover .techBadge {
+  animation: none;
+}
+
+.projectMetrics {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.metricItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metricLabel {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.metricValue {
+  font-size: 1rem;
+  color: #00ffff;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.projectCard:hover .metricValue {
+  color: #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+  transform: scale(1.05);
+}
+
+.projectFooter {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 255, 255, 0.15);
+}
+
+.projectLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #00ffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.projectLink:hover {
+  color: #ff00ff;
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.6);
+  transform: translateX(4px);
+}
+
+.projectLink svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.projectLink:hover svg {
+  transform: rotate(45deg);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 8px;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: brightness(0.9) contrast(1.1);
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.08) rotate(1deg);
+  filter: brightness(1.1) contrast(1.2);
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.1) 0%, rgba(255, 0, 255, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.projectCard:hover .imageOverlay {
+  opacity: 1;
+}
+
+.loadingPulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.cornerAccent {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(0, 255, 255, 0.4);
+  transition: border-color 0.3s ease;
+}
+
+.cornerAccent.topLeft {
+  top: 8px;
+  left: 8px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.cornerAccent.topRight {
+  top: 8px;
+  right: 8px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.cornerAccent.bottomLeft {
+  bottom: 8px;
+  left: 8px;
+  border-right: none;
+  border-top: none;
+}
+
+.cornerAccent.bottomRight {
+  bottom: 8px;
+  right: 8px;
+  border-left: none;
+  border-top: none;
+}
+
+.projectCard:hover .cornerAccent {
+  border-color: rgba(0, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .projectCard {
+    min-height: 320px;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .projectTitle {
+    font-size: 1.125rem;
+  }
+
+  .projectDescription {
+    font-size: 0.875rem;
+  }
+
+  .imageContainer {
+    height: 150px;
+  }
+
+  .projectMetrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projectCard:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 480px) {
+  .projectCard {
+    min-height: 280px;
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .projectTitle {
+    font-size: 1rem;
+  }
+
+  .projectDescription {
+    font-size: 0.8rem;
+  }
+
+  .techStack {
+    gap: 6px;
+  }
+
+  .techBadge {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+
+  .imageContainer {
+    height: 120px;
+  }
+
+  .cornerAccent {
+    width: 12px;
+    height: 12px;
+  }
+
+  .cornerAccent.topLeft,
+  .cornerAccent.topRight,
+  .cornerAccent.bottomLeft,
+  .cornerAccent.bottomRight {
+    top: 4px;
+    right: 4px;
+    bottom: 4px;
+    left: 4px;
+  }
+}

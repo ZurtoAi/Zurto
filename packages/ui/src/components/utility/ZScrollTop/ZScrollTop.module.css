@@ -1,0 +1,78 @@
+/* ========================================
+   ZScrollTop - Scroll to Top Button Styles
+======================================== */
+
+.button {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--z-accent-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+  z-index: 1000;
+  animation: slideUp 0.3s ease-out;
+}
+
+.button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   Positions
+======================================== */
+
+.button.bottom-right {
+  bottom: var(--z-space-6);
+  right: var(--z-space-6);
+}
+
+.button.bottom-left {
+  bottom: var(--z-space-6);
+  left: var(--z-space-6);
+}
+
+.button.bottom-center {
+  bottom: var(--z-space-6);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.button.bottom-center:hover {
+  transform: translateX(-50%) translateY(-4px);
+}
+
+/* ========================================
+   Icon
+======================================== */
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* ========================================
+   Animation
+======================================== */
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

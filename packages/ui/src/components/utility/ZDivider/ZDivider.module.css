@@ -1,0 +1,82 @@
+/* ========================================
+   ZDivider - Divider Styles
+======================================== */
+
+.divider {
+  position: relative;
+  background: var(--z-border-color);
+}
+
+/* ========================================
+   Orientation
+======================================== */
+
+.horizontal {
+  width: 100%;
+  height: 1px;
+  margin: var(--z-space-4) 0;
+}
+
+.vertical {
+  width: 1px;
+  height: 100%;
+  margin: 0 var(--z-space-4);
+}
+
+/* ========================================
+   Variant
+======================================== */
+
+.dashed {
+  background: none;
+  border-style: dashed;
+}
+
+.dashed.horizontal {
+  border-top: 1px dashed var(--z-border-color);
+}
+
+.dashed.vertical {
+  border-left: 1px dashed var(--z-border-color);
+}
+
+.dotted {
+  background: none;
+  border-style: dotted;
+}
+
+.dotted.horizontal {
+  border-top: 1px dotted var(--z-border-color);
+}
+
+.dotted.vertical {
+  border-left: 1px dotted var(--z-border-color);
+}
+
+/* ========================================
+   Label
+======================================== */
+
+.divider .label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 var(--z-space-3);
+  background: var(--z-primary-bg);
+  font-size: var(--z-text-sm);
+  color: var(--z-text-secondary);
+  white-space: nowrap;
+}
+
+.label-left .label {
+  left: 0;
+}
+
+.label-center .label {
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.label-right .label {
+  right: 0;
+}

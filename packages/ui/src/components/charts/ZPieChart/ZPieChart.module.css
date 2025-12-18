@@ -1,0 +1,79 @@
+/* ========================================
+   ZPieChart - Pie Chart Styles
+======================================== */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--z-space-4);
+  padding: var(--z-space-4);
+  background: var(--z-primary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-lg);
+}
+
+.chart {
+  flex-shrink: 0;
+}
+
+.segment {
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform-origin: center;
+}
+
+.segment:hover,
+.segment.hovered {
+  opacity: 0.8;
+  filter: brightness(1.1);
+}
+
+.donutHole {
+  pointer-events: none;
+}
+
+/* ========================================
+   Legend
+======================================== */
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-2);
+  width: 100%;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-3);
+  padding: var(--z-space-2);
+  border-radius: var(--z-radius-md);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.legendItem:hover,
+.legendItem.hovered {
+  background: var(--z-secondary-bg);
+}
+
+.legendColor {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--z-radius-sm);
+  flex-shrink: 0;
+}
+
+.legendLabel {
+  flex: 1;
+  font-size: var(--z-text-sm);
+  color: var(--z-text-primary);
+}
+
+.legendValue {
+  font-size: var(--z-text-sm);
+  font-weight: 700;
+  color: var(--z-text-secondary);
+}

@@ -1,0 +1,240 @@
+/* ========================================
+   ZToast - Toast Notification Styles
+======================================== */
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--z-space-3);
+  padding: var(--z-space-3) var(--z-space-4);
+  background: var(--z-bg-elevated);
+  border: 1px solid var(--z-border);
+  border-radius: var(--z-radius-lg);
+  box-shadow: var(--z-shadow-lg);
+  min-width: 300px;
+  max-width: 420px;
+  animation: toast-in var(--z-duration-normal) var(--z-ease-out);
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.exiting {
+  animation: toast-out var(--z-duration-fast) var(--z-ease-in) forwards;
+}
+
+@keyframes toast-out {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+/* ========================================
+   Variants
+======================================== */
+
+.success {
+  border-color: var(--z-success);
+}
+
+.success .icon {
+  color: var(--z-success);
+}
+
+.error {
+  border-color: var(--z-error);
+}
+
+.error .icon {
+  color: var(--z-error);
+}
+
+.warning {
+  border-color: var(--z-warning);
+}
+
+.warning .icon {
+  color: var(--z-warning);
+}
+
+.info {
+  border-color: var(--z-info);
+}
+
+.info .icon {
+  color: var(--z-info);
+}
+
+/* ========================================
+   Content
+======================================== */
+
+.icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--z-text-sm);
+  font-weight: var(--z-font-semibold);
+  color: var(--z-text-primary);
+  line-height: var(--z-leading-tight);
+}
+
+.description {
+  font-size: var(--z-text-sm);
+  color: var(--z-text-secondary);
+  margin-top: var(--z-space-1);
+  line-height: var(--z-leading-normal);
+}
+
+.action {
+  flex-shrink: 0;
+  margin-left: var(--z-space-2);
+}
+
+/* ========================================
+   Close Button
+======================================== */
+
+.close {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: var(--z-radius-sm);
+  color: var(--z-text-muted);
+  cursor: pointer;
+  transition: var(--z-transition);
+  margin-left: var(--z-space-1);
+  margin-top: -2px;
+}
+
+.close:hover {
+  background: var(--z-bg-secondary);
+  color: var(--z-text-primary);
+}
+
+.close:focus-visible {
+  outline: none;
+  box-shadow: var(--z-focus-ring);
+}
+
+/* ========================================
+   Container
+======================================== */
+
+.container {
+  position: fixed;
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-2);
+  padding: var(--z-space-4);
+  pointer-events: none;
+}
+
+.container > * {
+  pointer-events: auto;
+}
+
+/* Positions */
+.top-right {
+  top: 0;
+  right: 0;
+  align-items: flex-end;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+  align-items: flex-start;
+}
+
+.top-center {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+  align-items: flex-end;
+  flex-direction: column-reverse;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  align-items: flex-start;
+  flex-direction: column-reverse;
+}
+
+.bottom-center {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+  flex-direction: column-reverse;
+}
+
+/* Animations for different positions */
+.top-left .toast,
+.bottom-left .toast {
+  animation-name: toast-in-left;
+}
+
+@keyframes toast-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.top-center .toast,
+.bottom-center .toast {
+  animation-name: toast-in-center;
+}
+
+@keyframes toast-in-center {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

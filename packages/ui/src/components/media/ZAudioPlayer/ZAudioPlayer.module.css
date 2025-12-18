@@ -1,0 +1,104 @@
+/* ========================================
+   ZAudioPlayer - Audio Player Styles
+======================================== */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-3);
+  background: var(--z-card-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-lg);
+  padding: var(--z-space-4);
+}
+
+/* ========================================
+   Info
+======================================== */
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-1);
+}
+
+.title {
+  font-size: var(--z-text-base);
+  font-weight: 600;
+  color: var(--z-text-primary);
+}
+
+.artist {
+  font-size: var(--z-text-sm);
+  color: var(--z-text-secondary);
+}
+
+/* ========================================
+   Progress
+======================================== */
+
+.progress {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background: var(--z-secondary-bg);
+  border-radius: var(--z-radius-full);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.progressBar {
+  height: 100%;
+  background: var(--z-accent-color);
+  transition: width 0.1s linear;
+}
+
+/* ========================================
+   Controls
+======================================== */
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-2);
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--z-border-color);
+  color: var(--z-text-primary);
+  cursor: pointer;
+  padding: var(--z-space-2);
+  border-radius: var(--z-radius-sm);
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  background: var(--z-secondary-bg);
+  border-color: var(--z-accent-color);
+}
+
+.playButton {
+  background: var(--z-accent-color);
+  color: white;
+  border-color: var(--z-accent-color);
+}
+
+.playButton:hover {
+  opacity: 0.9;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+}
+
+.time {
+  margin-left: auto;
+  font-size: var(--z-text-sm);
+  color: var(--z-text-secondary);
+  font-family: var(--z-font-mono, ui-monospace, monospace);
+}

@@ -1,0 +1,130 @@
+/* ========================================
+   ZDialog - Dialog/Modal Styles
+======================================== */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.dialog {
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--z-bg-primary);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-lg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.2s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ========================================
+   Sizes
+======================================== */
+
+.dialog.sm {
+  width: 90%;
+  max-width: 400px;
+}
+
+.dialog.md {
+  width: 90%;
+  max-width: 600px;
+}
+
+.dialog.lg {
+  width: 90%;
+  max-width: 800px;
+}
+
+.dialog.xl {
+  width: 90%;
+  max-width: 1200px;
+}
+
+.dialog.full {
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  border-radius: 0;
+}
+
+/* ========================================
+   Elements
+======================================== */
+
+.closeButton {
+  position: absolute;
+  top: var(--z-space-4);
+  right: var(--z-space-4);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: var(--z-radius-sm);
+  color: var(--z-text-tertiary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+  background: var(--z-secondary-bg);
+  color: var(--z-text-primary);
+}
+
+.closeButton svg {
+  width: 20px;
+  height: 20px;
+}
+
+.header {
+  padding: var(--z-space-6);
+  padding-right: var(--z-space-12);
+  border-bottom: 1px solid var(--z-border-color);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--z-text-2xl);
+  font-weight: 700;
+  color: var(--z-text-primary);
+}
+
+.description {
+  margin: var(--z-space-2) 0 0;
+  font-size: var(--z-text-base);
+  color: var(--z-text-secondary);
+}
+
+.content {
+  padding: var(--z-space-6);
+}

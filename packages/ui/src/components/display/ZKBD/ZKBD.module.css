@@ -1,0 +1,46 @@
+/* ========================================
+   ZKBD - Keyboard Key Styles
+======================================== */
+
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--z-space-1);
+  font-family: var(--z-font-mono, ui-monospace, monospace);
+  background: var(--z-secondary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-sm);
+  box-shadow: 0 2px 0 var(--z-border-color);
+  padding: var(--z-space-1) var(--z-space-2);
+}
+
+.container.sm {
+  padding: 2px var(--z-space-1);
+  font-size: var(--z-text-xs);
+}
+
+.container.md {
+  padding: var(--z-space-1) var(--z-space-2);
+  font-size: var(--z-text-sm);
+}
+
+.container.lg {
+  padding: var(--z-space-2) var(--z-space-3);
+  font-size: var(--z-text-base);
+}
+
+/* ========================================
+   Keys
+======================================== */
+
+.key {
+  font-weight: 600;
+  color: var(--z-text-primary);
+  text-transform: uppercase;
+}
+
+.separator {
+  color: var(--z-text-tertiary);
+  font-weight: 400;
+  margin: 0 var(--z-space-1);
+}

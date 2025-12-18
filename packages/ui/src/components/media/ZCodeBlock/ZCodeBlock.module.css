@@ -1,0 +1,102 @@
+/* ========================================
+   ZCodeBlock - Code Block Styles
+======================================== */
+
+.container {
+  position: relative;
+  background: var(--z-secondary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-lg);
+  overflow: hidden;
+}
+
+/* ========================================
+   Header
+======================================== */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--z-space-2) var(--z-space-3);
+  border-bottom: 1px solid var(--z-border-color);
+  background: var(--z-card-bg);
+}
+
+.language {
+  font-size: var(--z-text-xs);
+  font-weight: 600;
+  color: var(--z-text-secondary);
+  text-transform: uppercase;
+  font-family: var(--z-font-mono, ui-monospace, monospace);
+}
+
+.copyButton {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-1);
+  background: transparent;
+  border: 1px solid var(--z-border-color);
+  color: var(--z-text-primary);
+  padding: var(--z-space-1) var(--z-space-2);
+  border-radius: var(--z-radius-sm);
+  font-size: var(--z-text-xs);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copyButton:hover {
+  background: var(--z-secondary-bg);
+  border-color: var(--z-accent-color);
+}
+
+.icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* ========================================
+   Code
+======================================== */
+
+.pre {
+  margin: 0;
+  padding: var(--z-space-3);
+  overflow-x: auto;
+  font-family: var(--z-font-mono, ui-monospace, monospace);
+  font-size: var(--z-text-sm);
+  line-height: 1.6;
+}
+
+.code {
+  display: block;
+  color: var(--z-text-primary);
+}
+
+/* ========================================
+   Line Numbers
+======================================== */
+
+.linesContainer {
+  display: flex;
+  gap: var(--z-space-3);
+}
+
+.lineNumbers {
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  color: var(--z-text-tertiary);
+  text-align: right;
+  padding-right: var(--z-space-2);
+  border-right: 1px solid var(--z-border-color);
+}
+
+.lineNumber {
+  line-height: 1.6;
+}
+
+.codeContent {
+  flex: 1;
+  white-space: pre;
+}

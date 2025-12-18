@@ -1,0 +1,129 @@
+/* ========================================
+   ZCommentThread - Comment Thread Styles
+======================================== */
+
+.thread {
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-4);
+}
+
+/* ========================================
+   Comment
+======================================== */
+
+.comment {
+  display: flex;
+  gap: var(--z-space-3);
+}
+
+.avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--z-radius-full);
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatarPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--z-accent-color);
+  color: white;
+  font-weight: 600;
+  font-size: var(--z-text-base);
+}
+
+/* ========================================
+   Content
+======================================== */
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-2);
+  margin-bottom: var(--z-space-1);
+}
+
+.author {
+  font-weight: 600;
+  color: var(--z-text-primary);
+  font-size: var(--z-text-sm);
+}
+
+.timestamp {
+  font-size: var(--z-text-xs);
+  color: var(--z-text-tertiary);
+}
+
+.text {
+  font-size: var(--z-text-sm);
+  color: var(--z-text-secondary);
+  line-height: 1.5;
+  margin-bottom: var(--z-space-2);
+}
+
+/* ========================================
+   Actions
+======================================== */
+
+.actions {
+  display: flex;
+  gap: var(--z-space-3);
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-1);
+  padding: var(--z-space-1) var(--z-space-2);
+  background: transparent;
+  border: none;
+  border-radius: var(--z-radius-sm);
+  color: var(--z-text-tertiary);
+  font-size: var(--z-text-xs);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action:hover {
+  background: var(--z-secondary-bg);
+  color: var(--z-text-primary);
+}
+
+.action.liked {
+  color: var(--z-accent-color);
+}
+
+.action svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ========================================
+   Replies
+======================================== */
+
+.replies {
+  margin-top: var(--z-space-3);
+  padding-left: var(--z-space-4);
+  border-left: 2px solid var(--z-border-color);
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-3);
+}

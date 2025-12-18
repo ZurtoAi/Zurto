@@ -1,0 +1,75 @@
+/* ========================================
+   ZSpace - Space/Spacer Styles
+======================================== */
+
+.space {
+  flex-shrink: 0;
+}
+
+/* ========================================
+   Sizes - Vertical
+======================================== */
+
+.space.vertical.xs,
+.space.both.xs {
+  height: var(--z-space-1);
+}
+
+.space.vertical.sm,
+.space.both.sm {
+  height: var(--z-space-2);
+}
+
+.space.vertical.md,
+.space.both.md {
+  height: var(--z-space-3);
+}
+
+.space.vertical.lg,
+.space.both.lg {
+  height: var(--z-space-4);
+}
+
+.space.vertical.xl,
+.space.both.xl {
+  height: var(--z-space-6);
+}
+
+.space.vertical.2xl,
+.space.both.2xl {
+  height: var(--z-space-8);
+}
+
+/* ========================================
+   Sizes - Horizontal
+======================================== */
+
+.space.horizontal.xs,
+.space.both.xs {
+  width: var(--z-space-1);
+}
+
+.space.horizontal.sm,
+.space.both.sm {
+  width: var(--z-space-2);
+}
+
+.space.horizontal.md,
+.space.both.md {
+  width: var(--z-space-3);
+}
+
+.space.horizontal.lg,
+.space.both.lg {
+  width: var(--z-space-4);
+}
+
+.space.horizontal.xl,
+.space.both.xl {
+  width: var(--z-space-6);
+}
+
+.space.horizontal.2xl,
+.space.both.2xl {
+  width: var(--z-space-8);
+}

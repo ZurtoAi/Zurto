@@ -1,0 +1,445 @@
+/* DeployModal.css - One-Click Deployment Modal */
+
+.deploy-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.deploy-modal {
+  width: 520px;
+  max-width: 95vw;
+  max-height: 85vh;
+  background: linear-gradient(135deg, #12121a, #1a1a28);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header */
+.deploy-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(16, 185, 129, 0.15),
+    rgba(16, 185, 129, 0.05)
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.deploy-header-info h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.deploy-icon {
+  font-size: 22px;
+}
+
+.deploy-node-name {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.deploy-close-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.deploy-close-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+
+/* Current Status Banner */
+.deploy-current-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background: rgba(16, 185, 129, 0.1);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(16, 185, 129, 0.2);
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #10b981;
+}
+
+.status-indicator .status-dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.deploy-url {
+  font-size: 13px;
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.deploy-url:hover {
+  text-decoration: underline;
+}
+
+/* Deployment Status Banner */
+.deploy-status-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: rgba(88, 101, 242, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.deploy-status-banner.deploying {
+  background: rgba(88, 101, 242, 0.15);
+}
+
+.deploy-status-banner.success {
+  background: rgba(16, 185, 129, 0.15);
+}
+
+.deploy-status-banner.error {
+  background: rgba(239, 68, 68, 0.15);
+}
+
+.deploy-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(88, 101, 242, 0.3);
+  border-top-color: #5865f2;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.status-icon {
+  font-size: 18px;
+}
+
+.status-message {
+  flex: 1;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.deploy-url-link {
+  font-size: 13px;
+  color: #10b981;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.deploy-url-link:hover {
+  text-decoration: underline;
+}
+
+/* Form */
+.deploy-form {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.deploy-input {
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  transition: all 0.2s ease;
+}
+
+.deploy-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(88, 101, 242, 0.2);
+}
+
+.deploy-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+/* Environment Selector */
+.environment-selector {
+  display: flex;
+  gap: 10px;
+}
+
+.env-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.env-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.env-btn.active {
+  border-color: var(--accent-color);
+  background: rgba(88, 101, 242, 0.15);
+  color: var(--text-primary);
+}
+
+.env-btn.active.production {
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.15);
+}
+
+.env-btn.active.staging {
+  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.15);
+}
+
+.env-btn.active.development {
+  border-color: #5865f2;
+  background: rgba(88, 101, 242, 0.15);
+}
+
+/* Advanced Toggle */
+.advanced-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  background: none;
+  border: none;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.advanced-toggle:hover {
+  color: var(--text-primary);
+}
+
+/* Advanced Options */
+.advanced-options {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Environment Variables */
+.add-env-btn {
+  padding: 2px 8px;
+  background: rgba(88, 101, 242, 0.2);
+  border: none;
+  border-radius: 4px;
+  font-size: 11px;
+  color: var(--accent-color);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.add-env-btn:hover {
+  background: rgba(88, 101, 242, 0.3);
+}
+
+.env-var-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.env-key {
+  flex: 0 0 120px;
+}
+
+.env-equals {
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+}
+
+.env-value {
+  flex: 1;
+}
+
+.remove-env-btn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 6px;
+  color: #ef4444;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.remove-env-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+/* Actions */
+.deploy-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 24px;
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.deploy-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.deploy-btn.primary {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.deploy-btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+.deploy-btn.secondary {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+}
+
+.deploy-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+}
+
+.deploy-btn.danger {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+
+.deploy-btn.danger:hover {
+  background: rgba(239, 68, 68, 0.25);
+}

@@ -1,0 +1,144 @@
+/* ========================================
+   ZArticle - Article Card Styles
+======================================== */
+
+.article {
+  background: var(--z-primary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-lg);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* ========================================
+   Image
+======================================== */
+
+.image {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: var(--z-secondary-bg);
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.article:hover .image img {
+  transform: scale(1.05);
+}
+
+/* ========================================
+   Content
+======================================== */
+
+.content {
+  padding: var(--z-space-6);
+}
+
+.title {
+  font-size: var(--z-text-2xl);
+  font-weight: 700;
+  color: var(--z-text-primary);
+  margin-bottom: var(--z-space-4);
+  line-height: 1.3;
+}
+
+/* ========================================
+   Meta
+======================================== */
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-4);
+  margin-bottom: var(--z-space-4);
+  font-size: var(--z-text-sm);
+  color: var(--z-text-tertiary);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-2);
+}
+
+.avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.defaultAvatar {
+  width: 18px;
+  height: 18px;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-1);
+}
+
+.date svg {
+  width: 14px;
+  height: 14px;
+}
+
+.readTime {
+  color: var(--z-accent-color);
+  font-weight: 500;
+}
+
+/* ========================================
+   Body
+======================================== */
+
+.body {
+  font-size: var(--z-text-base);
+  color: var(--z-text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--z-space-4);
+}
+
+.body.excerpt {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ========================================
+   Tags
+======================================== */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--z-space-2);
+}
+
+.tag {
+  padding: var(--z-space-1) var(--z-space-3);
+  background: var(--z-secondary-bg);
+  border-radius: var(--z-radius-full);
+  font-size: var(--z-text-xs);
+  color: var(--z-text-tertiary);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  background: var(--z-accent-color);
+  color: white;
+}

@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  zurto-ui-docs:
+    build:
+      context: .
+      dockerfile: Dockerfile.docs
+    container_name: zurto-ui-docs
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    networks:
+      - zurto-network
+
+networks:
+  zurto-network:
+    driver: bridge

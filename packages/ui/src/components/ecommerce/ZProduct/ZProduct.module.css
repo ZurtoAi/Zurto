@@ -1,0 +1,173 @@
+/* ========================================
+   ZProduct - Product Card Styles
+======================================== */
+
+.product {
+  display: flex;
+  flex-direction: column;
+  background: var(--z-card-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-lg);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.product:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+/* ========================================
+   Image
+======================================== */
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--z-secondary-bg);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product:hover .image {
+  transform: scale(1.05);
+}
+
+.badge {
+  position: absolute;
+  top: var(--z-space-2);
+  left: var(--z-space-2);
+  background: var(--z-accent-color);
+  color: white;
+  padding: var(--z-space-1) var(--z-space-2);
+  border-radius: var(--z-radius-sm);
+  font-size: var(--z-text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.discount {
+  position: absolute;
+  top: var(--z-space-2);
+  right: var(--z-space-2);
+  background: #ef4444;
+  color: white;
+  padding: var(--z-space-1) var(--z-space-2);
+  border-radius: var(--z-radius-sm);
+  font-size: var(--z-text-xs);
+  font-weight: 700;
+}
+
+/* ========================================
+   Content
+======================================== */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-2);
+  padding: var(--z-space-4);
+}
+
+.title {
+  font-size: var(--z-text-base);
+  font-weight: 600;
+  color: var(--z-text-primary);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ========================================
+   Rating
+======================================== */
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-2);
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  width: 16px;
+  height: 16px;
+  color: var(--z-border-color);
+  fill: var(--z-border-color);
+}
+
+.star.filled {
+  color: #fbbf24;
+  fill: #fbbf24;
+}
+
+.reviews {
+  font-size: var(--z-text-sm);
+  color: var(--z-text-tertiary);
+}
+
+/* ========================================
+   Pricing
+======================================== */
+
+.pricing {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-2);
+}
+
+.price {
+  font-size: var(--z-text-xl);
+  font-weight: 700;
+  color: var(--z-accent-color);
+}
+
+.originalPrice {
+  font-size: var(--z-text-base);
+  color: var(--z-text-tertiary);
+  text-decoration: line-through;
+}
+
+/* ========================================
+   Add to Cart
+======================================== */
+
+.addToCart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--z-space-2);
+  background: var(--z-accent-color);
+  color: white;
+  border: none;
+  padding: var(--z-space-3);
+  border-radius: var(--z-radius-md);
+  font-size: var(--z-text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: var(--z-space-2);
+}
+
+.addToCart:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+}

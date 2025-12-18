@@ -1,0 +1,40 @@
+/* ========================================
+   ZLineChart - Line Chart Styles
+======================================== */
+
+.chart {
+  width: 100%;
+  padding: var(--z-space-4);
+  background: var(--z-primary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-lg);
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+}
+
+.line {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke-width 0.2s ease;
+}
+
+.chart:hover .line {
+  stroke-width: 3;
+}
+
+.area {
+  transition: opacity 0.2s ease;
+}
+
+.dot {
+  transition: r 0.2s ease;
+}
+
+.chart:hover .dot {
+  r: 2;
+}

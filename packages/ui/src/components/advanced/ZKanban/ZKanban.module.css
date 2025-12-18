@@ -1,0 +1,156 @@
+/* ========================================
+   ZKanban - Kanban Board Styles
+======================================== */
+
+.kanban {
+  display: flex;
+  gap: var(--z-space-4);
+  overflow-x: auto;
+  padding: var(--z-space-4);
+}
+
+/* ========================================
+   Column
+======================================== */
+
+.column {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  max-width: 350px;
+  background: var(--z-secondary-bg);
+  border-radius: var(--z-radius-lg);
+  padding: var(--z-space-4);
+}
+
+.columnHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--z-space-4);
+}
+
+.columnTitle {
+  font-size: var(--z-text-lg);
+  font-weight: 700;
+  color: var(--z-text-primary);
+}
+
+.cardCount {
+  font-size: var(--z-text-sm);
+  font-weight: 600;
+  color: var(--z-text-tertiary);
+  padding: var(--z-space-1) var(--z-space-2);
+  background: var(--z-primary-bg);
+  border-radius: var(--z-radius-full);
+}
+
+/* ========================================
+   Cards
+======================================== */
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-3);
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: var(--z-space-3);
+}
+
+.card {
+  padding: var(--z-space-4);
+  background: var(--z-primary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-md);
+  cursor: move;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-2);
+  margin-bottom: var(--z-space-2);
+}
+
+.dragHandle {
+  width: 16px;
+  height: 16px;
+  color: var(--z-text-tertiary);
+  cursor: grab;
+}
+
+.cardTitle {
+  flex: 1;
+  font-size: var(--z-text-base);
+  font-weight: 600;
+  color: var(--z-text-primary);
+}
+
+.cardDescription {
+  font-size: var(--z-text-sm);
+  color: var(--z-text-secondary);
+  line-height: 1.5;
+  margin-bottom: var(--z-space-3);
+}
+
+/* ========================================
+   Tags
+======================================== */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--z-space-2);
+}
+
+.tag {
+  padding: 2px var(--z-space-2);
+  background: var(--z-accent-color);
+  color: white;
+  font-size: var(--z-text-xs);
+  font-weight: 500;
+  border-radius: var(--z-radius-sm);
+}
+
+/* ========================================
+   Add Button
+======================================== */
+
+.addButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--z-space-2);
+  width: 100%;
+  padding: var(--z-space-3);
+  background: transparent;
+  border: 2px dashed var(--z-border-color);
+  border-radius: var(--z-radius-md);
+  color: var(--z-text-tertiary);
+  font-size: var(--z-text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.addButton:hover {
+  border-color: var(--z-accent-color);
+  color: var(--z-accent-color);
+  background: rgba(223, 62, 83, 0.05);
+}
+
+.addButton svg {
+  width: 16px;
+  height: 16px;
+}

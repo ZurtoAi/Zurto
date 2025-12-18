@@ -1,0 +1,383 @@
+/* ContactForm.module.css */
+/* Contact form styling with validation states, animations, and responsive design */
+
+.contactFormContainer {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(15, 15, 30, 0.6) 0%, rgba(20, 20, 40, 0.6) 100%);
+  border: 2px solid rgba(0, 255, 255, 0.2);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.formHeader {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.formTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #00ffff, #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.5px;
+}
+
+.formSubtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(0, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.characterCount {
+  font-size: 11px;
+  color: rgba(0, 255, 255, 0.5);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.inputField {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1.5px solid rgba(0, 255, 255, 0.3);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.inputField::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.inputField:focus {
+  border-color: rgba(0, 255, 255, 0.8);
+  background: rgba(0, 255, 255, 0.05);
+  box-shadow: 0 0 16px rgba(0, 255, 255, 0.2);
+}
+
+.inputField:hover:not(:focus) {
+  border-color: rgba(0, 255, 255, 0.5);
+  background: rgba(0, 255, 255, 0.02);
+}
+
+.textareaField {
+  min-height: 140px;
+  resize: vertical;
+  max-height: 300px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.inputField.error {
+  border-color: rgba(255, 100, 100, 0.8);
+  background: rgba(255, 100, 100, 0.05);
+}
+
+.inputField.error:focus {
+  box-shadow: 0 0 16px rgba(255, 100, 100, 0.2);
+}
+
+.inputField.success {
+  border-color: rgba(0, 255, 136, 0.8);
+  background: rgba(0, 255, 136, 0.05);
+}
+
+.inputField.success:focus {
+  box-shadow: 0 0 16px rgba(0, 255, 136, 0.2);
+}
+
+.errorMessage {
+  font-size: 12px;
+  color: #ff6464;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  animation: slideInError 0.3s ease-out;
+}
+
+@keyframes slideInError {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.successMessage {
+  font-size: 12px;
+  color: #00ff88;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  animation: slideInSuccess 0.3s ease-out;
+}
+
+@keyframes slideInSuccess {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.submitButton {
+  width: 100%;
+  padding: 14px 24px;
+  margin-top: 8px;
+  background: linear-gradient(135deg, rgba(0, 255, 200, 0.1) 0%, rgba(0, 255, 136, 0.1) 100%);
+  border: 2px solid rgba(0, 255, 200, 0.4);
+  border-radius: 8px;
+  color: #00ffc8;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.submitButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 200, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+  border-color: rgba(0, 255, 200, 0.8);
+  background: linear-gradient(135deg, rgba(0, 255, 200, 0.15) 0%, rgba(0, 255, 136, 0.15) 100%);
+  box-shadow: 0 0 24px rgba(0, 255, 200, 0.3);
+}
+
+.submitButton:hover:not(:disabled)::before {
+  left: 100%;
+}
+
+.submitButton:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.submitButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.loadingSpinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0, 255, 200, 0.3);
+  border-top-color: #00ffc8;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.successState {
+  text-align: center;
+  padding: 24px 0;
+  animation: fadeInScale 0.5s ease-out;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.successIcon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 255, 136, 0.1);
+  border: 2px solid rgba(0, 255, 136, 0.4);
+  border-radius: 50%;
+  font-size: 32px;
+  color: #00ff88;
+}
+
+.successTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #00ff88;
+  margin-bottom: 8px;
+}
+
+.successDescription {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.resetButton {
+  padding: 10px 24px;
+  background: transparent;
+  border: 1.5px solid rgba(0, 255, 255, 0.4);
+  border-radius: 6px;
+  color: rgba(0, 255, 255, 0.8);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.resetButton:hover {
+  border-color: rgba(0, 255, 255, 0.8);
+  color: #00ffff;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.2);
+}
+
+.fieldWrapper {
+  position: relative;
+}
+
+.fieldIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.inputField.success ~ .fieldIcon {
+  opacity: 1;
+  color: #00ff88;
+}
+
+.inputField.error ~ .fieldIcon {
+  opacity: 1;
+  color: #ff6464;
+}
+
+@media (max-width: 640px) {
+  .contactFormContainer {
+    padding: 24px;
+    border-radius: 12px;
+  }
+
+  .formTitle {
+    font-size: 22px;
+  }
+
+  .formSubtitle {
+    font-size: 13px;
+  }
+
+  .inputField {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .textareaField {
+    min-height: 120px;
+  }
+
+  .submitButton {
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+
+  .label {
+    font-size: 12px;
+  }
+
+  .errorMessage,
+  .successMessage {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactFormContainer {
+    padding: 20px;
+  }
+
+  .formGroup {
+    margin-bottom: 20px;
+  }
+
+  .formTitle {
+    font-size: 20px;
+  }
+
+  .inputField {
+    border-radius: 6px;
+  }
+
+  .successIcon {
+    width: 56px;
+    height: 56px;
+    font-size: 28px;
+  }
+
+  .successTitle {
+    font-size: 18px;
+  }
+}

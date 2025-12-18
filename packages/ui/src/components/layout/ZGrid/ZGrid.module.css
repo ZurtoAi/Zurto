@@ -1,0 +1,11 @@
+/* ========================================
+   ZGrid - CSS Grid Component Styles
+======================================== */
+
+.grid {
+  display: grid;
+}
+
+.fullWidth {
+  width: 100%;
+}

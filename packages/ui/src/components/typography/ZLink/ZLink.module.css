@@ -1,0 +1,45 @@
+.link {
+  color: var(--z-text-primary);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.link.default {
+  color: var(--z-text-primary);
+}
+
+.link.default:hover {
+  color: var(--z-accent-color);
+}
+
+.link.accent {
+  color: var(--z-accent-color);
+}
+
+.link.accent:hover {
+  opacity: 0.8;
+}
+
+.link.muted {
+  color: var(--z-text-secondary);
+}
+
+.link.muted:hover {
+  color: var(--z-text-primary);
+}
+
+.link.underline-none {
+  text-decoration: none;
+}
+
+.link.underline-hover {
+  text-decoration: none;
+}
+
+.link.underline-hover:hover {
+  text-decoration: underline;
+}
+
+.link.underline-always {
+  text-decoration: underline;
+}

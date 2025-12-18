@@ -1,0 +1,100 @@
+# Zurto.app Production Configuration
+# Auto-HTTPS with Caddy for zurto.app domains
+
+{
+    # Global options
+    email admin@zurto.app
+}
+
+# Main domain with www redirect
+zurto.app, www.zurto.app {
+    # API proxy
+    handle /api/* {
+        reverse_proxy zurto-api:3000
+    }
+
+    # WebSocket proxy
+    handle /socket.io/* {
+        reverse_proxy zurto-api:3000 {
+            header_up Connection {http.request.header.Connection}
+            header_up Upgrade {http.request.header.Upgrade}
+        }
+    }
+
+    # Health check
+    handle /health {
+        reverse_proxy zurto-api:3000
+    }
+
+    # Frontend
+    handle {
+        reverse_proxy zurto-web:5173
+    }
+
+    # Enable compression
+    encode gzip
+
+    # HSTS header
+    header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+}
+
+# API subdomain
+api.zurto.app {
+    # All routes go to API
+    reverse_proxy zurto-api:3000
+
+    # WebSocket support
+    @websocket {
+        header Connection *Upgrade*
+        header Upgrade websocket
+    }
+    reverse_proxy @websocket zurto-api:3000 {
+        header_up Connection {http.request.header.Connection}
+        header_up Upgrade {http.request.header.Upgrade}
+    }
+
+    # Enable compression
+    encode gzip
+    
+    # NOTE: CORS handled by backend to avoid duplicate headers
+}
+
+# UI Documentation subdomain
+ui.zurto.app {
+    reverse_proxy zurto-ui-docs:80
+
+    # Enable compression
+    encode gzip
+
+    # Cache static assets
+    header /assets/* Cache-Control "public, max-age=31536000, immutable"
+}
+
+# Local development fallback (HTTP only)
+:80 {
+    # API proxy
+    handle /api/* {
+        reverse_proxy zurto-api:3000
+    }
+
+    # WebSocket proxy
+    handle /socket.io/* {
+        reverse_proxy zurto-api:3000 {
+            header_up Connection {http.request.header.Connection}
+            header_up Upgrade {http.request.header.Upgrade}
+        }
+    }
+
+    # Health check
+    handle /health {
+        reverse_proxy zurto-api:3000
+    }
+
+    # Frontend
+    handle {
+        reverse_proxy zurto-web:5173
+    }
+
+    # Enable compression
+    encode gzip
+}

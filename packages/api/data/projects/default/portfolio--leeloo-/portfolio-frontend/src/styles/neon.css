@@ -1,0 +1,565 @@
+/**
+ * Neon Color Definitions and Glow Effects - Portfolio Frontend
+ * Defines neon color palette, gradient utilities, and glow/shadow effects
+ * Coordinated with Three.js scene colors for visual cohesion
+ */
+
+/* ============================================================================
+   NEON COLOR PALETTE - CSS CUSTOM PROPERTIES
+   ============================================================================ */
+
+:root {
+  /* Primary Neon Colors */
+  --neon-primary: #00ff88;
+  --neon-primary-rgb: 0, 255, 136;
+  --neon-primary-dark: #00cc6a;
+  --neon-primary-light: #33ff99;
+  
+  /* Secondary Neon Colors */
+  --neon-secondary: #ff006e;
+  --neon-secondary-rgb: 255, 0, 110;
+  --neon-secondary-dark: #cc0056;
+  --neon-secondary-light: #ff3385;
+  
+  /* Tertiary Neon Colors */
+  --neon-tertiary: #0066ff;
+  --neon-tertiary-rgb: 0, 102, 255;
+  --neon-tertiary-dark: #0052cc;
+  --neon-tertiary-light: #3385ff;
+  
+  /* Accent Neon Colors */
+  --neon-accent-cyan: #00ffff;
+  --neon-accent-cyan-rgb: 0, 255, 255;
+  --neon-accent-magenta: #ff00ff;
+  --neon-accent-magenta-rgb: 255, 0, 255;
+  --neon-accent-yellow: #ffff00;
+  --neon-accent-yellow-rgb: 255, 255, 0;
+  
+  /* Dark Mode Background */
+  --neon-bg-dark: #0f0f1e;
+  --neon-bg-darker: #0a0a14;
+  --neon-bg-lighter: #1a1a2e;
+  
+  /* Neutral Colors */
+  --neon-text-primary: #ffffff;
+  --neon-text-secondary: #b0b0b0;
+  --neon-text-muted: #666666;
+  
+  /* Glow Intensity Levels */
+  --glow-intensity-low: 0.3;
+  --glow-intensity-medium: 0.6;
+  --glow-intensity-high: 0.9;
+}
+
+/* ============================================================================
+   NEON TEXT GLOW EFFECTS
+   ============================================================================ */
+
+.neon-glow-primary {
+  color: var(--neon-primary);
+  text-shadow: 
+    0 0 4px var(--neon-primary),
+    0 0 8px var(--neon-primary),
+    0 0 12px var(--neon-primary),
+    0 0 20px var(--neon-primary),
+    0 0 40px var(--neon-primary);
+}
+
+.neon-glow-secondary {
+  color: var(--neon-secondary);
+  text-shadow: 
+    0 0 4px var(--neon-secondary),
+    0 0 8px var(--neon-secondary),
+    0 0 12px var(--neon-secondary),
+    0 0 20px var(--neon-secondary),
+    0 0 40px var(--neon-secondary);
+}
+
+.neon-glow-tertiary {
+  color: var(--neon-tertiary);
+  text-shadow: 
+    0 0 4px var(--neon-tertiary),
+    0 0 8px var(--neon-tertiary),
+    0 0 12px var(--neon-tertiary),
+    0 0 20px var(--neon-tertiary),
+    0 0 40px var(--neon-tertiary);
+}
+
+.neon-glow-cyan {
+  color: var(--neon-accent-cyan);
+  text-shadow: 
+    0 0 4px var(--neon-accent-cyan),
+    0 0 8px var(--neon-accent-cyan),
+    0 0 12px var(--neon-accent-cyan),
+    0 0 20px var(--neon-accent-cyan),
+    0 0 40px var(--neon-accent-cyan);
+}
+
+.neon-glow-magenta {
+  color: var(--neon-accent-magenta);
+  text-shadow: 
+    0 0 4px var(--neon-accent-magenta),
+    0 0 8px var(--neon-accent-magenta),
+    0 0 12px var(--neon-accent-magenta),
+    0 0 20px var(--neon-accent-magenta),
+    0 0 40px var(--neon-accent-magenta);
+}
+
+.neon-glow-multi {
+  background: linear-gradient(45deg, var(--neon-primary), var(--neon-secondary), var(--neon-tertiary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 
+    0 0 20px rgba(var(--neon-primary-rgb), 0.5),
+    0 0 40px rgba(var(--neon-secondary-rgb), 0.3);
+  filter: drop-shadow(0 0 8px rgba(var(--neon-primary-rgb), 0.4))
+          drop-shadow(0 0 8px rgba(var(--neon-secondary-rgb), 0.4));
+}
+
+/* ============================================================================
+   NEON BOX GLOW EFFECTS
+   ============================================================================ */
+
+.neon-box-glow-primary {
+  background-color: var(--neon-bg-dark);
+  border: 2px solid var(--neon-primary);
+  box-shadow: 
+    0 0 8px var(--neon-primary),
+    0 0 16px var(--neon-primary),
+    0 0 24px var(--neon-primary),
+    inset 0 0 8px rgba(var(--neon-primary-rgb), 0.1);
+}
+
+.neon-box-glow-secondary {
+  background-color: var(--neon-bg-dark);
+  border: 2px solid var(--neon-secondary);
+  box-shadow: 
+    0 0 8px var(--neon-secondary),
+    0 0 16px var(--neon-secondary),
+    0 0 24px var(--neon-secondary),
+    inset 0 0 8px rgba(var(--neon-secondary-rgb), 0.1);
+}
+
+.neon-box-glow-tertiary {
+  background-color: var(--neon-bg-dark);
+  border: 2px solid var(--neon-tertiary);
+  box-shadow: 
+    0 0 8px var(--neon-tertiary),
+    0 0 16px var(--neon-tertiary),
+    0 0 24px var(--neon-tertiary),
+    inset 0 0 8px rgba(var(--neon-tertiary-rgb), 0.1);
+}
+
+.neon-box-glow-cyan {
+  background-color: var(--neon-bg-dark);
+  border: 2px solid var(--neon-accent-cyan);
+  box-shadow: 
+    0 0 8px var(--neon-accent-cyan),
+    0 0 16px var(--neon-accent-cyan),
+    0 0 24px var(--neon-accent-cyan),
+    inset 0 0 8px rgba(var(--neon-accent-cyan-rgb), 0.1);
+}
+
+/* ============================================================================
+   NEON GLOW INTENSITY VARIANTS
+   ============================================================================ */
+
+.neon-glow-low {
+  opacity: var(--glow-intensity-low);
+}
+
+.neon-glow-medium {
+  opacity: var(--glow-intensity-medium);
+}
+
+.neon-glow-high {
+  opacity: var(--glow-intensity-high);
+}
+
+/* ============================================================================
+   NEON GRADIENT BACKGROUNDS
+   ============================================================================ */
+
+.neon-gradient-primary {
+  background: linear-gradient(135deg, var(--neon-primary), var(--neon-primary-dark));
+}
+
+.neon-gradient-secondary {
+  background: linear-gradient(135deg, var(--neon-secondary), var(--neon-secondary-dark));
+}
+
+.neon-gradient-tertiary {
+  background: linear-gradient(135deg, var(--neon-tertiary), var(--neon-tertiary-dark));
+}
+
+.neon-gradient-multi {
+  background: linear-gradient(45deg, var(--neon-primary), var(--neon-secondary), var(--neon-tertiary), var(--neon-accent-cyan));
+  background-size: 400% 400%;
+}
+
+.neon-gradient-multi-animate {
+  animation: neon-gradient-shift 8s ease infinite;
+}
+
+@keyframes neon-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ============================================================================
+   NEON BORDER EFFECTS
+   ============================================================================ */
+
+.neon-border-primary {
+  border: 1px solid var(--neon-primary);
+  box-shadow: 0 0 4px var(--neon-primary);
+}
+
+.neon-border-secondary {
+  border: 1px solid var(--neon-secondary);
+  box-shadow: 0 0 4px var(--neon-secondary);
+}
+
+.neon-border-tertiary {
+  border: 1px solid var(--neon-tertiary);
+  box-shadow: 0 0 4px var(--neon-tertiary);
+}
+
+.neon-border-thick-primary {
+  border: 2px solid var(--neon-primary);
+  box-shadow: 0 0 8px var(--neon-primary), inset 0 0 8px rgba(var(--neon-primary-rgb), 0.1);
+}
+
+.neon-border-thick-secondary {
+  border: 2px solid var(--neon-secondary);
+  box-shadow: 0 0 8px var(--neon-secondary), inset 0 0 8px rgba(var(--neon-secondary-rgb), 0.1);
+}
+
+/* ============================================================================
+   NEON ANIMATED GLOW EFFECTS
+   ============================================================================ */
+
+.neon-pulse-primary {
+  animation: neon-pulse-primary 2s ease-in-out infinite;
+}
+
+@keyframes neon-pulse-primary {
+  0%, 100% {
+    text-shadow: 
+      0 0 4px var(--neon-primary),
+      0 0 8px var(--neon-primary),
+      0 0 12px var(--neon-primary),
+      0 0 20px var(--neon-primary);
+  }
+  50% {
+    text-shadow: 
+      0 0 8px var(--neon-primary),
+      0 0 16px var(--neon-primary),
+      0 0 24px var(--neon-primary),
+      0 0 40px var(--neon-primary);
+  }
+}
+
+.neon-pulse-secondary {
+  animation: neon-pulse-secondary 2s ease-in-out infinite;
+}
+
+@keyframes neon-pulse-secondary {
+  0%, 100% {
+    box-shadow: 
+      0 0 8px var(--neon-secondary),
+      0 0 16px var(--neon-secondary),
+      0 0 24px var(--neon-secondary);
+  }
+  50% {
+    box-shadow: 
+      0 0 16px var(--neon-secondary),
+      0 0 32px var(--neon-secondary),
+      0 0 48px var(--neon-secondary);
+  }
+}
+
+.neon-pulse-tertiary {
+  animation: neon-pulse-tertiary 2s ease-in-out infinite;
+}
+
+@keyframes neon-pulse-tertiary {
+  0%, 100% {
+    box-shadow: 
+      0 0 8px var(--neon-tertiary),
+      0 0 16px var(--neon-tertiary),
+      0 0 24px var(--neon-tertiary);
+  }
+  50% {
+    box-shadow: 
+      0 0 16px var(--neon-tertiary),
+      0 0 32px var(--neon-tertiary),
+      0 0 48px var(--neon-tertiary);
+  }
+}
+
+/* ============================================================================
+   NEON FLICKER EFFECTS
+   ============================================================================ */
+
+.neon-flicker-primary {
+  animation: neon-flicker-primary 0.3s ease-in-out infinite;
+}
+
+@keyframes neon-flicker-primary {
+  0%, 18%, 22%, 25%, 54%, 56%, 100% {
+    text-shadow: 
+      0 0 4px var(--neon-primary),
+      0 0 8px var(--neon-primary),
+      0 0 12px var(--neon-primary),
+      0 0 20px var(--neon-primary);
+  }
+  20%, 24%, 55% {
+    text-shadow: 
+      0 0 2px var(--neon-primary),
+      0 0 4px var(--neon-primary);
+  }
+}
+
+.neon-flicker-secondary {
+  animation: neon-flicker-secondary 0.3s ease-in-out infinite;
+}
+
+@keyframes neon-flicker-secondary {
+  0%, 18%, 22%, 25%, 54%, 56%, 100% {
+    box-shadow: 
+      0 0 8px var(--neon-secondary),
+      0 0 16px var(--neon-secondary),
+      0 0 24px var(--neon-secondary);
+  }
+  20%, 24%, 55% {
+    box-shadow: 
+      0 0 2px var(--neon-secondary),
+      0 0 4px var(--neon-secondary);
+  }
+}
+
+/* ============================================================================
+   NEON SHIMMER EFFECTS
+   ============================================================================ */
+
+.neon-shimmer-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.neon-shimmer-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(var(--neon-primary-rgb), 0.3), transparent);
+  animation: neon-shimmer 3s infinite;
+}
+
+.neon-shimmer-secondary {
+  position: relative;
+  overflow: hidden;
+}
+
+.neon-shimmer-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(var(--neon-secondary-rgb), 0.3), transparent);
+  animation: neon-shimmer 3s infinite;
+}
+
+@keyframes neon-shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* ============================================================================
+   NEON HOVER EFFECTS
+   ============================================================================ */
+
+.neon-hover-primary:hover {
+  color: var(--neon-primary);
+  text-shadow: 
+    0 0 4px var(--neon-primary),
+    0 0 8px var(--neon-primary),
+    0 0 12px var(--neon-primary),
+    0 0 20px var(--neon-primary);
+  transition: all 0.3s ease;
+}
+
+.neon-hover-secondary:hover {
+  color: var(--neon-secondary);
+  text-shadow: 
+    0 0 4px var(--neon-secondary),
+    0 0 8px var(--neon-secondary),
+    0 0 12px var(--neon-secondary),
+    0 0 20px var(--neon-secondary);
+  transition: all 0.3s ease;
+}
+
+.neon-hover-box-primary:hover {
+  border-color: var(--neon-primary);
+  box-shadow: 
+    0 0 8px var(--neon-primary),
+    0 0 16px var(--neon-primary),
+    0 0 24px var(--neon-primary),
+    inset 0 0 8px rgba(var(--neon-primary-rgb), 0.2);
+  transition: all 0.3s ease;
+}
+
+.neon-hover-box-secondary:hover {
+  border-color: var(--neon-secondary);
+  box-shadow: 
+    0 0 8px var(--neon-secondary),
+    0 0 16px var(--neon-secondary),
+    0 0 24px var(--neon-secondary),
+    inset 0 0 8px rgba(var(--neon-secondary-rgb), 0.2);
+  transition: all 0.3s ease;
+}
+
+/* ============================================================================
+   NEON BACKGROUND EFFECTS
+   ============================================================================ */
+
+.neon-bg-primary {
+  background-color: rgba(var(--neon-primary-rgb), 0.05);
+  border: 1px solid rgba(var(--neon-primary-rgb), 0.2);
+}
+
+.neon-bg-secondary {
+  background-color: rgba(var(--neon-secondary-rgb), 0.05);
+  border: 1px solid rgba(var(--neon-secondary-rgb), 0.2);
+}
+
+.neon-bg-tertiary {
+  background-color: rgba(var(--neon-tertiary-rgb), 0.05);
+  border: 1px solid rgba(var(--neon-tertiary-rgb), 0.2);
+}
+
+/* ============================================================================
+   NEON FOCUS STATES
+   ============================================================================ */
+
+.neon-focus-primary:focus,
+.neon-focus-primary:focus-visible {
+  outline: none;
+  box-shadow: 
+    0 0 0 3px var(--neon-bg-dark),
+    0 0 0 5px var(--neon-primary),
+    0 0 12px var(--neon-primary);
+}
+
+.neon-focus-secondary:focus,
+.neon-focus-secondary:focus-visible {
+  outline: none;
+  box-shadow: 
+    0 0 0 3px var(--neon-bg-dark),
+    0 0 0 5px var(--neon-secondary),
+    0 0 12px var(--neon-secondary);
+}
+
+.neon-focus-tertiary:focus,
+.neon-focus-tertiary:focus-visible {
+  outline: none;
+  box-shadow: 
+    0 0 0 3px var(--neon-bg-dark),
+    0 0 0 5px var(--neon-tertiary),
+    0 0 12px var(--neon-tertiary);
+}
+
+/* ============================================================================
+   UTILITY CLASSES
+   ============================================================================ */
+
+.neon-container {
+  background-color: var(--neon-bg-dark);
+  color: var(--neon-text-primary);
+}
+
+.neon-container-lighter {
+  background-color: var(--neon-bg-lighter);
+  color: var(--neon-text-primary);
+}
+
+.neon-text-primary {
+  color: var(--neon-primary);
+}
+
+.neon-text-secondary {
+  color: var(--neon-secondary);
+}
+
+.neon-text-tertiary {
+  color: var(--neon-tertiary);
+}
+
+.neon-text-cyan {
+  color: var(--neon-accent-cyan);
+}
+
+.neon-text-magenta {
+  color: var(--neon-accent-magenta);
+}
+
+.neon-text-yellow {
+  color: var(--neon-accent-yellow);
+}
+
+/* ============================================================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .neon-pulse-primary,
+  .neon-pulse-secondary,
+  .neon-pulse-tertiary,
+  .neon-flicker-primary,
+  .neon-flicker-secondary,
+  .neon-shimmer-primary,
+  .neon-shimmer-secondary,
+  .neon-gradient-multi-animate {
+    animation: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .neon-glow-primary,
+  .neon-glow-secondary,
+  .neon-glow-tertiary,
+  .neon-glow-cyan,
+  .neon-glow-magenta {
+    text-shadow: 
+      0 0 2px currentColor,
+      0 0 4px currentColor,
+      0 0 8px currentColor;
+  }
+
+  .neon-box-glow-primary,
+  .neon-box-glow-secondary,
+  .neon-box-glow-tertiary,
+  .neon-box-glow-cyan {
+    box-shadow: 
+      0 0 4px currentColor,
+      0 0 8px currentColor,
+      inset 0 0 4px rgba(255, 255, 255, 0.05);
+  }
+}

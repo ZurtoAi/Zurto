@@ -1,0 +1,115 @@
+/* ========================================
+   ZStatusIndicator - Status Indicator Styles
+======================================== */
+
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--z-space-2);
+}
+
+/* ========================================
+   Indicator
+======================================== */
+
+.indicator {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.container.sm .indicator {
+  width: 12px;
+  height: 12px;
+}
+
+.container.md .indicator {
+  width: 16px;
+  height: 16px;
+}
+
+.container.lg .indicator {
+  width: 20px;
+  height: 20px;
+}
+
+.dot {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+  stroke: none;
+}
+
+/* ========================================
+   Status Colors
+======================================== */
+
+.indicator.online {
+  color: #22c55e; /* green-500 */
+}
+
+.indicator.offline {
+  color: #94a3b8; /* slate-400 */
+}
+
+.indicator.away {
+  color: #fbbf24; /* amber-400 */
+}
+
+.indicator.busy {
+  color: #ef4444; /* red-500 */
+}
+
+.indicator.idle {
+  color: #f59e0b; /* amber-500 */
+}
+
+/* ========================================
+   Pulse Animation
+======================================== */
+
+.indicator.pulse::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.5;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* ========================================
+   Label
+======================================== */
+
+.label {
+  font-size: var(--z-text-sm);
+  font-weight: 500;
+  color: var(--z-text-primary);
+}
+
+.container.sm .label {
+  font-size: var(--z-text-xs);
+}
+
+.container.lg .label {
+  font-size: var(--z-text-base);
+}

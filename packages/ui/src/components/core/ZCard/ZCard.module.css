@@ -1,0 +1,145 @@
+/* ========================================
+   ZCard - Card Container Component Styles
+======================================== */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--z-radius-card);
+  transition: var(--z-transition);
+  overflow: hidden;
+}
+
+/* ========================================
+   Variants
+======================================== */
+
+.default {
+  background: var(--z-bg-secondary);
+  border: 1px solid var(--z-border);
+}
+
+.glass {
+  background: var(--z-glass-bg);
+  border: 1px solid var(--z-glass-border);
+  backdrop-filter: var(--z-glass-blur);
+  -webkit-backdrop-filter: var(--z-glass-blur);
+}
+
+.bordered {
+  background: transparent;
+  border: 1px solid var(--z-border);
+}
+
+.elevated {
+  background: var(--z-bg-elevated);
+  border: 1px solid transparent;
+  box-shadow: var(--z-shadow-lg);
+}
+
+/* ========================================
+   Padding Variants
+======================================== */
+
+.padding-none .body {
+  padding: 0;
+}
+.padding-sm .body {
+  padding: var(--z-space-3);
+}
+.padding-md .body {
+  padding: var(--z-space-4);
+}
+.padding-lg .body {
+  padding: var(--z-space-6);
+}
+.padding-xl .body {
+  padding: var(--z-space-8);
+}
+
+/* ========================================
+   Interactive States
+======================================== */
+
+.hoverable:hover {
+  border-color: var(--z-border-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--z-shadow-lg);
+}
+
+.glass.hoverable:hover {
+  background: var(--z-glass-bg-hover);
+  border-color: var(--z-glass-border-hover);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:focus-visible {
+  outline: none;
+  box-shadow: var(--z-focus-ring);
+}
+
+.clickable:active {
+  transform: scale(0.98);
+}
+
+/* ========================================
+   Card Sections
+======================================== */
+
+.header {
+  padding: var(--z-space-4);
+  border-bottom: 1px solid var(--z-border);
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--z-space-3);
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-1);
+}
+
+.title {
+  font-size: var(--z-text-lg);
+  font-weight: var(--z-font-semibold);
+  color: var(--z-text-primary);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: var(--z-text-sm);
+  color: var(--z-text-secondary);
+  margin: 0;
+}
+
+.headerAction {
+  flex-shrink: 0;
+}
+
+.body {
+  flex: 1;
+}
+
+.footer {
+  padding: var(--z-space-4);
+  border-top: 1px solid var(--z-border);
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-2);
+}
+
+/* ========================================
+   Nested Card Adjustments
+======================================== */
+
+.card .card {
+  background: var(--z-bg-tertiary);
+}

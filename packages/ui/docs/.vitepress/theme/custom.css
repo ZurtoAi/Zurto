@@ -1,0 +1,153 @@
+/**
+ * Zurto UI Documentation Theme
+ * Dark theme with primary brand color
+ */
+
+:root {
+  /* Brand colors */
+  --vp-c-brand-1: #df3e53;
+  --vp-c-brand-2: #e85566;
+  --vp-c-brand-3: #c73548;
+  --vp-c-brand-soft: rgba(223, 62, 83, 0.14);
+
+  /* Backgrounds */
+  --vp-c-bg: #0a0a0a;
+  --vp-c-bg-alt: #111111;
+  --vp-c-bg-elv: #1a1a1a;
+  --vp-c-bg-soft: #1a1a1a;
+
+  /* Text */
+  --vp-c-text-1: #ffffff;
+  --vp-c-text-2: #a0a0a0;
+  --vp-c-text-3: #666666;
+
+  /* Borders */
+  --vp-c-border: #2a2a2a;
+  --vp-c-divider: #2a2a2a;
+  --vp-c-gutter: #1a1a1a;
+
+  /* Code blocks */
+  --vp-code-block-bg: #111111;
+  --vp-code-line-highlight-color: rgba(223, 62, 83, 0.1);
+
+  /* Sidebar */
+  --vp-sidebar-bg-color: #0a0a0a;
+
+  /* Nav */
+  --vp-nav-bg-color: #0a0a0a;
+
+  /* Hero */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(
+    135deg,
+    #df3e53 0%,
+    #e85566 100%
+  );
+  --vp-home-hero-image-background-image: linear-gradient(
+    135deg,
+    #df3e53 30%,
+    #e85566 70%
+  );
+  --vp-home-hero-image-filter: blur(68px);
+}
+
+/* Dark mode overrides (default) */
+.dark {
+  --vp-c-bg: #0a0a0a;
+  --vp-c-bg-alt: #111111;
+  --vp-c-bg-elv: #1a1a1a;
+}
+
+/* Custom component previews */
+.component-preview {
+  background: #111111;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 24px;
+  margin: 16px 0;
+}
+
+.component-preview__header {
+  font-size: 12px;
+  color: #666666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+/* Props table styling */
+.props-table {
+  width: 100%;
+  margin: 16px 0;
+}
+
+.props-table th {
+  text-align: left;
+  padding: 12px;
+  background: #1a1a1a;
+  border-bottom: 1px solid #2a2a2a;
+  font-weight: 600;
+}
+
+.props-table td {
+  padding: 12px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.props-table code {
+  background: rgba(223, 62, 83, 0.1);
+  color: #df3e53;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+/* Color swatches */
+.color-swatch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0;
+}
+
+.color-swatch__box {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: 1px solid #2a2a2a;
+}
+
+/* Feature grid on home */
+.VPFeatures .VPFeature {
+  background: #111111;
+  border: 1px solid #2a2a2a;
+}
+
+/* Button styling */
+.VPButton.brand {
+  background: linear-gradient(135deg, #df3e53 0%, #c73548 100%);
+  border: none;
+}
+
+.VPButton.brand:hover {
+  background: linear-gradient(135deg, #e85566 0%, #df3e53 100%);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}

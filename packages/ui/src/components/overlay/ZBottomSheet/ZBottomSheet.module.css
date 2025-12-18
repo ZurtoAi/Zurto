@@ -1,0 +1,138 @@
+/* ========================================
+   ZBottomSheet - Bottom Sheet Styles
+======================================== */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--z-bg-primary);
+  border-top-left-radius: var(--z-radius-xl);
+  border-top-right-radius: var(--z-radius-xl);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+  transition: transform 0.1s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   Sizes
+======================================== */
+
+.sheet.sm {
+  max-height: 30vh;
+}
+
+.sheet.md {
+  max-height: 50vh;
+}
+
+.sheet.lg {
+  max-height: 70vh;
+}
+
+.sheet.full {
+  max-height: 90vh;
+}
+
+/* ========================================
+   Handle
+======================================== */
+
+.handleWrapper {
+  display: flex;
+  justify-content: center;
+  padding: var(--z-space-3) 0;
+  cursor: grab;
+  touch-action: none;
+}
+
+.handleWrapper:active {
+  cursor: grabbing;
+}
+
+.handle {
+  width: 40px;
+  height: 4px;
+  background: var(--z-border-color);
+  border-radius: var(--z-radius-full);
+}
+
+/* ========================================
+   Header
+======================================== */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--z-space-4) var(--z-space-6);
+  border-bottom: 1px solid var(--z-border-color);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--z-text-xl);
+  font-weight: 600;
+  color: var(--z-text-primary);
+}
+
+.closeButton {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: var(--z-radius-sm);
+  color: var(--z-text-tertiary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+  background: var(--z-secondary-bg);
+  color: var(--z-text-primary);
+}
+
+.closeButton svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ========================================
+   Content
+======================================== */
+
+.content {
+  padding: var(--z-space-6);
+  overflow-y: auto;
+  max-height: calc(90vh - 120px);
+}

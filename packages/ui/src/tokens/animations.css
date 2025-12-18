@@ -1,0 +1,229 @@
+/* ========================================
+   ZURTO UI - ANIMATION TOKENS
+   Durations, easings, and keyframes
+======================================== */
+
+:root {
+  /* Durations */
+  --z-duration-instant: 0ms;
+  --z-duration-fast: 100ms;
+  --z-duration-normal: 200ms;
+  --z-duration-slow: 300ms;
+  --z-duration-slower: 400ms;
+  --z-duration-slowest: 500ms;
+
+  /* Easing Functions */
+  --z-ease-linear: linear;
+  --z-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --z-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --z-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --z-ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --z-ease-elastic: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  --z-ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* Default transition */
+  --z-transition: all var(--z-duration-normal) var(--z-ease-in-out);
+  --z-transition-fast: all var(--z-duration-fast) var(--z-ease-in-out);
+  --z-transition-slow: all var(--z-duration-slow) var(--z-ease-in-out);
+
+  /* Property-specific transitions */
+  --z-transition-colors: color var(--z-duration-normal) var(--z-ease-in-out),
+    background-color var(--z-duration-normal) var(--z-ease-in-out),
+    border-color var(--z-duration-normal) var(--z-ease-in-out);
+  --z-transition-opacity: opacity var(--z-duration-normal) var(--z-ease-in-out);
+  --z-transition-shadow: box-shadow var(--z-duration-normal)
+    var(--z-ease-in-out);
+  --z-transition-transform: transform var(--z-duration-normal)
+    var(--z-ease-in-out);
+}
+
+/* Keyframe Animations */
+@keyframes z-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes z-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes z-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes z-scale-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes z-slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes z-slide-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes z-slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes z-slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes z-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes z-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes z-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes z-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes z-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Animation utility classes */
+.z-animate-fade-in {
+  animation: z-fade-in var(--z-duration-normal) var(--z-ease-out);
+}
+.z-animate-fade-out {
+  animation: z-fade-out var(--z-duration-normal) var(--z-ease-in);
+}
+.z-animate-scale-in {
+  animation: z-scale-in var(--z-duration-normal) var(--z-ease-out);
+}
+.z-animate-scale-out {
+  animation: z-scale-out var(--z-duration-normal) var(--z-ease-in);
+}
+.z-animate-slide-up {
+  animation: z-slide-in-up var(--z-duration-normal) var(--z-ease-out);
+}
+.z-animate-slide-down {
+  animation: z-slide-in-down var(--z-duration-normal) var(--z-ease-out);
+}
+.z-animate-spin {
+  animation: z-spin 1s var(--z-ease-linear) infinite;
+}
+.z-animate-pulse {
+  animation: z-pulse 2s var(--z-ease-in-out) infinite;
+}
+.z-animate-bounce {
+  animation: z-bounce 1s infinite;
+}
+.z-animate-shake {
+  animation: z-shake 0.5s var(--z-ease-in-out);
+}
+.z-animate-shimmer {
+  animation: z-shimmer 2s var(--z-ease-linear) infinite;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

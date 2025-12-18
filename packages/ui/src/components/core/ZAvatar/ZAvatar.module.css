@@ -1,0 +1,150 @@
+/* ========================================
+   ZAvatar - Avatar Component Styles
+======================================== */
+
+.avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--z-radius-full);
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--z-bg-elevated);
+}
+
+/* ========================================
+   Sizes
+======================================== */
+
+.xs {
+  width: 24px;
+  height: 24px;
+  font-size: var(--z-text-xs);
+}
+.sm {
+  width: 32px;
+  height: 32px;
+  font-size: var(--z-text-sm);
+}
+.md {
+  width: 40px;
+  height: 40px;
+  font-size: var(--z-text-base);
+}
+.lg {
+  width: 48px;
+  height: 48px;
+  font-size: var(--z-text-lg);
+}
+.xl {
+  width: 56px;
+  height: 56px;
+  font-size: var(--z-text-xl);
+}
+.\32xl {
+  width: 72px;
+  height: 72px;
+  font-size: var(--z-text-2xl);
+}
+
+/* ========================================
+   Image
+======================================== */
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ========================================
+   Initials
+======================================== */
+
+.initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: var(--z-text-primary);
+  font-weight: var(--z-font-semibold);
+  text-transform: uppercase;
+  user-select: none;
+}
+
+/* ========================================
+   Status Indicator
+======================================== */
+
+.status {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 25%;
+  height: 25%;
+  min-width: 8px;
+  min-height: 8px;
+  border-radius: var(--z-radius-full);
+  border: 2px solid var(--z-bg-primary);
+}
+
+.status-online {
+  background: var(--z-success);
+}
+.status-offline {
+  background: var(--z-text-muted);
+}
+.status-away {
+  background: var(--z-warning);
+}
+.status-busy {
+  background: var(--z-error);
+}
+
+/* ========================================
+   Modifiers
+======================================== */
+
+.rounded {
+  border-radius: var(--z-radius-lg);
+}
+
+.bordered {
+  border: 2px solid var(--z-border);
+}
+
+/* ========================================
+   Avatar Group
+======================================== */
+
+.group {
+  display: flex;
+  align-items: center;
+}
+
+.group .avatar {
+  margin-left: -8px;
+  border: 2px solid var(--z-bg-primary);
+}
+
+.group .avatar:first-child {
+  margin-left: 0;
+}
+
+.group .avatar:hover {
+  z-index: 1;
+  transform: scale(1.1);
+}
+
+.overflow {
+  background: var(--z-bg-tertiary);
+  border: 2px solid var(--z-bg-primary);
+}
+
+.overflowText {
+  color: var(--z-text-secondary);
+  font-size: 0.75em;
+  font-weight: var(--z-font-semibold);
+}

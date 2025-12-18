@@ -1,0 +1,492 @@
+/* Visual Sketch Styles */
+
+.visual-sketch-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 9999;
+  animation: fadeIn 0.2s ease;
+}
+
+.visual-sketch-overlay.fullscreen {
+  padding: 0;
+}
+
+.visual-sketch-modal {
+  width: 100%;
+  max-width: 1200px;
+  height: 80vh;
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 80px rgba(223, 62, 83, 0.1);
+}
+
+.visual-sketch-overlay.fullscreen .visual-sketch-modal {
+  max-width: 100%;
+  height: 100vh;
+  border-radius: 0;
+}
+
+/* Header */
+.sketch-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sketch-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.sketch-title svg {
+  color: #df3e53;
+}
+
+.project-badge {
+  padding: 4px 10px;
+  background: rgba(223, 62, 83, 0.15);
+  border: 1px solid rgba(223, 62, 83, 0.3);
+  border-radius: 6px;
+  font-size: 12px;
+  color: #df3e53;
+}
+
+.sketch-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sketch-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sketch-action-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.sketch-close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sketch-close-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+}
+
+/* Info Bar */
+.sketch-info-bar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.info-label {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.info-value {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 400px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.complexity-badge {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.complexity-badge.low {
+  background: rgba(72, 187, 120, 0.15);
+  color: #48bb78;
+}
+
+.complexity-badge.medium {
+  background: rgba(236, 201, 75, 0.15);
+  color: #ecc94b;
+}
+
+.complexity-badge.high {
+  background: rgba(245, 101, 101, 0.15);
+  color: #f56565;
+}
+
+/* Canvas */
+.sketch-canvas {
+  flex: 1;
+  background: linear-gradient(180deg, #0a0a0a 0%, #0f0f0f 100%);
+}
+
+/* Custom Node Styles */
+.sketch-node {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 180px;
+  padding: 14px 16px;
+  background: rgba(15, 15, 15, 0.95);
+  border: 2px solid;
+  border-radius: 12px;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  cursor: grab;
+  transition: all 0.2s ease;
+}
+
+.sketch-node:hover {
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.sketch-node-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.sketch-node-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.sketch-node-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.sketch-node-desc {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.4;
+}
+
+.sketch-node-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.tech-tag {
+  padding: 2px 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Controls Override */
+.sketch-controls {
+  background: rgba(15, 15, 15, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+.sketch-controls button {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.sketch-controls button:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+}
+
+.sketch-controls button:last-child {
+  border-bottom: none !important;
+}
+
+.sketch-controls button path {
+  fill: currentColor !important;
+}
+
+/* MiniMap Override */
+.sketch-minimap {
+  background: rgba(15, 15, 15, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 10px !important;
+}
+
+/* Legend Panel */
+.sketch-legend {
+  background: rgba(15, 15, 15, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 10px !important;
+  padding: 12px 16px !important;
+}
+
+.legend-title {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 10px;
+}
+
+.legend-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+/* Footer */
+.sketch-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tech-label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.sketch-footer .tech-tag {
+  padding: 4px 10px;
+  background: rgba(88, 101, 242, 0.15);
+  border: 1px solid rgba(88, 101, 242, 0.3);
+  border-radius: 6px;
+  font-size: 11px;
+  color: #818cf8;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* React Flow edge label style fix */
+.react-flow__edge-textwrapper {
+  pointer-events: none;
+}
+
+.react-flow__edge-text {
+  font-size: 11px;
+  fill: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .visual-sketch-overlay {
+    padding: 12px;
+  }
+
+  .visual-sketch-modal {
+    height: 90vh;
+  }
+
+  .sketch-info-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .sketch-legend {
+    display: none !important;
+  }
+}
+
+/* Generate Prompt Styles */
+.generate-prompt {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 10, 0.95) 0%,
+    rgba(15, 15, 15, 0.98) 100%
+  );
+}
+
+.generate-prompt-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 400px;
+  padding: 48px;
+}
+
+.generate-icon {
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(223, 62, 83, 0.1),
+    rgba(88, 101, 242, 0.1)
+  );
+  border: 1px solid rgba(223, 62, 83, 0.2);
+  border-radius: 24px;
+  color: #df3e53;
+  margin-bottom: 24px;
+}
+
+.generate-prompt-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 12px 0;
+}
+
+.generate-prompt-content p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 24px 0;
+  line-height: 1.6;
+}
+
+.generate-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #df3e53, #c73a4d);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 20px rgba(223, 62, 83, 0.3);
+}
+
+.generate-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #e84d60, #d9434f);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(223, 62, 83, 0.4);
+}
+
+.generate-btn:disabled {
+  opacity: 0.8;
+  cursor: wait;
+}
+
+.generate-hint {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 16px;
+}
+
+/* Spin animation for loading icons */
+.spin-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Action button disabled state */
+.sketch-action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

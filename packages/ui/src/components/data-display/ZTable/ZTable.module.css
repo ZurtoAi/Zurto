@@ -1,0 +1,205 @@
+/* ========================================
+   ZTable - Data Table Styles
+======================================== */
+
+.wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+/* ========================================
+   Sizes
+======================================== */
+
+.sm .th,
+.sm .td {
+  padding: var(--z-space-2) var(--z-space-3);
+  font-size: var(--z-text-xs);
+}
+
+.md .th,
+.md .td {
+  padding: var(--z-space-3) var(--z-space-4);
+  font-size: var(--z-text-sm);
+}
+
+.lg .th,
+.lg .td {
+  padding: var(--z-space-4) var(--z-space-5);
+  font-size: var(--z-text-base);
+}
+
+/* ========================================
+   Header
+======================================== */
+
+.thead {
+  background: var(--z-bg-secondary);
+}
+
+.th {
+  font-weight: var(--z-font-semibold);
+  color: var(--z-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--z-border);
+}
+
+.thContent {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-1);
+}
+
+.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.sortable:hover {
+  color: var(--z-text-primary);
+}
+
+.sortIcon {
+  color: var(--z-text-muted);
+  font-size: 10px;
+  opacity: 0.3;
+}
+
+.sortActive {
+  opacity: 1;
+  color: var(--z-primary);
+}
+
+/* Sticky Header */
+.stickyHeader .th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--z-bg-secondary);
+}
+
+/* ========================================
+   Body
+======================================== */
+
+.tr {
+  border-bottom: 1px solid var(--z-border);
+  transition: var(--z-transition);
+}
+
+.td {
+  color: var(--z-text-primary);
+  vertical-align: middle;
+}
+
+/* Hover */
+.hoverable .tr:hover {
+  background: var(--z-bg-secondary);
+}
+
+/* Striped */
+.striped .tr:nth-child(even) {
+  background: var(--z-bg-secondary);
+}
+
+.striped.hoverable .tr:hover {
+  background: var(--z-bg-tertiary);
+}
+
+/* Bordered */
+.bordered .th,
+.bordered .td {
+  border: 1px solid var(--z-border);
+}
+
+/* Clickable */
+.clickable {
+  cursor: pointer;
+}
+
+/* Selected */
+.selected {
+  background: var(--z-primary-subtle) !important;
+}
+
+/* ========================================
+   Alignment
+======================================== */
+
+.align-left {
+  text-align: left;
+}
+.align-center {
+  text-align: center;
+}
+.align-right {
+  text-align: right;
+}
+
+.align-center .thContent {
+  justify-content: center;
+}
+.align-right .thContent {
+  justify-content: flex-end;
+}
+
+/* ========================================
+   Checkbox
+======================================== */
+
+.checkboxCell {
+  width: 48px;
+  text-align: center;
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--z-primary);
+}
+
+/* ========================================
+   Empty / Loading
+======================================== */
+
+.emptyCell {
+  padding: var(--z-space-8) !important;
+}
+
+.empty,
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--z-text-muted);
+  font-size: var(--z-text-sm);
+}
+
+.loading {
+  gap: var(--z-space-2);
+}
+
+.loading::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--z-border);
+  border-top-color: var(--z-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

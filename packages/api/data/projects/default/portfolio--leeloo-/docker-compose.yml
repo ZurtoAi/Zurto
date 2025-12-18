@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  portfolio-frontend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.portfolio-frontend
+    container_name: portfolio-leeloo-portfolio-frontend
+    ports:
+      - "5173:5173"
+    environment:
+      - NODE_ENV=production
+      - PORT=5173
+    networks:
+      - portfolio-leeloo-network
+    restart: unless-stopped
+
+networks:
+  portfolio-leeloo-network:
+    driver: bridge

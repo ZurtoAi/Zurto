@@ -1,0 +1,106 @@
+/* ========================================
+   ZStatCard - Stat Card Styles
+======================================== */
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-4);
+  padding: var(--z-space-5);
+  background: var(--z-primary-bg);
+  border-radius: var(--z-radius-lg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card.bordered {
+  border: 1px solid var(--z-border-color);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   Icon
+======================================== */
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  background: var(--z-secondary-bg);
+  border-radius: var(--z-radius-lg);
+}
+
+.icon svg {
+  width: 28px;
+  height: 28px;
+  color: var(--z-accent-color);
+}
+
+/* ========================================
+   Content
+======================================== */
+
+.content {
+  flex: 1;
+}
+
+.title {
+  font-size: var(--z-text-sm);
+  font-weight: 500;
+  color: var(--z-text-secondary);
+  margin-bottom: var(--z-space-1);
+}
+
+.value {
+  font-size: var(--z-text-2xl);
+  font-weight: 700;
+  color: var(--z-text-primary);
+  margin-bottom: var(--z-space-1);
+}
+
+.description {
+  font-size: var(--z-text-xs);
+  color: var(--z-text-tertiary);
+}
+
+/* ========================================
+   Variants
+======================================== */
+
+.card.success .icon {
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.card.success .icon svg {
+  color: #10b981;
+}
+
+.card.warning .icon {
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.card.warning .icon svg {
+  color: #f59e0b;
+}
+
+.card.error .icon {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.card.error .icon svg {
+  color: #ef4444;
+}
+
+.card.info .icon {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.card.info .icon svg {
+  color: #3b82f6;
+}

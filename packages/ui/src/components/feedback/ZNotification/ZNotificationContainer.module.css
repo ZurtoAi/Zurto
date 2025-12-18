@@ -1,0 +1,52 @@
+/* ========================================
+   ZNotificationContainer - Container Styles
+======================================== */
+
+.container {
+  position: fixed;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-3);
+  max-width: 400px;
+  pointer-events: none;
+}
+
+.container.top-right {
+  top: var(--z-space-4);
+  right: var(--z-space-4);
+}
+
+.container.top-left {
+  top: var(--z-space-4);
+  left: var(--z-space-4);
+}
+
+.container.top-center {
+  top: var(--z-space-4);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container.bottom-right {
+  bottom: var(--z-space-4);
+  right: var(--z-space-4);
+}
+
+.container.bottom-left {
+  bottom: var(--z-space-4);
+  left: var(--z-space-4);
+}
+
+.container.bottom-center {
+  bottom: var(--z-space-4);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-3);
+  pointer-events: auto;
+}

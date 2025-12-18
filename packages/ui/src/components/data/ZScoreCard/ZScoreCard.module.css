@@ -1,0 +1,129 @@
+/* ========================================
+   ZScoreCard - Score Card Styles
+======================================== */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-3);
+  background: var(--z-card-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-lg);
+  padding: var(--z-space-4);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   Header
+======================================== */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.label {
+  font-size: var(--z-text-sm);
+  font-weight: 600;
+  color: var(--z-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ========================================
+   Trend
+======================================== */
+
+.trend {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-1);
+  font-size: var(--z-text-xs);
+  font-weight: 600;
+  padding: var(--z-space-1) var(--z-space-2);
+  border-radius: var(--z-radius-full);
+}
+
+.trend.up {
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.1);
+}
+
+.trend.down {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.trend.neutral {
+  color: var(--z-text-secondary);
+  background: var(--z-secondary-bg);
+}
+
+.trendIcon {
+  width: 14px;
+  height: 14px;
+}
+
+/* ========================================
+   Score
+======================================== */
+
+.scoreContainer {
+  display: flex;
+  align-items: baseline;
+  gap: var(--z-space-2);
+}
+
+.score {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--z-text-primary);
+  line-height: 1;
+}
+
+.maxScore {
+  font-size: var(--z-text-xl);
+  font-weight: 600;
+  color: var(--z-text-tertiary);
+}
+
+/* ========================================
+   Progress Bar
+======================================== */
+
+.progressBar {
+  width: 100%;
+  height: 8px;
+  background: var(--z-secondary-bg);
+  border-radius: var(--z-radius-full);
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: var(--z-accent-color);
+  border-radius: var(--z-radius-full);
+  transition: width 0.5s ease;
+}
+
+/* ========================================
+   Variants
+======================================== */
+
+.card.success .progress {
+  background: #22c55e;
+}
+
+.card.warning .progress {
+  background: #f59e0b;
+}
+
+.card.error .progress {
+  background: #ef4444;
+}

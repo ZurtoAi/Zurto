@@ -1,0 +1,81 @@
+/* ========================================
+   ZTable - Table Component Styles
+======================================== */
+
+.wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--z-text-primary);
+}
+
+/* ========================================
+   Variants
+======================================== */
+
+.table.striped tbody tr:nth-child(even) {
+  background: var(--z-secondary-bg);
+}
+
+.table.bordered {
+  border: 1px solid var(--z-border-color);
+}
+
+.table.bordered th,
+.table.bordered td {
+  border: 1px solid var(--z-border-color);
+}
+
+/* ========================================
+   Sizes
+======================================== */
+
+.table.sm th,
+.table.sm td {
+  padding: var(--z-space-2);
+  font-size: var(--z-text-sm);
+}
+
+.table.md th,
+.table.md td {
+  padding: var(--z-space-3);
+  font-size: var(--z-text-base);
+}
+
+.table.lg th,
+.table.lg td {
+  padding: var(--z-space-4);
+  font-size: var(--z-text-lg);
+}
+
+/* ========================================
+   Elements
+======================================== */
+
+.thead {
+  background: var(--z-secondary-bg);
+  border-bottom: 2px solid var(--z-border-color);
+}
+
+.th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--z-text-primary);
+}
+
+.tbody tr {
+  border-bottom: 1px solid var(--z-border-color);
+  transition: background 0.2s ease;
+}
+
+.table.hover tbody tr:hover {
+  background: var(--z-secondary-bg);
+}
+
+.td {
+  color: var(--z-text-secondary);
+}

@@ -1,0 +1,231 @@
+/**
+ * Service Canvas Styles
+ */
+
+.service-canvas {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: linear-gradient(135deg, #1e1e2e 0%, #181825 100%);
+}
+
+/* Loading State */
+.service-canvas.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #cdd6f4;
+}
+
+.service-canvas.loading .spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #313244;
+  border-top: 3px solid #89b4fa;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error State */
+.service-canvas.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #f38ba8;
+}
+
+.service-canvas.error button {
+  padding: 8px 20px;
+  background: #89b4fa;
+  color: #1e1e2e;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Empty State */
+.service-canvas.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #cdd6f4;
+}
+
+.service-canvas.empty .empty-icon {
+  font-size: 64px;
+  opacity: 0.6;
+}
+
+/* Info Bar */
+.canvas-info {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 100;
+  display: flex;
+  gap: 12px;
+  padding: 8px 14px;
+  background: rgba(30, 30, 46, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid #45475a;
+  border-radius: 8px;
+}
+
+.folder-count,
+.file-count {
+  font-size: 13px;
+  color: #a6adc8;
+}
+
+/* Folder Node */
+.folder-node {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #313244 0%, #45475a 100%);
+  border: 1px solid #585b70;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 140px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.folder-node:hover {
+  transform: translateY(-3px);
+  border-color: #f6ad55;
+  box-shadow: 0 6px 20px rgba(246, 173, 85, 0.2);
+}
+
+.folder-node .node-icon {
+  font-size: 24px;
+}
+
+.folder-node .node-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #cdd6f4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
+}
+
+/* File Node */
+.file-node {
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #1e1e2e 0%, #313244 100%);
+  border: 1px solid #45475a;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 120px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.file-node:hover {
+  transform: translateY(-2px);
+  border-color: #89b4fa;
+  box-shadow: 0 4px 16px rgba(137, 180, 250, 0.15);
+}
+
+.file-node .node-icon {
+  font-size: 18px;
+}
+
+.file-node .node-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.file-node .node-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: #cdd6f4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90px;
+}
+
+.file-node .node-size {
+  font-size: 10px;
+  color: #6c7086;
+}
+
+/* Selected state */
+.file-node.selected,
+.folder-node.selected {
+  border-color: #89b4fa;
+  box-shadow: 0 0 0 2px rgba(137, 180, 250, 0.3);
+}
+
+/* ReactFlow Handles */
+.folder-node .react-flow__handle,
+.file-node .react-flow__handle {
+  width: 8px;
+  height: 8px;
+  background: #45475a;
+  border: 2px solid #585b70;
+}
+
+.folder-node .react-flow__handle:hover,
+.file-node .react-flow__handle:hover {
+  background: #89b4fa;
+}
+
+/* ReactFlow Overrides */
+.service-canvas .react-flow__background {
+  background: #1e1e2e !important;
+}
+
+.service-canvas .react-flow__controls {
+  background: rgba(30, 30, 46, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid #45475a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.service-canvas .react-flow__controls-button {
+  background: transparent;
+  border: none;
+  color: #cdd6f4;
+  width: 32px;
+  height: 32px;
+}
+
+.service-canvas .react-flow__controls-button:hover {
+  background: #313244;
+}
+
+.service-canvas .react-flow__controls-button svg {
+  fill: #cdd6f4;
+}
+
+.service-canvas .react-flow__minimap {
+  background: #1e1e2e;
+  border: 1px solid #45475a;
+  border-radius: 8px;
+}
+
+.service-canvas .react-flow__attribution {
+  display: none;
+}

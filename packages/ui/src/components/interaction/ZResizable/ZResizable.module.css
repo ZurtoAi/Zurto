@@ -1,0 +1,35 @@
+.resizable {
+  position: relative;
+  background: var(--z-secondary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-md);
+  overflow: hidden;
+}
+
+.resizable.resizing {
+  user-select: none;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  padding: var(--z-space-4);
+  overflow: auto;
+}
+
+.handle {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+  cursor: nwse-resize;
+  background: var(--z-accent-color);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+.handle:hover {
+  opacity: 1;
+}

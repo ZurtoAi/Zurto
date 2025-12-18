@@ -1,0 +1,73 @@
+/* ========================================
+   ZURTO UI - BREAKPOINT TOKENS
+   Responsive design breakpoints
+======================================== */
+
+:root {
+  /* Breakpoint values (for reference in JS) */
+  --z-screen-xs: 480px;
+  --z-screen-sm: 640px;
+  --z-screen-md: 768px;
+  --z-screen-lg: 1024px;
+  --z-screen-xl: 1280px;
+  --z-screen-2xl: 1536px;
+
+  /* Container max-widths */
+  --z-container-xs: 480px;
+  --z-container-sm: 640px;
+  --z-container-md: 768px;
+  --z-container-lg: 1024px;
+  --z-container-xl: 1280px;
+  --z-container-2xl: 1536px;
+  --z-container-full: 100%;
+}
+
+/*
+  Breakpoint usage in CSS:
+  
+  @media (min-width: 480px) { } // xs
+  @media (min-width: 640px) { } // sm
+  @media (min-width: 768px) { } // md
+  @media (min-width: 1024px) { } // lg
+  @media (min-width: 1280px) { } // xl
+  @media (min-width: 1536px) { } // 2xl
+*/
+
+/* Container utility */
+.z-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--z-space-4);
+  padding-right: var(--z-space-4);
+}
+
+@media (min-width: 640px) {
+  .z-container {
+    max-width: var(--z-container-sm);
+  }
+}
+
+@media (min-width: 768px) {
+  .z-container {
+    max-width: var(--z-container-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .z-container {
+    max-width: var(--z-container-lg);
+  }
+}
+
+@media (min-width: 1280px) {
+  .z-container {
+    max-width: var(--z-container-xl);
+  }
+}
+
+@media (min-width: 1536px) {
+  .z-container {
+    max-width: var(--z-container-2xl);
+  }
+}

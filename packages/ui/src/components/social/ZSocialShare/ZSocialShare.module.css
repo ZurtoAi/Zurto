@@ -1,0 +1,101 @@
+/* ========================================
+   ZSocialShare - Social Share Styles
+======================================== */
+
+.container {
+  display: flex;
+  gap: var(--z-space-2);
+  flex-wrap: wrap;
+}
+
+/* ========================================
+   Buttons
+======================================== */
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-2);
+  padding: var(--z-space-2) var(--z-space-3);
+  background: var(--z-secondary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-md);
+  color: var(--z-text-primary);
+  font-size: var(--z-text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  border-color: var(--z-accent-color);
+  background: var(--z-accent-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   Sizes
+======================================== */
+
+.sm .button {
+  padding: var(--z-space-1) var(--z-space-2);
+}
+
+.sm .icon {
+  width: 14px;
+  height: 14px;
+}
+
+.md .icon {
+  width: 18px;
+  height: 18px;
+}
+
+.lg .button {
+  padding: var(--z-space-3) var(--z-space-4);
+}
+
+.lg .icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* ========================================
+   Platform Colors
+======================================== */
+
+.button.facebook:hover {
+  background: #1877f2;
+  border-color: #1877f2;
+}
+
+.button.twitter:hover {
+  background: #1da1f2;
+  border-color: #1da1f2;
+}
+
+.button.linkedin:hover {
+  background: #0a66c2;
+  border-color: #0a66c2;
+}
+
+.button.email:hover {
+  background: #ea4335;
+  border-color: #ea4335;
+}
+
+.button.whatsapp:hover {
+  background: #25d366;
+  border-color: #25d366;
+}
+
+.button.copy:hover {
+  background: var(--z-accent-color);
+  border-color: var(--z-accent-color);
+}
+
+.label {
+  font-size: var(--z-text-sm);
+  white-space: nowrap;
+}

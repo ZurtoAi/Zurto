@@ -1,0 +1,81 @@
+.timeline {
+  position: relative;
+  padding: var(--z-space-4) 0;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  gap: var(--z-space-4);
+  margin-bottom: var(--z-space-6);
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
+
+.marker {
+  position: relative;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--z-secondary-bg);
+  border: 2px solid var(--z-accent-color);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: var(--z-accent-color);
+  border-radius: 50%;
+}
+
+.content {
+  flex: 1;
+  padding-top: var(--z-space-1);
+}
+
+.timestamp {
+  font-size: var(--z-text-xs);
+  color: var(--z-text-tertiary);
+  margin-bottom: var(--z-space-1);
+}
+
+.title {
+  font-weight: 600;
+  color: var(--z-text-primary);
+  margin-bottom: var(--z-space-2);
+}
+
+.description {
+  color: var(--z-text-secondary);
+  line-height: 1.5;
+}
+
+.line {
+  position: absolute;
+  left: 15px;
+  top: 32px;
+  width: 2px;
+  height: calc(100% + var(--z-space-6));
+  background: var(--z-border-color);
+  z-index: 1;
+}
+
+.item:last-child .line {
+  display: none;
+}
+
+.timeline.alternating .item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline.alternating .item:nth-child(even) .line {
+  left: auto;
+  right: 15px;
+}

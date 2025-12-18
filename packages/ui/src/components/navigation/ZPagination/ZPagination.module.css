@@ -1,0 +1,152 @@
+/* ========================================
+   ZPagination - Page Navigation Styles
+======================================== */
+
+.pagination {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--z-space-1);
+}
+
+.pagination.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ========================================
+   Buttons
+======================================== */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: var(--z-font-medium);
+  color: var(--z-text-secondary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: var(--z-transition);
+}
+
+.button:hover:not(:disabled) {
+  color: var(--z-text-primary);
+  background: var(--z-bg-secondary);
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: var(--z-focus-ring);
+}
+
+.button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   Sizes
+======================================== */
+
+.sm .button {
+  height: 28px;
+  min-width: 28px;
+  padding: 0 var(--z-space-1);
+  font-size: var(--z-text-xs);
+  border-radius: var(--z-radius-sm);
+}
+
+.md .button {
+  height: 36px;
+  min-width: 36px;
+  padding: 0 var(--z-space-2);
+  font-size: var(--z-text-sm);
+  border-radius: var(--z-radius-md);
+}
+
+.lg .button {
+  height: 44px;
+  min-width: 44px;
+  padding: 0 var(--z-space-3);
+  font-size: var(--z-text-base);
+  border-radius: var(--z-radius-md);
+}
+
+/* ========================================
+   Variants
+======================================== */
+
+/* Default */
+.default .button {
+  background: var(--z-bg-secondary);
+}
+
+.default .button:hover:not(:disabled) {
+  background: var(--z-bg-tertiary);
+}
+
+.default .button.active {
+  background: var(--z-primary);
+  color: var(--z-text-primary);
+}
+
+/* Minimal */
+.minimal .button {
+  background: transparent;
+}
+
+.minimal .button.active {
+  background: var(--z-primary);
+  color: var(--z-text-primary);
+}
+
+/* Bordered */
+.bordered .button {
+  background: transparent;
+  border: 1px solid var(--z-border);
+}
+
+.bordered .button:hover:not(:disabled) {
+  border-color: var(--z-border-hover);
+  background: var(--z-bg-secondary);
+}
+
+.bordered .button.active {
+  background: var(--z-primary);
+  border-color: var(--z-primary);
+  color: var(--z-text-primary);
+}
+
+/* ========================================
+   Pages Container
+======================================== */
+
+.pages {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--z-space-0-5);
+}
+
+.nav {
+  flex-shrink: 0;
+}
+
+.dots {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--z-text-muted);
+  padding: 0 var(--z-space-1);
+}
+
+/* ========================================
+   Page Count
+======================================== */
+
+.pageCount {
+  margin-left: var(--z-space-2);
+  font-size: var(--z-text-sm);
+  color: var(--z-text-muted);
+  white-space: nowrap;
+}

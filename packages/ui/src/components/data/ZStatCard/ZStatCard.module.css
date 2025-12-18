@@ -1,0 +1,68 @@
+.card {
+  padding: var(--z-space-5);
+  background: var(--z-secondary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-lg);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--z-accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card.accent {
+  background: rgba(223, 62, 83, 0.1);
+  border-color: var(--z-accent-color);
+}
+
+.card.success {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: #10b981;
+}
+
+.card.warning {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: #f59e0b;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--z-space-3);
+}
+
+.label {
+  font-size: var(--z-text-sm);
+  color: var(--z-text-secondary);
+  font-weight: 500;
+}
+
+.icon {
+  color: var(--z-accent-color);
+}
+
+.value {
+  font-size: var(--z-text-3xl);
+  font-weight: 700;
+  color: var(--z-text-primary);
+  margin-bottom: var(--z-space-2);
+}
+
+.change {
+  display: flex;
+  align-items: center;
+  gap: var(--z-space-1);
+  font-size: var(--z-text-sm);
+  font-weight: 600;
+}
+
+.change.positive {
+  color: #10b981;
+}
+
+.change.negative {
+  color: #ef4444;
+}

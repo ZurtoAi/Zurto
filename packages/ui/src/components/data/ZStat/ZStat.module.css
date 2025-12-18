@@ -1,0 +1,122 @@
+/* ========================================
+   ZStat - Statistic Display Styles
+======================================== */
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-2);
+  padding: var(--z-space-4);
+}
+
+/* ========================================
+   Header
+======================================== */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.label {
+  font-size: var(--z-text-sm);
+  font-weight: var(--z-font-medium);
+  color: var(--z-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.iconWrapper {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(223, 62, 83, 0.1);
+  border-radius: var(--z-radius-md);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  color: var(--z-accent);
+}
+
+/* ========================================
+   Body
+======================================== */
+
+.body {
+  display: flex;
+  align-items: baseline;
+  gap: var(--z-space-2);
+}
+
+.value {
+  font-size: var(--z-text-3xl);
+  font-weight: var(--z-font-bold);
+  color: var(--z-text-primary);
+  line-height: 1;
+}
+
+.change {
+  font-size: var(--z-text-sm);
+  font-weight: var(--z-font-semibold);
+  padding: var(--z-space-1) var(--z-space-2);
+  border-radius: var(--z-radius-sm);
+}
+
+.change.up {
+  color: var(--z-success);
+  background: rgba(34, 197, 94, 0.1);
+}
+
+.change.down {
+  color: var(--z-error);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.change.neutral {
+  color: var(--z-text-secondary);
+  background: var(--z-secondary-bg);
+}
+
+.helpText {
+  margin: 0;
+  font-size: var(--z-text-xs);
+  color: var(--z-text-tertiary);
+}
+
+/* ========================================
+   Variant: Card
+======================================== */
+
+.card {
+  background: var(--z-secondary-bg);
+  border: 1px solid var(--z-border-color);
+  border-radius: var(--z-radius-lg);
+  padding: var(--z-space-6);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   Variant: Minimal
+======================================== */
+
+.minimal {
+  padding: 0;
+}
+
+.minimal .iconWrapper {
+  display: none;
+}
+
+.minimal .value {
+  font-size: var(--z-text-2xl);
+}

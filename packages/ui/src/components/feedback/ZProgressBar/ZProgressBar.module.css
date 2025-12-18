@@ -1,0 +1,127 @@
+/* ========================================
+   ZProgressBar - Progress Bar Styles
+======================================== */
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--z-space-2);
+}
+
+.label {
+  font-size: var(--z-text-sm);
+  font-weight: var(--z-font-medium);
+  color: var(--z-text-primary);
+}
+
+/* ========================================
+   Track
+======================================== */
+
+.track {
+  position: relative;
+  width: 100%;
+  background: var(--z-secondary-bg);
+  border-radius: var(--z-radius-full);
+  overflow: hidden;
+}
+
+.track.xs {
+  height: 4px;
+}
+
+.track.sm {
+  height: 8px;
+}
+
+.track.md {
+  height: 12px;
+}
+
+.track.lg {
+  height: 16px;
+}
+
+/* ========================================
+   Fill
+======================================== */
+
+.fill {
+  height: 100%;
+  border-radius: var(--z-radius-full);
+  transition: width 0.3s ease;
+}
+
+.fill.animated {
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+/* ========================================
+   Color Variants
+======================================== */
+
+.fill.primary {
+  background: var(--z-primary);
+}
+
+.fill.accent {
+  background: var(--z-accent);
+}
+
+.fill.success {
+  background: var(--z-success);
+}
+
+.fill.warning {
+  background: var(--z-warning);
+}
+
+.fill.error {
+  background: var(--z-error);
+}
+
+/* ========================================
+   Variant: Gradient
+======================================== */
+
+.gradient .fill {
+  background: linear-gradient(90deg, var(--z-accent) 0%, #c2355a 100%);
+}
+
+/* ========================================
+   Variant: Striped
+======================================== */
+
+.striped .fill {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 20px 20px;
+  animation: stripes 1s linear infinite;
+}
+
+@keyframes stripes {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 20px 0;
+  }
+}

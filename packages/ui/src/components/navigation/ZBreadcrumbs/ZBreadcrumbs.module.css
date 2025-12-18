@@ -1,0 +1,60 @@
+/* ========================================
+   ZBreadcrumbs - Navigation Trail Styles
+======================================== */
+
+.breadcrumbs {
+  font-size: var(--z-text-sm);
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--z-space-1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--z-space-1-5);
+  color: var(--z-text-secondary);
+  text-decoration: none;
+  padding: var(--z-space-1) var(--z-space-1-5);
+  border-radius: var(--z-radius-sm);
+  transition: var(--z-transition);
+}
+
+.link:hover:not(.current) {
+  color: var(--z-text-primary);
+  background: var(--z-bg-secondary);
+}
+
+.link:focus-visible {
+  outline: none;
+  box-shadow: var(--z-focus-ring);
+}
+
+.current {
+  color: var(--z-text-primary);
+  font-weight: var(--z-font-medium);
+  cursor: default;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  color: var(--z-text-muted);
+}
+
+.collapsed {
+  color: var(--z-text-muted);
+  padding: var(--z-space-1);
+}
